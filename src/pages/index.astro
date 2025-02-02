@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavBar from '../components/NavBar.astro';
+import Hero from '../components/Hero.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<Layout title="Home - Draft & Build">
+	<NavBar currentPath={currentPath} />
+	<div class="h-20"></div>
+	<Hero />
+</Layout>
+
+<style>
+	@keyframes slideUp {
+		0% {
+			opacity: 0;
+			transform: translateY(50px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.scroll-animate-up {
+		will-change: transform, opacity;
+		opacity: 0;
+		transform: translateY(50px);
+	}
+</style>
+
+<script>
+	let lastScrollTop = 0;
+	let isScrollingDown = true;
+
+	window.addEventListener('scroll', () => {
+		const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		isScrollingDown = currentScrollTop > lastScrollTop;
+		lastScrollTop = currentScrollTop;
+	});
+
+	const observerOptions = {
+		root: null,
+		rootMargin: '0px',
+		threshold: 0.1
+	};
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			const element = entry.target as HTMLElement;
+			
+			if (entry.isIntersecting) {
+				if (isScrollingDown) {
+					element.style.animation = 'slideUp 0.8s ease-out forwards';
+				} else {
+					element.style.opacity = '1';
+					element.style.transform = 'translateY(0)';
+				}
+			} else if (!entry.isIntersecting && !isScrollingDown) {
+				element.style.animation = 'none';
+				element.style.opacity = '0';
+				element.style.transform = 'translateY(50px)';
+			}
+		});
+	}, observerOptions);
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const sections = document.querySelectorAll('section:not(:first-child), footer');
+		sections.forEach(section => {
+			const element = section as HTMLElement;
+			element.classList.add('scroll-animate-up');
+			
+			const rect = element.getBoundingClientRect();
+			const isInViewport = rect.top < window.innerHeight;
+			
+			if (isInViewport) {
+				element.style.opacity = '1';
+				element.style.transform = 'translateY(0)';
+			} else {
+				element.style.opacity = '0';
+				element.style.transform = 'translateY(50px)';
+			}
+			
+			element.style.transition = 'transform 0.8s ease-out, opacity 0.8s ease-out';
+			observer.observe(element);
+		});
+	});
+</script>

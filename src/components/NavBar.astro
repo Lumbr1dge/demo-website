@@ -1,0 +1,162 @@
+---
+// Add this at the top to accept the currentPath prop
+interface Props {
+    currentPath?: string;
+}
+
+const { currentPath = '' } = Astro.props;
+
+import SearchBar from './SearchBar.astro';
+---
+
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-[1000]">
+    <div class="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between">
+        {/* Company Name */}
+        <div class="flex-shrink-0">
+            <a href="/" class="flex items-center group">
+                <div class="flex flex-col animate-fade-in">
+                    <span class="text-2xl md:text-3xl font-bold tracking-tight">
+                        <span class="text-[#330000] group-hover:text-[#73605B] transition-colors duration-300 animate-slide-down" style="animation-delay: 200ms;">Draft</span>
+                        <span class="text-[#73605B] group-hover:text-[#330000] transition-colors duration-300 animate-slide-down" style="animation-delay: 400ms;">&</span>
+                        <span class="text-[#330000] group-hover:text-[#73605B] transition-colors duration-300 animate-slide-down" style="animation-delay: 600ms;">Build</span>
+                    </span>
+                    <span class="text-sm md:text-base text-[#73605B] tracking-[0.3em] uppercase font-light group-hover:tracking-[0.4em] transition-all duration-300 animate-fade-in" style="animation-delay: 800ms;">
+                        
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        {/* Navigation Links - Centered */}
+        <div class="hidden lg:flex items-center justify-center space-x-12 flex-grow mx-4">
+            <a href="/" class="text-[#330000] hover:text-[#73605B] font-medium transition-colors duration-300 relative group">
+                Home
+                <span class={`absolute bottom-0 left-0 ${currentPath === '/' ? 'w-full' : 'w-0'} h-0.5 bg-[#73605B] group-hover:w-full transition-all duration-300`}></span>
+            </a>
+            <a href="/gallery" class="text-[#330000] hover:text-[#73605B] font-medium transition-colors duration-300 relative group">
+                Projects
+                <span class={`absolute bottom-0 left-0 ${currentPath === '/gallery' ? 'w-full' : 'w-0'} h-0.5 bg-[#73605B] group-hover:w-full transition-all duration-300`}></span>
+            </a>
+            <a href="/services" class="text-[#330000] hover:text-[#73605B] font-medium transition-colors duration-300 relative group">
+                Services
+                <span class={`absolute bottom-0 left-0 ${currentPath === '/services' ? 'w-full' : 'w-0'} h-0.5 bg-[#73605B] group-hover:w-full transition-all duration-300`}></span>
+            </a>
+            <a href="/about" class="text-[#330000] hover:text-[#73605B] font-medium transition-colors duration-300 relative group">
+                About
+                <span class={`absolute bottom-0 left-0 ${currentPath === '/about' ? 'w-full' : 'w-0'} h-0.5 bg-[#73605B] group-hover:w-full transition-all duration-300`}></span>
+            </a>
+            <a href="/contact" class="text-[#330000] hover:text-[#73605B] font-medium transition-colors duration-300 relative group">
+                Contact
+                <span class={`absolute bottom-0 left-0 ${currentPath === '/contact' ? 'w-full' : 'w-0'} h-0.5 bg-[#73605B] group-hover:w-full transition-all duration-300`}></span>
+            </a>
+        </div>
+
+        {/* Search and CTA */}
+        <div class="hidden lg:flex items-center space-x-4">
+            <div class="hidden md:block w-64">
+                <SearchBar />
+            </div>
+            
+            <a href="/contact#getInTouch" 
+               class="px-5 py-2 text-white bg-[#330000] hover:bg-[#73605B] rounded-lg transition-all duration-300 shadow-sm hover:shadow-md">
+                Contact Us
+            </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button class="lg:hidden bg-transparent border-none cursor-pointer p-2" aria-label="Toggle Menu" id="mobile-menu-button">
+            <span class="block w-6 h-0.5 bg-[#330000] relative transition-all duration-300 mobile-menu-bar">
+                <span class="absolute w-6 h-0.5 bg-[#330000] transition-all duration-300 -translate-y-2"></span>
+                <span class="absolute w-6 h-0.5 bg-[#330000] transition-all duration-300 translate-y-2"></span>
+            </span>
+        </button>
+    </div>
+
+    {/* Mobile Menu */}
+    <div class="lg:hidden">
+        <div class="hidden py-4 space-y-4 bg-white border-t border-gray-100" id="mobile-links">
+            <a href="/" class="block px-4 py-2 text-[#330000] hover:text-[#73605B] transition-colors duration-300">Home</a>
+            <a href="/gallery" class="block px-4 py-2 text-[#330000] hover:text-[#73605B] transition-colors duration-300">Projects</a>
+            <a href="/services" class="block px-4 py-2 text-[#330000] hover:text-[#73605B] transition-colors duration-300">Services</a>
+            <a href="/about" class="block px-4 py-2 text-[#330000] hover:text-[#73605B] transition-colors duration-300">About</a>
+            <a href="/contact" class="block px-4 py-2 text-[#330000] hover:text-[#73605B] transition-colors duration-300">Contact</a>
+            <div class="px-4 py-2">
+                <div class="relative mb-4">
+                    <input 
+                        type="text" 
+                        placeholder="Search..." 
+                        class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-[#73605B] transition-all duration-300"
+                    />
+                    <button class="absolute right-3 top-1/2 -translate-y-1/2 text-[#73605B]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
+                </div>
+                <a href="/contact#getInTouch" 
+                   class="block w-full px-4 py-2 text-center text-white bg-[#330000] hover:bg-[#73605B] rounded-lg transition-all duration-300">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const mobileButton = document.querySelector('#mobile-menu-button');
+    const mobileLinks = document.querySelector('#mobile-links');
+    const menuBar = document.querySelector('.mobile-menu-bar');
+
+    mobileButton?.addEventListener('click', () => {
+        mobileLinks?.classList.toggle('hidden');
+        menuBar?.classList.toggle('active');
+    });
+</script>
+
+<style>
+    .mobile-menu-bar.active {
+        background: transparent;
+    }
+
+    .mobile-menu-bar.active span:first-child {
+        transform: rotate(45deg) translate(0);
+        top: 0;
+    }
+
+    .mobile-menu-bar.active span:last-child {
+        transform: rotate(-45deg) translate(0);
+        top: 0;
+    }
+
+    /* Animation keyframes */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Animation classes */
+    .animate-fade-in {
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    .animate-slide-down {
+        opacity: 0;
+        animation: slideDown 0.8s ease-out forwards;
+    }
+</style> 

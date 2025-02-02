@@ -1,0 +1,981 @@
+---
+import Footer from './Footer.astro';
+import CTA from './CTA.astro';
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { 
+    title = "From Plans to Perfection", 
+    description = "Licensed builders specialising in renovations, new builds, and custom projects. No stress, no surprises—just quality results." 
+} = Astro.props;
+---
+
+<div class="relative min-h-screen">
+    {/* Left Side Decoration */}
+    <div class="absolute left-0 top-0 bottom-0 w-[10%]">
+        <div class="sticky top-0 h-screen w-full bg-[#ffffff]">
+            <div class="animate-fade-line absolute top-[15%] w-full h-[1px] bg-gradient-to-r from-[#333333]/30 to-transparent"></div>
+            <div class="animate-fade-line absolute top-[35%] w-full h-[1px] bg-gradient-to-r from-[#B22222]/30 to-transparent" style="animation-delay: 1s;"></div>
+            <div class="animate-fade-line absolute top-[55%] w-full h-[1px] bg-gradient-to-r from-[#333333]/30 to-transparent" style="animation-delay: 2s;"></div>
+            <div class="animate-fade-line absolute top-[75%] w-full h-[1px] bg-gradient-to-r from-[#B22222]/30 to-transparent" style="animation-delay: 3s;"></div>
+            <div class="animate-fade-line absolute top-[95%] w-full h-[1px] bg-gradient-to-r from-[#333333]/30 to-transparent" style="animation-delay: 4s;"></div>
+        </div>
+    </div>
+
+    {/* Right Side Decoration */}
+    <div class="absolute right-0 top-0 bottom-0 w-[10%]">
+        <div class="sticky top-0 h-screen w-full bg-[#ffffff]">
+            <div class="animate-fade-line absolute top-[25%] w-full h-[1px] bg-gradient-to-l from-[#333333]/30 to-transparent" style="animation-delay: 0.5s;"></div>
+            <div class="animate-fade-line absolute top-[45%] w-full h-[1px] bg-gradient-to-l from-[#B22222]/30 to-transparent" style="animation-delay: 1.5s;"></div>
+            <div class="animate-fade-line absolute top-[65%] w-full h-[1px] bg-gradient-to-l from-[#333333]/30 to-transparent" style="animation-delay: 2.5s;"></div>
+            <div class="animate-fade-line absolute top-[85%] w-full h-[1px] bg-gradient-to-l from-[#B22222]/30 to-transparent" style="animation-delay: 3.5s;"></div>
+        </div>
+    </div>
+
+    {/* Main Content */}
+    <div class="mx-[10%]">
+        <section class="relative h-[90vh] flex items-center opacity-0 animate-fade-in">
+            <div class="relative z-10 max-w-[1400px] mx-auto px-4">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Left content */}
+                    <div class="space-y-8 animate-slide-in-left">
+                        {/* Enhanced badge */}
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#B22222]/5 rounded-full border border-[#B22222]/10">
+                            <span class="flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#B22222] opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#B22222]"></span>
+                            </span>
+                            <span class="text-gray-700 text-sm font-medium">Licensed Building Practitioners [LBP]</span>
+                        </div>
+
+                        {/* Enhanced heading */}
+                        <h1 class="text-5xl lg:text-6xl font-bold">
+                            <span class="block text-gray-900">From Plans</span>
+                            <span class="block mt-2 text-[#B22222]">to Perfection</span>
+                        </h1>
+
+                        {/* Description */}
+                        <p class="text-xl text-gray-600 max-w-xl leading-relaxed">
+                            {description}
+                        </p>
+
+                        {/* CTAs */}
+                        <div class="flex flex-wrap gap-4">
+                            <a href="/contact" 
+                                class="group px-8 py-4 bg-[#B22222] text-white rounded-lg 
+                                hover:bg-[#330000] transition-all duration-300 
+                                flex items-center text-lg font-medium shadow-lg shadow-[#B22222]/10">
+                                Start Your Project
+                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </a>
+                            <a href="/gallery" 
+                                class="group px-8 py-4 bg-white text-gray-700 rounded-lg 
+                                hover:bg-gray-50 transition-all duration-300 
+                                flex items-center text-lg font-medium
+                                border border-gray-200 hover:border-gray-300">
+                                View Our Work
+                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </a>
+                        </div>
+
+                        {/* Stats */}
+                        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gray-100">
+                            <div>
+                                <div class="text-2xl font-bold text-gray-900">13+</div>
+                                <div class="text-sm text-gray-600">Years Experience</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-900">50+</div>
+                                <div class="text-sm text-gray-600">Projects Done</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-900">100%</div>
+                                <div class="text-sm text-gray-600">Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right content - Image */}
+                    <div class="relative w-full h-[500px] rounded-2xl overflow-hidden group animate-slide-in-right">
+                        <img 
+                            src="/FrenchBayKwilaDeck.jpg"
+                            alt="French Bay Kwila Deck"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        <div class="absolute inset-0 border border-gray-200 rounded-2xl"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Divider */}
+        <div class="w-full py-8 bg-[#ffffff] scroll-animate-up opacity-0">
+            <div class="max-w-[1400px] mx-auto px-4">
+                <div class="flex items-center justify-center gap-4">
+                    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#333333] to-[#333333]"></div>
+                    <div class="flex-shrink-0 text-[#333333]">●●●</div>
+                    <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#333333] to-[#333333]"></div>
+                </div>
+            </div>
+        </div>
+
+        {/* Services Section - Light Grey Background */}
+        <section class="bg-[#f8f8f8] py-12 relative overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-4 md:px-6 relative">
+                <div class="text-center mb-10 scroll-animate-up opacity-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-[#333333] to-[#B22222] bg-clip-text text-transparent">
+                        Services we provide
+                    </h2>
+                    <div class="w-20 h-0.5 bg-gradient-to-r from-[#333333] to-[#B22222] mx-auto"></div>
+                </div>
+
+                <div class="space-y-16">
+                    {/* Renovations */}
+                    <div class="relative scroll-animate-up opacity-0">
+                        <div class="flex flex-col lg:flex-row items-center gap-6">
+                            <div class="w-full lg:w-7/12 relative">
+                                <div class="relative h-[300px] rounded-lg overflow-hidden group glow-image">
+                                    <img 
+                                        src="/BeforeRenovation.jpg" 
+                                        alt="Before Renovation" 
+                                        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 group-hover:opacity-0"
+                                    />
+                                    <img 
+                                        src="/AfterRenovation.jpg" 
+                                        alt="After Renovation" 
+                                        class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+                                    />
+                                    <div class="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"></div>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-5/12 lg:ml-[-30px] relative z-10">
+                                <div class="bg-[#ffffff] p-6 rounded-lg shadow-[0_4px_20px_-2px_rgba(51,51,51,0.25)] border-t border-r border-b border-[#B22222]/10 glow-box">
+                                    <div class="text-[#B22222] mb-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold mb-2 text-gray-900">Renovations</h3>
+                                    <p class="text-sm text-gray-600 mb-4">Transform your space with our expert renovation services. From small updates to complete home makeovers, we bring your vision to life with precision and care.</p>
+                                    <a href="/services/renovations" class="inline-flex items-center text-[#B22222] hover:text-[#333333] transition-colors duration-300 text-sm">
+                                        Learn More
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* New Builds */}
+                    <div class="relative scroll-animate-up opacity-0">
+                        <div class="flex flex-col lg:flex-row-reverse items-center gap-6">
+                            <div class="w-full lg:w-7/12 relative">
+                                <div class="relative h-[300px] rounded-lg overflow-hidden glow-image">
+                                    <img 
+                                        src="/NewMinorDwellingInWestmere-MakingUseOfUnusedSpaceToAddValue.jpg" 
+                                        alt="New Minor Dwelling in Westmere" 
+                                        class="absolute inset-0 w-full h-full object-cover"
+                                    />
+                                    <div class="absolute inset-0 bg-gradient-to-l from-black/30 to-transparent"></div>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-5/12 lg:mr-[-30px] relative z-10">
+                                <div class="bg-[#ffffff] p-6 rounded-lg shadow-[0_4px_20px_-2px_rgba(51,51,51,0.25)] border-t border-l border-b border-[#B22222]/10 glow-box">
+                                    <div class="text-[#B22222] mb-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold mb-2 text-gray-900">New Builds</h3>
+                                    <p class="text-sm text-gray-600 mb-4">Building your dream home from the ground up. Our experienced team ensures quality craftsmanship at every step, creating spaces that perfectly match your vision and lifestyle.</p>
+                                    <a href="/services/new-builds" class="inline-flex items-center text-[#B22222] hover:text-[#333333] transition-colors duration-300 text-sm">
+                                        Learn More
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Outdoor Structures */}
+                    <div class="relative scroll-animate-up opacity-0">
+                        <div class="flex flex-col lg:flex-row items-center gap-6">
+                            <div class="w-full lg:w-7/12 relative">
+                                <div class="relative h-[300px] rounded-lg overflow-hidden glow-image">
+                                    <img 
+                                        src="/BackyardUpgradeInNewLynn.jpg" 
+                                        alt="Backyard Upgrade in New Lynn" 
+                                        class="absolute inset-0 w-full h-full object-cover"
+                                    />
+                                    <div class="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"></div>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-5/12 lg:ml-[-30px] relative z-10">
+                                <div class="bg-[#ffffff] p-6 rounded-lg shadow-[0_4px_20px_-2px_rgba(51,51,51,0.25)] border-t border-r border-b border-[#B22222]/10 glow-box">
+                                    <div class="text-[#B22222] mb-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6h.75m-.75 3h.75m-.75 3h.75M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold mb-2 text-gray-900">Outdoor Structures</h3>
+                                    <p class="text-sm text-gray-600 mb-4">Enhance your outdoor living with custom-built decks, fences, and retaining walls. We create durable, beautiful structures that complement your home and lifestyle.</p>
+                                    <a href="/services/outdoor-structures" class="inline-flex items-center text-[#B22222] hover:text-[#333333] transition-colors duration-300 text-sm">
+                                        Learn More
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Design + Build */}
+                    <div class="relative scroll-animate-up opacity-0">
+                        <div class="flex flex-col lg:flex-row-reverse items-center gap-6">
+                            <div class="w-full lg:w-7/12 relative">
+                                <div class="relative h-[300px] rounded-lg overflow-hidden glow-image">
+                                    <img 
+                                        src="/NewRoofExtensionOverANewDeck.jpg" 
+                                        alt="New Roof Extension Over A New Deck" 
+                                        class="absolute inset-0 w-full h-full object-cover"
+                                    />
+                                    <div class="absolute inset-0 bg-gradient-to-l from-black/30 to-transparent"></div>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-5/12 lg:mr-[-30px] relative z-10">
+                                <div class="bg-[#ffffff] p-6 rounded-lg shadow-[0_4px_20px_-2px_rgba(51,51,51,0.25)] border-t border-l border-b border-[#B22222]/10 glow-box">
+                                    <div class="text-[#B22222] mb-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-xl font-bold mb-2 text-gray-900">Design + Build</h3>
+                                    <p class="text-sm text-gray-600 mb-4">Full-service solutions from concept to completion. Our integrated approach ensures seamless project delivery, combining creative design with expert construction.</p>
+                                    <a href="/services/design-build" class="inline-flex items-center text-[#B22222] hover:text-[#333333] transition-colors duration-300 text-sm">
+                                        Learn More
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* View All Services Button */}
+                <div class="text-center mt-16 scroll-animate-up opacity-0">
+                    <a href="/services" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-[#330000] hover:bg-[#B22222] rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                        View All Services
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        {/* Divider before About Us */}
+        <div class="w-full py-8 bg-[#ffffff] scroll-animate-up opacity-0">
+            <div class="max-w-[1400px] mx-auto px-4">
+                <div class="flex items-center justify-center gap-4">
+                    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#333333] to-[#333333]"></div>
+                    <div class="flex-shrink-0 text-[#333333]">●●●</div>
+                    <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#333333] to-[#333333]"></div>
+                </div>
+            </div>
+        </div>
+
+        {/* About Us Section */}
+        <section class="bg-[#ffffff] py-16 relative overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-4 md:px-6 relative">
+                <div class="grid md:grid-cols-2 gap-20 items-center">
+                    {/* Image Side with extra padding */}
+                    <div class="relative scroll-animate-up opacity-0 px-8">
+                        {/* Main Image Container */}
+                        <div class="relative h-[400px] w-[400px] mx-auto rounded-full overflow-visible">
+                            {/* Enhanced Red Glow Background */}
+                            <div class="absolute inset-[5px] bg-[#B22222] rounded-full opacity-40 blur-[25px] animate-pulse-slow"></div>
+                            <div class="absolute inset-[5px] bg-[#C7B8F5] rounded-full opacity-30 blur-[25px] animate-pulse-slow-delay"></div>
+                            
+                            {/* Image Container with Glow */}
+                            <div class="relative h-full w-full rounded-full overflow-hidden glow-image">
+                                <img 
+                                    src="/Team.jpg" 
+                                    alt="Our Team" 
+                                    class="absolute inset-0 w-full h-full object-cover rounded-full"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+                                
+                                {/* Rotating Border Effect */}
+                                <div class="absolute inset-[-2px] rounded-full border-2 border-[#333333]/20 animate-spin-slow"></div>
+                                <div class="absolute inset-[-4px] rounded-full border-2 border-[#B22222]/10 animate-spin-reverse"></div>
+                            </div>
+                        </div>
+
+                        {/* Decorative Elements */}
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-[#ffffff] shadow-lg z-[-1] animate-float"></div>
+                        <div class="absolute -top-4 -left-4 w-40 h-40 rounded-full bg-gradient-to-br from-[#B22222]/5 to-transparent animate-float-delay"></div>
+                        
+                        {/* Additional Decorative Elements */}
+                        <div class="absolute top-1/4 -right-6 w-12 h-12 rounded-full border-2 border-[#333333]/10 animate-pulse"></div>
+                        <div class="absolute bottom-1/4 -left-6 w-12 h-12 rounded-full border-2 border-[#B22222]/10 animate-pulse-delay"></div>
+                        
+                        {/* Dot Pattern Background */}
+                        <div class="absolute -z-10 inset-0 opacity-10">
+                            <div class="absolute top-0 left-0 w-full h-full"
+                                 style="background-image: radial-gradient(#333333 1px, transparent 1px), radial-gradient(#B22222 1px, transparent 1px);
+                                        background-size: 20px 20px;
+                                        background-position: 0 0, 10px 10px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Content Side with extra left padding */}
+                    <div class="relative scroll-animate-up opacity-0 md:pl-8" style="animation-delay: 200ms;">
+                        <div class="relative">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-[#333333] to-[#B22222] bg-clip-text text-transparent">
+                                About Us
+                            </h2>
+                            <div class="w-20 h-0.5 bg-gradient-to-r from-[#333333] to-[#B22222] mb-8"></div>
+                            <p class="text-gray-600 leading-relaxed mb-10">
+                                We are a New Zealand-based residential building company dedicated to high-quality craftsmanship and a stress-free building experience. With years of expertise and a hands-on approach, we bring your vision to life with precision and care.
+                            </p>
+                            <div class="flex gap-4">
+                                <a href="/about" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-[#330000] hover:bg-[#B22222] rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                                    Learn More About Us
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Decorative Line */}
+                        <div class="absolute left-0 top-0 w-[1px] h-full bg-gradient-to-b from-[#B22222]/20 via-[#333333]/10 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Divider before Gallery */}
+        <div class="w-full py-8 bg-[#f8f8f8] scroll-animate-up opacity-0">
+            <div class="max-w-[1400px] mx-auto px-4">
+                <div class="flex items-center justify-center gap-4">
+                    <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#333333] to-[#333333]"></div>
+                    <div class="flex-shrink-0 text-[#333333]">●●●</div>
+                    <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#333333] to-[#333333]"></div>
+                </div>
+            </div>
+        </div>
+
+        {/* Gallery Section */}
+        <section class="bg-[#f8f8f8] py-16 relative overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-4 md:px-6 relative">
+                {/* Section Header */}
+                <div class="text-center mb-12 scroll-animate-up opacity-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-[#333333] to-[#B22222] bg-clip-text text-transparent">
+                        Projects Completed
+                    </h2>
+                    <div class="w-20 h-0.5 bg-gradient-to-r from-[#333333] to-[#B22222] mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Take a look at some of our recent transformations. Each project showcases our commitment to quality craftsmanship and attention to detail.
+                    </p>
+                </div>
+
+                {/* Masonry Gallery */}
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 scroll-animate-up opacity-0 max-w-[1200px] mx-auto">
+                    {/* Row 1 - Two small images */}
+                    <div class="relative group rounded-lg overflow-hidden h-[250px] glow-image">
+                        <img 
+                            src="/FrenchBayKwilaDeck.jpg" 
+                            alt="French Bay Kwila Deck" 
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                                <h3 class="font-bold">Kwila Deck</h3>
+                                <p class="text-sm">Custom outdoor living space in French Bay</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group rounded-lg overflow-hidden h-[250px] glow-image">
+                        <img 
+                            src="/CustomFenceInMountEden.jpg" 
+                            alt="Custom Fence" 
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                                <h3 class="font-bold">Custom Fencing</h3>
+                                <p class="text-sm">Bespoke fence design in Mount Eden</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Large featured image */}
+                    <div class="relative group rounded-lg overflow-hidden h-[520px] row-span-2 glow-image">
+                        <img 
+                            src="/NewMinorDwellingInWestmere-MakingUseOfUnusedSpaceToAddValue.jpg" 
+                            alt="New Minor Dwelling in Westmere" 
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                                <h3 class="font-bold">Minor Dwelling</h3>
+                                <p class="text-sm">Space optimisation project in Westmere</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Row 2 - Two medium images */}
+                    <div class="relative group rounded-lg overflow-hidden h-[250px] glow-image">
+                        <img 
+                            src="/BackyardUpgradeInNewLynn.jpg" 
+                            alt="Backyard Upgrade" 
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                                <h3 class="font-bold">Backyard Transformation</h3>
+                                <p class="text-sm">Complete outdoor renovation in New Lynn</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group rounded-lg overflow-hidden h-[250px] glow-image">
+                        <img 
+                            src="/NewRoofExtensionOverANewDeck.jpg" 
+                            alt="Roof Extension Project" 
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                                <h3 class="font-bold">Roof Extension</h3>
+                                <p class="text-sm">Combined deck and roof project</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                {/* View More Button */}
+                <div class="text-center mt-12 scroll-animate-up opacity-0">
+                    <a href="/gallery" class="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-[#330000] hover:bg-[#B22222] rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                        View Full Gallery
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        {/* Add divider before testimonials section */}
+        <div class="w-full py-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="h-[2px] bg-gradient-to-r from-transparent via-[#B22222]/20 to-transparent"></div>
+            </div>
+        </div>
+
+        {/* Client Reviews Section */}
+        <section class="py-24 relative overflow-hidden bg-white">
+            {/* Decorative Elements */}
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-0 right-0 w-[300px] h-[300px] border border-[#B22222]/10 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 left-0 w-[300px] h-[300px] border border-[#333333]/10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
+                <div class="absolute top-1/2 left-0 w-[8px] h-[8px] bg-[#B22222]/20 rounded-full"></div>
+                <div class="absolute top-1/3 right-0 w-[8px] h-[8px] bg-[#333333]/20 rounded-full"></div>
+                <div class="absolute bottom-1/4 left-1/4 w-[8px] h-[8px] bg-[#B22222]/20 rounded-full"></div>
+            </div>
+
+            {/* Section Header */}
+            <div class="relative text-center mb-20 scroll-animate-up opacity-0">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 leading-tight">
+                    <span class="text-2xl md:text-3xl lg:text-4xl block text-gray-700 mb-1">What Our</span>
+                    <span class="text-3xl md:text-4xl lg:text-5xl text-[#333333] font-bold">Clients Say</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-[#333333] to-[#B22222] mx-auto mb-8"></div>
+                <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our commitment to excellence is reflected in the words of those we've had the privilege to serve.
+                </p>
+            </div>
+
+            {/* Testimonials Grid */}
+            <div class="relative max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+                {/* Testimonial 1 */}
+                <div class="group">
+                    <div class="relative p-8 rounded-2xl transition-all duration-500 hover:translate-y-[-5px]">
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 shadow-[0_0_25px_-10px_rgba(0,0,0,0.2)] border border-gray-100"></div>
+                        <div class="absolute inset-[2px] rounded-[14px] bg-white"></div>
+                        <div class="relative">
+                            <div class="text-[#B22222] mb-6 flex items-center">
+                                <div class="p-2 bg-[#B22222]/5 rounded-lg group-hover:bg-[#B22222]/10 transition-colors duration-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 transform group-hover:scale-110 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-8 leading-relaxed">"Draft & Build transformed our renovation dreams into reality. Their attention to detail and commitment to quality exceeded our expectations. The team was professional and delivered on time."</p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#B22222]/10 to-[#B22222]/5 flex items-center justify-center text-[#B22222] font-bold text-xl group-hover:scale-110 transition-transform duration-500">
+                                    M
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-gray-800">Michael Thompson</h4>
+                                    <p class="text-sm text-gray-500">Home Renovation Project</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Testimonial 2 */}
+                <div class="group md:translate-y-8">
+                    <div class="relative p-8 rounded-2xl transition-all duration-500 hover:translate-y-[-5px]">
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 shadow-[0_0_25px_-10px_rgba(0,0,0,0.2)] border border-gray-100"></div>
+                        <div class="absolute inset-[2px] rounded-[14px] bg-white"></div>
+                        <div class="relative">
+                            <div class="text-[#B22222] mb-6 flex items-center">
+                                <div class="p-2 bg-[#B22222]/5 rounded-lg group-hover:bg-[#B22222]/10 transition-colors duration-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 transform group-hover:scale-110 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-8 leading-relaxed">"The craftsmanship and attention to detail in our new home is outstanding. Draft & Build guided us through every step of the process, making our dream home a reality."</p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#B22222]/10 to-[#B22222]/5 flex items-center justify-center text-[#B22222] font-bold text-xl group-hover:scale-110 transition-transform duration-500">
+                                    S
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-gray-800">Sarah Wilson</h4>
+                                    <p class="text-sm text-gray-500">New Home Build</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Testimonial 3 */}
+                <div class="group">
+                    <div class="relative p-8 rounded-2xl transition-all duration-500 hover:translate-y-[-5px]">
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 shadow-[0_0_25px_-10px_rgba(0,0,0,0.2)] border border-gray-100"></div>
+                        <div class="absolute inset-[2px] rounded-[14px] bg-white"></div>
+                        <div class="relative">
+                            <div class="text-[#B22222] mb-6 flex items-center">
+                                <div class="p-2 bg-[#B22222]/5 rounded-lg group-hover:bg-[#B22222]/10 transition-colors duration-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 transform group-hover:scale-110 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-8 leading-relaxed">"The outdoor living space Draft & Build created for us is absolutely perfect. Their team's expertise in deck construction and landscaping has given us an amazing area for entertaining."</p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#B22222]/10 to-[#B22222]/5 flex items-center justify-center text-[#B22222] font-bold text-xl group-hover:scale-110 transition-transform duration-500">
+                                    D
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-gray-800">David Chen</h4>
+                                    <p class="text-sm text-gray-500">Outdoor Living Project</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* View More Button */}
+            <div class="relative text-center mt-20">
+                <a href="/client-stories" 
+                   class="inline-flex items-center px-8 py-4 text-lg font-medium text-white bg-[#330000] hover:bg-[#B22222] rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#B22222]/20 transform hover:-translate-y-1">
+                    View All Client Stories
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        {/* Add divider after testimonials section */}
+        <div class="w-full py-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="h-[2px] bg-gradient-to-r from-transparent via-[#B22222]/20 to-transparent"></div>
+            </div>
+        </div>
+
+        <CTA />
+        <Footer />
+    </div>
+</div>
+
+<script>
+    // Track scroll position and direction
+    let lastScrollTop = 0;
+    let isScrollingDown = true;
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        isScrollingDown = scrollTop > lastScrollTop;
+        lastScrollTop = scrollTop;
+    });
+
+    // Scroll animation for content sections
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',  // Changed from -50px to 0px for better footer visibility
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const element = entry.target as HTMLElement;
+            
+            if (entry.isIntersecting) {
+                if (isScrollingDown) {
+                    // Animate when scrolling down
+                    element.style.animation = 'slideUp 0.8s ease-out forwards';
+                } else {
+                    // Just show content without animation when already in view
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            } else if (!entry.isIntersecting && !isScrollingDown) {
+                // Reset only when scrolling up and element is out of view
+                element.style.animation = 'none';
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(50px)';
+            }
+        });
+    }, observerOptions);
+
+    // Start observing all elements with scroll-animate-up class
+    document.addEventListener('DOMContentLoaded', () => {
+        const elements = document.querySelectorAll('.scroll-animate-up');
+        elements.forEach((element) => {
+            const animatedElement = element as HTMLElement;
+            
+            // Check if element is already in viewport on page load
+            const rect = animatedElement.getBoundingClientRect();
+            const isInViewport = rect.top < window.innerHeight;
+            
+            if (isInViewport) {
+                // If element is in viewport on load, show it immediately
+                animatedElement.style.opacity = '1';
+                animatedElement.style.transform = 'translateY(0)';
+            } else {
+                // If not in viewport, set initial hidden state
+                animatedElement.style.opacity = '0';
+                animatedElement.style.transform = 'translateY(50px)';
+            }
+            
+            animatedElement.style.transition = 'transform 0.8s ease-out, opacity 0.8s ease-out';
+            observer.observe(animatedElement);
+        });
+    });
+</script>
+
+<style>
+    @keyframes fadeSlide {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-slide {
+        opacity: 0;
+        animation: fadeSlide 0.8s ease-out forwards;
+    }
+
+    .shimmer {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .shimmer::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(
+            45deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.1) 40%,
+            rgba(255, 255, 255, 0.1) 60%,
+            transparent 80%
+        );
+        animation: shimmer 3s infinite linear;
+        transform: translateX(-100%);
+    }
+
+    @keyframes shimmer {
+        100% {
+            transform: translateX(100%);
+        }
+    }
+
+    .glow-image {
+        position: relative;
+        box-shadow: 0 0 20px rgba(178, 34, 34, 0.2), 0 0 40px rgba(51, 51, 51, 0.1);
+    }
+
+    .glow-image::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        background: linear-gradient(45deg, #333333, #B22222);
+        border-radius: inherit;
+        padding: 2px;
+        -webkit-mask: 
+            linear-gradient(#fff 0 0) content-box, 
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.4;
+        transition: all 0.3s ease;
+        filter: blur(3px);
+    }
+
+    .glow-image:hover::before {
+        opacity: 0.6;
+        filter: blur(4px);
+    }
+
+    .glow-image::after {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        background: linear-gradient(45deg, #B22222, #333333);
+        border-radius: inherit;
+        padding: 1px;
+        -webkit-mask: 
+            linear-gradient(#fff 0 0) content-box, 
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.3;
+        filter: blur(2px);
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    .glow-box {
+        position: relative;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px -2px rgba(51, 51, 51, 0.25), 0 0 15px rgba(178, 34, 34, 0.15);
+    }
+
+    .glow-box::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        background: linear-gradient(45deg, #333333, #B22222);
+        border-radius: inherit;
+        padding: 2px;
+        -webkit-mask: 
+            linear-gradient(#fff 0 0) content-box, 
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.25;
+        transition: all 0.3s ease;
+        filter: blur(3px);
+    }
+
+    .glow-box:hover::before {
+        opacity: 0.4;
+        filter: blur(4px);
+    }
+
+    .glow-box::after {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        background: linear-gradient(45deg, #B22222, #333333);
+        border-radius: inherit;
+        padding: 1px;
+        -webkit-mask: 
+            linear-gradient(#fff 0 0) content-box, 
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.2;
+        filter: blur(2px);
+        animation: pulse 2s ease-in-out infinite alternate;
+    }
+
+    .glow-box:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px -4px rgba(51, 51, 51, 0.3), 0 0 20px rgba(178, 34, 34, 0.2);
+    }
+
+    @keyframes pulse {
+        0% {
+            opacity: 0.2;
+            filter: blur(2px);
+        }
+        50% {
+            opacity: 0.3;
+            filter: blur(3px);
+        }
+        100% {
+            opacity: 0.2;
+            filter: blur(2px);
+        }
+    }
+
+    @keyframes fadeLine {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+
+    .animate-fade-line {
+        animation: fadeLine 4s ease-in-out infinite;
+        opacity: 0;
+    }
+
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .scroll-animate-up {
+        will-change: transform, opacity;
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    @keyframes spin-reverse {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(0, 10px); }
+    }
+
+    @keyframes pulse-delay {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.1); }
+    }
+
+    .animate-spin-slow {
+        animation: spin-slow 20s linear infinite;
+    }
+
+    .animate-spin-reverse {
+        animation: spin-reverse 15s linear infinite;
+    }
+
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-float-delay {
+        animation: float 6s ease-in-out infinite;
+        animation-delay: 3s;
+    }
+
+    .animate-pulse-delay {
+        animation: pulse-delay 4s ease-in-out infinite;
+        animation-delay: 2s;
+    }
+
+    @keyframes pulse-slow {
+        0%, 100% { opacity: 0.4; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.1); }
+    }
+
+    @keyframes pulse-slow-delay {
+        0%, 100% { opacity: 0.3; transform: scale(1.1); }
+        50% { opacity: 0.5; transform: scale(1); }
+    }
+
+    .animate-pulse-slow {
+        animation: pulse-slow 4s ease-in-out infinite;
+    }
+
+    .animate-pulse-slow-delay {
+        animation: pulse-slow-delay 4s ease-in-out infinite;
+        animation-delay: 2s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out forwards;
+    }
+
+    .animate-slide-in-left {
+        opacity: 0;
+        animation: slideInLeft 1s ease-out forwards;
+        animation-delay: 0.3s;
+    }
+
+    .animate-slide-in-right {
+        opacity: 0;
+        animation: slideInRight 1s ease-out forwards;
+        animation-delay: 0.3s;
+    }
+</style>

@@ -1,0 +1,418 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+
+const currentPath = Astro.url.pathname;
+
+const reviews = [
+    {
+        text: "Really happy with the outcome of this job. Not often you find builders with such attention to detail. Project management was really transparent as to what's going on. Would highly recommend Draft and Build.",
+        author: "James",
+        date: "5th Dec, 2024",
+        rating: 100
+    },
+    {
+        text: "Smashed it!!! Fully recommend. Workmanship is excellent, keeping the client informed and honest. Thanks Draft and Build",
+        author: "Daniel",
+        date: "5th Dec, 2024",
+        rating: 100
+    },
+    {
+        text: "Draft and build were excellent! Smashed the job out even in the average weather. Communication was spot on and asked for my opinion when things were impacting the final presentation of the job. Even came in below the initial quote. These guys go over and above, would highly recommend!!",
+        author: "Carl",
+        date: "1st Oct, 2024",
+        rating: 100
+    },
+    {
+        text: "From the very first contact with Draft and Build Ltd we were very impressed with their promptness and communication. A very reasonable quote for the 3 jobs we required. Work was completed on schedule and to a excellent standard. We would recommend Draft and Build Ltd (Joe and Tobin) to anyone requiring a high standard of service and excellent communication.",
+        author: "Graeme",
+        date: "28th Aug, 2024",
+        rating: 100
+    },
+    {
+        text: "The lads did a great job at our place. Communication was excellent, they turned up when scheduled and were very flexible with the changes we wanted. Job was completed to a very high standard.",
+        author: "Richard",
+        date: "19th Aug, 2024",
+        rating: 100
+    },
+    {
+        text: "Did all that I requested to an excellent standard! Responded promptly and was friendly and professional. Would definitely use again!",
+        author: "May",
+        date: "18th Aug, 2024",
+        rating: 100
+    },
+    {
+        text: "I had a fence and small deck built by Joe and Tobin. From the very first contact I was impressed by Joe and his professionalism, quick responses to emails and phone messages, and giving updates on progress. He and Tobin work, completed the job on time, to a high standard, and cleaned up afterwards. Honest and reliable. I highly recommend Draft and Build.",
+        author: "Vivienne",
+        date: "17th Aug, 2024",
+        rating: 100
+    },
+    {
+        text: "We are delighted with our new deck installation completed by Joseph and Tobin. Not only were we really happy with the outcome, but the process of completion filled us with confidence that we had made the right choice when choosing Draft and Build. We would have no hesitation in recommending the guys for other projects and will no doubt utilise their expertise in other parts of our property at some point soon. Thanks!",
+        author: "Steven",
+        date: "11th Jul, 2024",
+        rating: 100
+    },
+    {
+        text: "We used the boys to help get components over the line for a new build under timeline pressure. Went the extra mile (literally driving hours) to get it done in time. Featuring; floating shelves with routered LED lighting, laundry install, deck step solutions, inbuilt bbq bench and cladding. Call me for any references",
+        author: "Sam",
+        date: "28th May, 2024",
+        rating: 100
+    },
+    {
+        text: "From the first time we met Joseph and Tobin we knew we would be working with Draft and Build. Every question was answered, calls always returned, changes to the plan were not a problem. These guys could not have been better. They kept us up to date with progress reports and time lines. The quality of the build was amazing with any small issues being picked up and dealt with immediately. We have moved into a well designed, well built home and we couldn't be happier. We got exactly what we were looking for.",
+        author: "Alix",
+        date: "26th May, 2024",
+        rating: 100
+    },
+    {
+        text: "Joey did a great job for us at very short notice. He helped us to get our house ready for sale following a building report with a few items to fix, plus others we threw at him as we went along. He managed it all, within budget and the short timeframe, bending over backwards to get it all done. Totally recommend him for building work!! Thks heaps.",
+        author: "Bek",
+        date: "15th Aug, 2022",
+        rating: 85
+    },
+    {
+        text: "Joseph was excellent with his quick response to my job. His quote was reasonable and the job was done promptly. I have a few more jobs coming up and won't hesitate to contact Joseph to do the job.",
+        author: "Darrin",
+        date: "11th Jul, 2022",
+        rating: 100
+    },
+    {
+        text: "Joseph and a colleague dismantled and removed a wardrobe for us. We were very pleased with the work which was completed professionally and the space left clean and tidy with all components removed. Communication was excellent and the job completed as scheduled which was important for us as we had a specific time frame. Than you very much Joseph.",
+        author: "Pat",
+        date: "29th Jun, 2022",
+        rating: 100
+    },
+    {
+        text: "Joseph was very job, helped us out with the design and was flexible as issues arose and things needed to change. Mocked up what was happening to ensure everyone was on the same page. Supply issues etc were all communicated and so there were no surprises.",
+        author: "Jamie",
+        date: "29th May, 2022",
+        rating: 100
+    },
+    {
+        text: "We enlisted the help of Joseph and his team for our new deck/renovation. As there were a few existing challenges to deal with, Joseph was clear in communicating the process and the what and why's around the project - even though it was a challenge, it wasn't an issue. Very hard working team, with constant dialogue between themselves which was great to witness. Also very respectful of us, as we now both work from home. Would highly recommended, and have booked them in for the next...",
+        author: "Matisse",
+        date: "29th Nov, 2021",
+        rating: 100
+    },
+    {
+        text: "Had a great experience with Joseph and the guys replacing an aging fence. Got in quick and did a great job on schedule despite having to battle with a nightmare of bamboo and other underground hazards. Appreciated the attention to detail and communication was great the whole way. Would highly recommend",
+        author: "Robert",
+        date: "31st Jan, 2021",
+        rating: 100
+    },
+    {
+        text: "Jo had excellent communication throughout the job. He made scribers for our garage and a few outside areas and did a good job. The work was completed within our tight time frame which was excellent. Would recommend his company.",
+        author: "Sue",
+        date: "21st Nov, 2020",
+        rating: 98
+    },
+    {
+        text: "Extremely happy with the work Joe and his lads did. Lots of communication and a great job. Cleaned up as they went and removed all the rubbish. A really honest, professional builder who pays attention to detail. Highly recommended",
+        author: "Teresa",
+        date: "20th Nov, 2020",
+        rating: 100
+    },
+    {
+        text: "A friendly, professional team who carried out the required work to a high standard.",
+        author: "Adrienne",
+        date: "1st Oct, 2020",
+        rating: 100
+    },
+    {
+        text: "I had Joe come out and knock out some internal walls and build a new deck for me. Was a pretty big job! He was nothing but professional and helpful throughout the duration of project keeping me informed of any updates or changes. Would highly recommend his service top quality will definitely only use parkes builders for future works! Have told all my friends and family!",
+        author: "Thomas",
+        date: "30th Sep, 2020",
+        rating: 100
+    },
+    {
+        text: "Joe worked on our property renovation. He was very knowledgeable, helpful and the communication was great. We are really happy with the workmanship and can unreservedly recommend Joe to other home owners with renovation projects.",
+        author: "Craig",
+        date: "23rd Sep, 2020",
+        rating: 100
+    },
+    {
+        text: "This guy is pure gold. Joe replaced some stairs for my deck and replaced the base boards around the bottom of my house. I'm stoked with the result great craftsmanship and one hell of a nice guy, I definitely recommend him. Cheers Joe",
+        author: "Anonymous",
+        date: "2020",
+        rating: 100
+    }
+];
+---
+
+<Layout title="Client Stories - Draft & Build">
+    <NavBar currentPath={currentPath} />
+    
+    <main class="pt-32 pb-24 min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100">
+        {/* Shining Stars Background */}
+        <div class="fixed inset-0 overflow-hidden pointer-events-none bg-[#000000]/5">
+            {Array.from({ length: 150 }).map((_, i) => (
+                <div 
+                    class={`shining-star absolute ${i % 3 === 0 ? 'star-large' : i % 3 === 1 ? 'star-medium' : 'star-small'}`}
+                    style={`
+                        left: ${Math.random() * 100}%;
+                        top: ${Math.random() * 100}%;
+                        animation-delay: ${Math.random() * 3}s;
+                    `}
+                />
+            ))}
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            {/* Hero Section */}
+            <div class="text-center mb-20 relative">
+                {/* Decorative elements */}
+                <div class="absolute inset-0 flex items-center justify-center -z-10">
+                    <div class="w-[600px] h-[600px] bg-gradient-to-r from-[#B22222]/5 via-transparent to-[#330000]/5 rounded-full blur-3xl"></div>
+                </div>
+                
+                {/* Title Container */}
+                <div class="relative inline-block">
+                    {/* Animated underline */}
+                    <div class="absolute -bottom-4 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#B22222] to-transparent"></div>
+                    
+                    {/* Quote marks decoration */}
+                    <div class="absolute -left-8 -top-8 text-6xl text-[#B22222]/20 font-serif">"</div>
+                    <div class="absolute -right-8 -bottom-8 text-6xl text-[#B22222]/20 font-serif rotate-180">"</div>
+                    
+                    {/* Main title - replacing the heart with a decorative separator */}
+                    <h1 class="relative text-7xl font-bold mb-8 py-4">
+                        <span class="inline-block transform hover:scale-105 transition-transform duration-300">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#330000] to-[#330000]/90 
+                                drop-shadow-[0_2px_2px_rgba(178,34,34,0.3)]">
+                                Client
+                            </span>
+                        </span>
+                        <span class="inline-block mx-4">
+                            <div class="w-3 h-3 rounded-full bg-gradient-to-br from-[#B22222] to-[#330000] rotate-45 inline-block"></div>
+                        </span>
+                        <span class="inline-block transform hover:scale-105 transition-transform duration-300">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#B22222] to-[#B22222]/90 
+                                drop-shadow-[0_2px_2px_rgba(51,0,0,0.3)]">
+                                Stories
+                            </span>
+                        </span>
+                    </h1>
+                </div>
+                
+                {/* Subtitle with animated typing effect */}
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-12 relative">
+                    <span class="absolute -left-6 top-0 h-full w-1 bg-gradient-to-b from-[#B22222] to-transparent"></span>
+                    Real experiences shared by our valued clients. 
+                    <br/>
+                    Every story reflects our commitment to excellence.
+                    <span class="absolute -right-6 top-0 h-full w-1 bg-gradient-to-b from-transparent to-[#B22222]"></span>
+                </p>
+            </div>
+
+            {/* Container for both circles and content */}
+            <div class="relative">
+                {/* Masonry Grid */}
+                <div class="masonry-grid">
+                    {reviews.map((review) => (
+                        <div class="masonry-item">
+                            <div class="bg-white rounded-2xl p-8 border-2 border-[#B22222]">
+                                <div class="flex items-start space-x-6">
+                                    {/* Quote icon */}
+                                    <div class="text-[#B22222] flex-shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                                        </svg>
+                                    </div>
+
+                                    {/* Quote and name section */}
+                                    <div class="flex-1">
+                                        <p class="text-gray-700 italic mb-4">
+                                            {review.text.split(' ').map(word => {
+                                                const keywords = [
+                                                    'excellent', 'professional', 'communication', 'quality', 'standard',
+                                                    'attention to detail', 'recommend', 'reliable', 'on time', 'schedule',
+                                                    'clean', 'tidy', 'honest', 'workmanship', 'transparent', 'flexible',
+                                                    'reasonable', 'prompt', 'knowledgeable', 'helpful', 'high standard',
+                                                    'craftsmanship', 'expertise', 'well designed', 'well built'
+                                                ];
+                                                
+                                                return keywords.some(keyword => 
+                                                    word.toLowerCase().includes(keyword.toLowerCase())
+                                                ) ? (
+                                                    <span class="text-[#B22222] font-medium">{word} </span>
+                                                ) : (
+                                                    word + ' '
+                                                );
+                                            })}
+                                        </p>
+                                        <div class="border-l-4 border-[#B22222] pl-4">
+                                            <h3 class="font-semibold text-[#330000]">{review.author}</h3>
+                                            <p class="text-sm text-gray-600">{review.date}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="text-center py-16">
+        <a href="/" 
+            class="group inline-flex items-center gap-2 px-10 py-4 text-lg font-medium 
+            bg-rose-50 text-[#B22222] border-2 border-[#B22222]/20
+            rounded-xl transition-all duration-300 
+            hover:bg-[#B22222] hover:text-white hover:border-[#B22222]
+            hover:shadow-lg hover:shadow-[#B22222]/10">
+            <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                class="h-5 w-5 transform transition-transform group-hover:-translate-x-1" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor">
+                <path 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="2" 
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
+            Return Home
+        </a>
+    </div>
+
+    <Footer />
+</Layout>
+
+<style>
+    .masonry-grid {
+        columns: 1;
+        column-gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+        .masonry-grid {
+            columns: 2;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .masonry-grid {
+            columns: 3;
+        }
+    }
+
+    .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        width: 100%;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .masonry-item:nth-child(3n + 1) { animation-delay: 0.2s; }
+    .masonry-item:nth-child(3n + 2) { animation-delay: 0.4s; }
+    .masonry-item:nth-child(3n + 3) { animation-delay: 0.6s; }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+
+    .typing-effect {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid #B22222;
+        animation: typing 3.5s steps(40, end),
+                 blink-caret .75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #B22222 }
+    }
+
+    .shining-star {
+        position: absolute;
+        background: #fff;
+        animation: shine 3s ease-in-out infinite;
+        clip-path: polygon(
+            50% 0%,
+            61% 35%,
+            98% 35%,
+            68% 57%,
+            79% 91%,
+            50% 70%,
+            21% 91%,
+            32% 57%,
+            2% 35%,
+            39% 35%
+        );
+        box-shadow: 0 0 10px #fff,
+                    0 0 30px #fff,
+                    0 0 50px #B22222,
+                    0 0 70px #B22222,
+                    0 0 90px #B22222;
+    }
+
+    .star-large {
+        width: 20px;
+        height: 20px;
+        box-shadow: 0 0 15px #fff,
+                    0 0 35px #fff,
+                    0 0 55px #B22222,
+                    0 0 75px #B22222,
+                    0 0 95px #B22222;
+    }
+
+    .star-medium {
+        width: 15px;
+        height: 15px;
+        box-shadow: 0 0 10px #fff,
+                    0 0 30px #fff,
+                    0 0 50px #B22222,
+                    0 0 65px #B22222,
+                    0 0 85px #B22222;
+    }
+
+    .star-small {
+        width: 10px;
+        height: 10px;
+        box-shadow: 0 0 5px #fff,
+                    0 0 25px #fff,
+                    0 0 45px #B22222,
+                    0 0 55px #B22222,
+                    0 0 75px #B22222;
+    }
+
+    @keyframes shine {
+        0%, 100% {
+            opacity: 0.5;
+            transform: scale(0.8) rotate(0deg);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.5) rotate(180deg);
+        }
+    }
+</style> 
