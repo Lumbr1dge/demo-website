@@ -16,79 +16,56 @@ const currentPath = Astro.url.pathname;
         <div class="absolute -bottom-32 right-32 w-96 h-96 bg-gradient-to-tl from-[#330000]/10 to-[#B22222]/10 rounded-full blur-3xl animate-blob animation-delay-6000 opacity-0 animate-fade-in" style="animation-delay: 800ms;"></div>
 
         {/* Hero Image Section */}
-        <section class="pt-32 px-4">
+        <section class="pt-24 sm:pt-32 px-4">
             <div class="max-w-7xl mx-auto">
-                <div class="w-full h-[350px] relative overflow-hidden rounded-3xl shadow-2xl mb-6">
-                    <img src="/ContactUs.jpeg" alt="Contact Us Hero" class="w-full h-full object-cover object-center opacity-90" />
+                <div class="relative w-full h-[200px] sm:h-[250px] md:h-[350px] rounded-3xl shadow-2xl mb-6 overflow-hidden">
+                    <img 
+                        src="/ContactUs.jpeg" 
+                        alt="Contact Us Hero" 
+                        class="w-full h-full object-cover object-center"
+                        loading="eager"
+                    />
                     <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/40"></div>
                 </div>
             </div>
         </section>
 
-        {/* Hero Section */}
-        <section class="pb-24 px-4">
+        {/* Contact Section */}
+        <section class="pb-16 sm:pb-24 px-4">
             <div class="max-w-7xl mx-auto">
-                <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border-2 border-gray-200/50 shadow-2xl relative overflow-hidden">
+                <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border-2 border-gray-200/50 shadow-2xl relative overflow-hidden">
                     {/* Background Patterns */}
                     <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#B22222]/5 via-[#330000]/3 to-transparent rounded-full blur-3xl"></div>
                     <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[#330000]/5 via-[#B22222]/3 to-transparent rounded-full blur-3xl"></div>
                     
-                    <div class="text-center mb-16 relative">
-                        {/* Background accent */}
-                        <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[150%] bg-gradient-to-r from-[#B22222]/5 via-white to-[#330000]/5"></div>
-                        
+                    <div class="text-center mb-12 sm:mb-16 relative">
                         {/* Title container */}
-                        <div class="relative inline-flex items-center">
-                            {/* Left decorative element */}
-                            <div class="absolute -left-12 top-1/2 -translate-y-1/2">
-                                <div class="w-8 h-[2px] bg-gradient-to-r from-[#B22222] to-transparent"></div>
-                                <div class="w-6 h-[2px] bg-gradient-to-r from-[#B22222]/50 to-transparent mt-1"></div>
-                                <div class="w-4 h-[2px] bg-gradient-to-r from-[#B22222]/20 to-transparent mt-1"></div>
-                            </div>
-
-                            {/* Title */}
-                            <h1 class="text-5xl font-bold px-16">
-                                <span class="relative">
-                                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#330000] to-[#330000]/90">Contact</span>
-                                    <div class="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#330000]/20 to-transparent"></div>
-                                </span>
-                                <span class="relative ml-3">
-                                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#B22222] to-[#B22222]/90">Us</span>
-                                    <div class="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#B22222]/20 to-transparent"></div>
-                                </span>
+                        <div class="relative inline-flex flex-col items-center gap-2 sm:gap-4 animate-slide-in-left">
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center relative">
+                                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#330000] to-[#330000]/90">Contact</span>
+                                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#B22222] to-[#B22222]/90 ml-2">Us</span>
                             </h1>
-
-                            {/* Right decorative element */}
-                            <div class="absolute -right-12 top-1/2 -translate-y-1/2">
-                                <div class="w-8 h-[2px] bg-gradient-to-l from-[#B22222] to-transparent"></div>
-                                <div class="w-6 h-[2px] bg-gradient-to-l from-[#B22222]/50 to-transparent mt-1"></div>
-                                <div class="w-4 h-[2px] bg-gradient-to-l from-[#B22222]/20 to-transparent mt-1"></div>
-                            </div>
-                        </div>
-
-                        {/* Subtitle */}
-                        <div class="relative mt-6">
-                            <p class="text-gray-600 text-lg">Let's Build Something Amazing Together</p>
-                            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-[1px] bg-gradient-to-r from-transparent via-[#B22222]/30 to-transparent"></div>
+                            <div class="h-1 w-32 sm:w-40 bg-gradient-to-r from-[#330000] via-[#B22222] to-[#330000] rounded-full mt-2"></div>
+                            <p class="text-base sm:text-lg text-gray-600 mt-4">Let's Build Something Amazing Together</p>
                         </div>
                     </div>
 
                     {/* Contact Content */}
-                    <div class="grid md:grid-cols-2 gap-12">
+                    <div class="grid md:grid-cols-2 gap-6 sm:gap-12">
                         {/* Left Side - Contact Details */}
                         <div id="getInTouch" class="h-full">
                             <div class="bg-gradient-to-r from-[#330000] to-[#B22222] p-[1px] rounded-2xl h-full shadow-lg">
-                                <div class="bg-white rounded-2xl p-8 h-full flex flex-col relative overflow-hidden">
+                                <div class="bg-white rounded-2xl p-6 sm:p-8 h-full flex flex-col relative overflow-hidden">
                                     {/* Background Pattern */}
                                     <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#B22222]/5 to-transparent rounded-full blur-2xl"></div>
                                     <div class="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-[#330000]/5 to-transparent rounded-full blur-2xl"></div>
 
-                                    <h2 class="text-3xl font-bold mb-8 text-[#330000] relative">
+                                    <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-[#330000] relative">
                                         Get in Touch
                                         <div class="w-20 h-1 bg-gradient-to-r from-[#330000] to-[#B22222] mt-2 rounded-full"></div>
                                     </h2>
 
-                                    <div class="space-y-8 flex-grow relative">
+                                    <div class="space-y-6 sm:space-y-8 flex-grow relative">
                                         {/* Phone */}
                                         <div>
                                             <div class="flex items-start space-x-4 p-4 rounded-lg">

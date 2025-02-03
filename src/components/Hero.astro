@@ -9,34 +9,39 @@ interface Props {
 
 interface Review {
     author: string;
-
+    project: string;
     text: string;
 }
 
 const reviews: Review[] = [
     {
         author: "Alix",
-
+        project: "New Home Build",
         text: "From the first time we met Joseph and Tobin we knew we would be working with Draft and Build. Every question was answered, calls always returned, changes to the plan were not a problem. The quality of the build was amazing with any small issues being picked up and dealt with immediately."
     },
     {
         author: "Steven",
+        project: "Deck Installation",
         text: "We are delighted with our new deck installation. Not only were we really happy with the outcome, but the process of completion filled us with confidence that we had made the right choice when choosing Draft and Build."
     },
     {
         author: "James",
+        project: "Custom Project",
         text: "Really happy with the outcome of this job. Not often you find builders with such attention to detail. Project management was really transparent as to what's going on. Would highly recommend Draft and Build."
     },
     {
         author: "Graeme",
+        project: "New Home Build",
         text: "From the very first contact with Draft and Build Ltd we were very impressed with their promptness and communication. Work was completed on schedule and to an excellent standard."
     },
     {
         author: "Carl",
+        project: "New Home Build",
         text: "Draft and build were excellent! Communication was spot on and asked for my opinion when things were impacting the final presentation of the job. Even came in below the initial quote."
     },
     {
         author: "Richard",
+        project: "New Home Build",
         text: "The lads did a great job at our place. Communication was excellent, they turned up when scheduled and were very flexible with the changes we wanted. Job was completed to a very high standard."
     }
 ];
@@ -70,81 +75,84 @@ const {
     </div>
 
     {/* Main Content */}
-    <div class="mx-[10%]">
-        <section class="relative h-[90vh] flex items-center opacity-0 animate-fade-in">
-            <div class="relative z-10 max-w-[1400px] mx-auto px-4">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class="mx-[5%] sm:mx-[10%] px-4 sm:px-0">
+        <section class="relative min-h-[80vh] sm:min-h-[90vh] flex items-center opacity-0 animate-fade-in">
+            <div class="relative z-10 max-w-[1400px] mx-auto">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     {/* Left content */}
-                    <div class="space-y-8 animate-slide-in-left">
+                    <div class="space-y-6 lg:space-y-8 animate-slide-in-left text-center lg:text-left">
                         {/* Enhanced badge */}
-                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#B22222]/5 rounded-full border border-[#B22222]/10">
+                        <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-[#B22222]/5 rounded-full border border-[#B22222]/10">
                             <span class="flex h-2 w-2">
                                 <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-[#B22222] opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-2 w-2 bg-[#B22222]"></span>
                             </span>
-                            <span class="text-gray-700 text-sm font-medium">Licensed Building Practitioners [LBP]</span>
+                            <span class="text-gray-700 text-xs sm:text-sm font-medium">Licensed Building Practitioners [LBP]</span>
                         </div>
 
                         {/* Enhanced heading */}
-                        <h1 class="text-5xl lg:text-6xl font-bold">
+                        <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold">
                             <span class="block text-gray-900">From Plans</span>
                             <span class="block mt-2 text-[#B22222]">to Perfection</span>
                         </h1>
 
                         {/* Description */}
-                        <p class="text-xl text-gray-600 max-w-xl leading-relaxed">
+                        <p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                             {description}
                         </p>
 
                         {/* CTAs */}
-                        <div class="flex flex-wrap gap-4">
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <a href="/contact" 
-                                class="group px-8 py-4 bg-[#B22222] text-white rounded-lg 
+                                class="w-full sm:w-auto group px-6 sm:px-8 py-3 sm:py-4 bg-[#B22222] text-white rounded-lg 
                                 hover:bg-[#330000] transition-all duration-300 
-                                flex items-center text-lg font-medium shadow-lg shadow-[#B22222]/10">
+                                flex items-center justify-center text-base sm:text-lg font-medium shadow-lg shadow-[#B22222]/10">
                                 Contact Us
-                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                                 </svg>
                             </a>
                             <a href="/gallery" 
-                                class="group px-8 py-4 bg-white text-gray-700 rounded-lg 
+                                class="w-full sm:w-auto group px-6 sm:px-8 py-3 sm:py-4 bg-white text-gray-700 rounded-lg 
                                 hover:bg-gray-50 transition-all duration-300 
-                                flex items-center text-lg font-medium
+                                flex items-center justify-center text-base sm:text-lg font-medium
                                 border border-gray-200 hover:border-gray-300">
                                 View Our Work
-                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
                             </a>
                         </div>
 
                         {/* Stats */}
-                        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gray-100">
+                        <div class="grid grid-cols-3 gap-3 sm:gap-6 pt-6 sm:pt-8 border-t border-gray-100">
                             <div>
-                                <div class="text-2xl font-bold text-gray-900">13+</div>
-                                <div class="text-sm text-gray-600">Years Experience</div>
+                                <div class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">13+</div>
+                                <div class="text-xs sm:text-sm text-gray-600">Years Experience</div>
                             </div>
                             <div>
-                                <div class="text-2xl font-bold text-gray-900">50+</div>
-                                <div class="text-sm text-gray-600">Projects Done</div>
+                                <div class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">50+</div>
+                                <div class="text-xs sm:text-sm text-gray-600">Projects Done</div>
                             </div>
                             <div>
-                                <div class="text-2xl font-bold text-gray-900">LBP</div>
-                                <div class="text-sm text-gray-600">Certified</div>
+                                <div class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">LBP</div>
+                                <div class="text-xs sm:text-sm text-gray-600">Certified</div>
                             </div>
                         </div>
                     </div>
 
                     {/* Right content - Image */}
-                    <div class="relative w-full h-[500px] rounded-2xl overflow-hidden group animate-slide-in-right">
-                        <img 
-                            src="/FrenchBayKwilaDeck.jpg"
-                            alt="French Bay Kwila Deck"
-                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                        <div class="absolute inset-0 border border-gray-200 rounded-2xl"></div>
+                    <div class="relative w-full">
+                        <div class="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
+                            <img 
+                                src="/FrenchBayKwilaDeck.jpg"
+                                alt="French Bay Kwila Deck"
+                                class="w-full h-full object-cover object-center"
+                                loading="eager"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            <div class="absolute inset-0 border border-gray-200 rounded-2xl"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -338,42 +346,26 @@ const {
             <div class="max-w-[1400px] mx-auto px-4 md:px-6 relative">
                 <div class="grid md:grid-cols-2 gap-20 items-center">
                     {/* Image Side with extra padding */}
-                    <div class="relative scroll-animate-up opacity-0 px-8">
+                    <div class="relative scroll-animate-up opacity-0 flex justify-center items-center w-full">
                         {/* Main Image Container */}
-                        <div class="relative h-[400px] w-[400px] mx-auto rounded-full overflow-visible">
+                        <div class="relative h-[300px] sm:h-[400px] w-[300px] sm:w-[400px] mx-auto">
                             {/* Enhanced Red Glow Background */}
                             <div class="absolute inset-[5px] bg-[#B22222] rounded-full opacity-40 blur-[25px] animate-pulse-slow"></div>
                             <div class="absolute inset-[5px] bg-[#C7B8F5] rounded-full opacity-30 blur-[25px] animate-pulse-slow-delay"></div>
                             
                             {/* Image Container with Glow */}
-                            <div class="relative h-full w-full rounded-full overflow-hidden glow-image">
+                            <div class="relative w-full h-full rounded-full overflow-hidden">
                                 <img 
                                     src="/Team.jpg" 
                                     alt="Our Team" 
-                                    class="absolute inset-0 w-full h-full object-cover rounded-full"
+                                    class="w-full h-full object-cover object-center"
+                                    loading="eager"
                                 />
                                 <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
                                 
                                 {/* Rotating Border Effect */}
                                 <div class="absolute inset-[-2px] rounded-full border-2 border-[#333333]/20 animate-spin-slow"></div>
                                 <div class="absolute inset-[-4px] rounded-full border-2 border-[#B22222]/10 animate-spin-reverse"></div>
-                            </div>
-                        </div>
-
-                        {/* Decorative Elements */}
-                        <div class="absolute -bottom-4 -right-4 w-32 h-32 rounded-full bg-[#ffffff] shadow-lg z-[-1] animate-float"></div>
-                        <div class="absolute -top-4 -left-4 w-40 h-40 rounded-full bg-gradient-to-br from-[#B22222]/5 to-transparent animate-float-delay"></div>
-                        
-                        {/* Additional Decorative Elements */}
-                        <div class="absolute top-1/4 -right-6 w-12 h-12 rounded-full border-2 border-[#333333]/10 animate-pulse"></div>
-                        <div class="absolute bottom-1/4 -left-6 w-12 h-12 rounded-full border-2 border-[#B22222]/10 animate-pulse-delay"></div>
-                        
-                        {/* Dot Pattern Background */}
-                        <div class="absolute -z-10 inset-0 opacity-10">
-                            <div class="absolute top-0 left-0 w-full h-full"
-                                 style="background-image: radial-gradient(#333333 1px, transparent 1px), radial-gradient(#B22222 1px, transparent 1px);
-                                        background-size: 20px 20px;
-                                        background-position: 0 0, 10px 10px;">
                             </div>
                         </div>
                     </div>
@@ -527,112 +519,55 @@ const {
         </div>
 
         {/* Client Reviews Section */}
-        <section class="py-24 relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white">
+        <section class="py-16 sm:py-24 relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white">
             {/* Decorative Elements */}
             <div class="absolute inset-0 pointer-events-none">
-                {/* Animated circles */}
-                <div class="absolute top-0 right-0 w-[400px] h-[400px] border-2 border-[#B22222]/5 rounded-full transform translate-x-1/2 -translate-y-1/2 animate-[spin_30s_linear_infinite]"></div>
-                <div class="absolute bottom-0 left-0 w-[400px] h-[400px] border-2 border-[#333333]/5 rounded-full transform -translate-x-1/2 translate-y-1/2 animate-[spin_25s_linear_infinite_reverse]"></div>
-                
-                {/* Decorative dots */}
-                <div class="absolute top-1/4 left-10 w-2 h-2 bg-[#B22222]/20 rounded-full animate-pulse"></div>
-                <div class="absolute top-3/4 right-10 w-2 h-2 bg-[#333333]/20 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-                <div class="absolute bottom-1/4 left-1/4 w-2 h-2 bg-[#B22222]/20 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-                
-                {/* Additional decorative elements */}
-                <div class="absolute top-1/3 right-1/4 w-8 h-8 border border-[#B22222]/10 rounded-full"></div>
-                <div class="absolute bottom-1/3 left-1/3 w-6 h-6 border border-[#333333]/10 rounded-full"></div>
+                {/* Animated circles - hidden on mobile */}
+                <div class="hidden sm:block absolute top-0 right-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] border-2 border-[#B22222]/5 rounded-full transform translate-x-1/2 -translate-y-1/2 animate-[spin_30s_linear_infinite]"></div>
+                <div class="hidden sm:block absolute bottom-0 left-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] border-2 border-[#333333]/5 rounded-full transform -translate-x-1/2 translate-y-1/2 animate-[spin_25s_linear_infinite_reverse]"></div>
             </div>
 
             {/* Section Header */}
-            <div class="relative text-center mb-20 scroll-animate-up opacity-0">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <div class="relative text-center mb-12 sm:mb-20 scroll-animate-up opacity-0">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                     <span class="relative inline-block">
-                        <span class="absolute -left-6 top-1/2 w-4 h-4 border-t-2 border-l-2 border-[#B22222]/30 transform -translate-y-1/2 rotate-[-45deg]"></span>
-                        <span class="text-2xl md:text-3xl lg:text-4xl block text-gray-700 mb-2">What Our</span>
-                        <span class="text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-[#333333] to-[#B22222] bg-clip-text text-transparent font-bold">Clients Say</span>
-                        <span class="absolute -right-6 top-1/2 w-4 h-4 border-t-2 border-r-2 border-[#B22222]/30 transform -translate-y-1/2 rotate-45"></span>
+                        <span class="text-xl sm:text-2xl lg:text-3xl block text-gray-700 mb-2">What Our</span>
+                        <span class="text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-[#333333] to-[#B22222] bg-clip-text text-transparent font-bold">Clients Say</span>
                     </span>
                 </h2>
-                <div class="w-32 h-1 bg-gradient-to-r from-[#333333] via-[#B22222] to-[#333333] mx-auto mb-8"></div>
-                <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto italic">
+                <div class="w-24 sm:w-32 h-1 bg-gradient-to-r from-[#333333] via-[#B22222] to-[#333333] mx-auto mb-6 sm:mb-8"></div>
+                <p class="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto italic">
                     Our commitment to excellence is reflected in the words of those we've had the privilege to serve.
                 </p>
             </div>
 
             {/* Testimonials Grid */}
             <div class="relative max-w-7xl mx-auto px-4">
-                <div class="grid md:grid-cols-3 gap-8">
-                    {/* Row 1 */}
-                    {reviews.slice(0, 3).map((review, index) => (
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                    {reviews.map((review, index) => (
                         <div class="group" style={`animation-delay: ${index * 200}ms`}>
-                            <div class="relative p-8 rounded-2xl transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl">
+                            <div class="relative p-6 sm:p-8 rounded-2xl transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl">
                                 {/* Card Background with gradient border */}
                                 <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#B22222]/5 via-white to-[#333333]/5 shadow-lg"></div>
                                 <div class="absolute inset-[2px] rounded-[14px] bg-white"></div>
                                 
                                 {/* Content */}
                                 <div class="relative">
-                                    {/* Quote icon */}
-                                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-[#B22222] to-[#330000] rounded-full flex items-center justify-center text-white transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                                        </svg>
-                                    </div>
-                                    
                                     {/* Author info */}
-                                    <div class="flex items-center mb-6">
-                                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#B22222] to-[#330000] flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                    <div class="flex items-center mb-4 sm:mb-6">
+                                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#B22222] to-[#330000] flex items-center justify-center text-white font-bold text-lg sm:text-xl group-hover:scale-110 transition-transform duration-500 shadow-lg">
                                             {review.author[0]}
                                         </div>
-                                        <div class="ml-4">
+                                        <div class="ml-3 sm:ml-4">
                                             <h4 class="font-semibold text-gray-800">{review.author}</h4>
-                                            <p class="text-sm text-[#B22222]">{review.project}</p>
+                                            <p class="text-xs sm:text-sm text-[#B22222]">{review.project}</p>
                                         </div>
                                     </div>
                                     
                                     {/* Review text */}
                                     <div class="relative">
                                         <div class="absolute -left-2 top-0 w-1 h-full bg-gradient-to-b from-[#B22222] via-[#330000] to-transparent rounded-full"></div>
-                                        <p class="text-gray-600 italic pl-4">{review.text}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-
-                    {/* Row 2 */}
-                    {reviews.slice(3).map((review, index) => (
-                        <div class="group" style={`animation-delay: ${(index + 3) * 200}ms`}>
-                            <div class="relative p-8 rounded-2xl transition-all duration-500 hover:translate-y-[-10px] hover:shadow-2xl">
-                                {/* Card Background with gradient border */}
-                                <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#333333]/5 via-white to-[#B22222]/5 shadow-lg"></div>
-                                <div class="absolute inset-[2px] rounded-[14px] bg-white"></div>
-                                
-                                {/* Content */}
-                                <div class="relative">
-                                    {/* Quote icon */}
-                                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-[#330000] to-[#B22222] rounded-full flex items-center justify-center text-white transform -rotate-12 group-hover:rotate-0 transition-transform duration-300">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                                        </svg>
-                                    </div>
-                                    
-                                    {/* Author info */}
-                                    <div class="flex items-center mb-6">
-                                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#330000] to-[#B22222] flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-500 shadow-lg">
-                                            {review.author[0]}
-                                        </div>
-                                        <div class="ml-4">
-                                            <h4 class="font-semibold text-gray-800">{review.author}</h4>
-                                            <p class="text-sm text-[#B22222]">{review.project}</p>
-                                        </div>
-                                    </div>
-                                    
-                                    {/* Review text */}
-                                    <div class="relative">
-                                        <div class="absolute -left-2 top-0 w-1 h-full bg-gradient-to-b from-[#330000] via-[#B22222] to-transparent rounded-full"></div>
-                                        <p class="text-gray-600 italic pl-4">{review.text}</p>
+                                        <p class="text-sm sm:text-base text-gray-600 italic pl-4">{review.text}</p>
                                     </div>
                                 </div>
                             </div>
@@ -642,11 +577,11 @@ const {
             </div>
 
             {/* View More Button */}
-            <div class="relative text-center mt-20">
+            <div class="relative text-center mt-12 sm:mt-20">
                 <a href="/client-stories" 
-                   class="group inline-flex items-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-[#330000] to-[#B22222] rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#B22222]/20 transform hover:-translate-y-1">
+                   class="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-gradient-to-r from-[#330000] to-[#B22222] rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#B22222]/20 transform hover:-translate-y-1">
                     View All Client Stories
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                     </svg>
                 </a>
@@ -1019,5 +954,17 @@ const {
         opacity: 0;
         animation: slideInRight 1s ease-out forwards;
         animation-delay: 0.3s;
+    }
+
+    /* Additional responsive styles */
+    @media (max-width: 640px) {
+        .animate-slide-in-left {
+            animation: none;
+            opacity: 1;
+        }
+        .animate-slide-in-right {
+            animation: none;
+            opacity: 1;
+        }
     }
 </style>
