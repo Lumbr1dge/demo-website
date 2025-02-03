@@ -217,39 +217,13 @@ const currentPath = Astro.url.pathname;
                                 </div>
                             </div>
 
-                            <div class="text-center">
-                                <button id="toggleCategories" 
-                                    class="group relative inline-flex items-center px-12 py-4 text-lg font-medium
-                                    bg-gradient-to-r from-white via-rose-50 to-white
-                                    hover:from-rose-50 hover:via-white hover:to-rose-50
-                                    border border-rose-100 hover:border-[#B22222]/20
-                                    rounded-2xl transition-all duration-500 
-                                    shadow-lg hover:shadow-xl">
-                                    
-                                    {/* Inner glow effect */}
-                                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#B22222]/5 via-transparent to-[#B22222]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                    
-                                    {/* Button content */}
-                                    <span class="relative text-[#330000] group-hover:text-[#B22222] transition-colors duration-300 mr-3">
-                                        View All Categories
-                                    </span>
-                                    <svg id="arrowIcon" 
-                                        xmlns="http://www.w3.org/2000/svg" 
-                                        class="h-5 w-5 text-[#B22222] transform transition-all duration-500 group-hover:translate-y-0.5" 
-                                        viewBox="0 0 20 20" 
-                                        fill="currentColor">
-                                        <path fill-rule="evenodd" 
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" 
-                                            clip-rule="evenodd" />
-                                    </svg>
+                            {/* Categories list */}
+                            <div class="mt-12">
+                                <div class="text-center">
+                                    <h3 class="text-3xl font-bold text-[#330000] mb-8">All Service Categories</h3>
+                                </div>
 
-                                    {/* Light beam effect */}
-                                    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-rose-100/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                                </button>
-                            </div>
-
-                            <div id="categoriesList" class="hidden mt-8">
-                                <div class="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-2 max-h-[600px] overflow-y-auto custom-scrollbar">
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-2">
                                     {[
                                         "Architects",
                                         "Architects / Building Designers",
@@ -341,10 +315,15 @@ const currentPath = Astro.url.pathname;
                                             <>
                                                 {isNewLetter && (
                                                     <div class="col-span-full mt-6 mb-3 first:mt-0">
-                                                        <h3 class="text-2xl font-bold text-[#330000] border-b-2 border-gray-200 pb-2 letter-header">{firstLetter}</h3>
+                                                        <div class="flex items-center gap-4">
+                                                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#B22222] to-[#330000] flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                                                                {firstLetter}
+                                                            </div>
+                                                            <div class="h-[2px] flex-grow bg-gradient-to-r from-[#B22222]/20 to-transparent"></div>
+                                                        </div>
                                                     </div>
                                                 )}
-                                                <div class="group hover:bg-gray-50 p-3 rounded-xl transition-all duration-300 cursor-pointer category-item">
+                                                <div class="group hover:bg-gray-50 p-3 rounded-xl transition-all duration-300 cursor-pointer animate-fade-in" style={`animation-delay: ${index * 50}ms`}>
                                                     <p class="text-gray-600 group-hover:text-[#B22222] transition-colors duration-300 text-base">{category}</p>
                                                     <div class="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-[#B22222] to-[#330000] transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                                                 </div>
@@ -500,7 +479,7 @@ const currentPath = Astro.url.pathname;
     }
 
     .clip-path-custom {
-        clip-path: polygon(0% 15%, 15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%);
+        clip-path: polygon(10% 0%, 90% 0%, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0% 80%, 0% 20%);
     }
 
     .clip-path-custom2 {
@@ -510,190 +489,20 @@ const currentPath = Astro.url.pathname;
     .clip-path-custom3 {
         clip-path: polygon(10% 0%, 90% 0%, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0% 80%, 0% 20%);
     }
-</style>
 
-<script>
-    // Categories toggle functionality
-    const toggleButton = document.getElementById('toggleCategories');
-    const categoriesList = document.getElementById('categoriesList');
-    const arrowIcon = document.getElementById('arrowIcon');
-
-    // Function to close dropdown
-    const closeDropdown = (shouldScroll = false) => {
-        if (!categoriesList?.classList.contains('hidden')) {
-            animateCategories(false);
-            setTimeout(() => {
-                categoriesList?.classList.add('hidden');
-                arrowIcon?.classList.remove('rotate-180');
-                
-                // Only scroll back if explicitly requested (when toggle button is clicked)
-                if (shouldScroll && toggleButton) {
-                    const specialisedSection = toggleButton.closest('section');
-                    if (specialisedSection) {
-                        const sectionRect = specialisedSection.getBoundingClientRect();
-                        const scrollPosition = window.pageYOffset + sectionRect.top - 100;
-                        window.scrollTo({
-                            top: scrollPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            }, 300);
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
         }
-    };
-
-    // Function to open dropdown and scroll to content
-    const openDropdown = () => {
-        categoriesList?.classList.remove('hidden');
-        arrowIcon?.classList.add('rotate-180');
-        animateCategories(true);
-
-        // Wait for the dropdown to be visible and animations to start
-        setTimeout(() => {
-            if (categoriesList && toggleButton) {
-                const buttonRect = toggleButton.getBoundingClientRect();
-                const dropdownRect = categoriesList.getBoundingClientRect();
-                
-                // Calculate position that shows both button and content
-                const targetPosition = window.pageYOffset + buttonRect.top - 100; // Keep button visible with some padding
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }, 100);
-    };
-
-    // Toggle button click handler
-    toggleButton?.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent click from immediately triggering document click
-        if (categoriesList?.classList.contains('hidden')) {
-            openDropdown();
-        } else {
-            closeDropdown(true); // Pass true to scroll back when toggle button is clicked
-        }
-    });
-
-    // Click outside to close
-    document.addEventListener('click', (e) => {
-        if (!categoriesList?.contains(e.target as Node) && 
-            !toggleButton?.contains(e.target as Node) && 
-            !categoriesList?.classList.contains('hidden')) {
-            closeDropdown(false); // Pass false to prevent scrolling when clicking outside
-        }
-    });
-
-    // Prevent clicks inside dropdown from closing it
-    categoriesList?.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !categoriesList?.classList.contains('hidden')) {
-            closeDropdown(false); // Pass false to prevent scrolling when using escape key
-        }
-    });
-
-    function animateCategories(show: boolean) {
-        const letterHeaders = document.querySelectorAll<HTMLElement>('.letter-header');
-        const categoryItems = document.querySelectorAll<HTMLElement>('.category-item');
-
-        if (show) {
-            letterHeaders.forEach((header, index) => {
-                setTimeout(() => {
-                    header.classList.add('show');
-                }, index * 100);
-            });
-
-            categoryItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.classList.add('show');
-                }, Math.floor(index / 4) * 50 + 200);
-            });
-        } else {
-            letterHeaders.forEach(header => header.classList.remove('show'));
-            categoryItems.forEach(item => item.classList.remove('show'));
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 
-    // Add hover effect for category items
-    document.querySelectorAll<HTMLElement>('.group').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            item.style.transform = 'translateY(-2px)';
-        });
-        
-        item.addEventListener('mouseleave', () => {
-            item.style.transform = 'translateY(0)';
-        });
-    });
-
-    // Scroll animation
-    let lastScrollTop = 0;
-    let isScrollingDown = true;
-
-    // Update scroll direction
-    window.addEventListener('scroll', () => {
-        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        isScrollingDown = currentScrollTop > lastScrollTop;
-        lastScrollTop = currentScrollTop;
-    });
-
-    // Scroll animation for content sections and CTA
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const element = entry.target as HTMLElement;
-            
-            if (entry.isIntersecting) {
-                if (isScrollingDown) {
-                    element.style.animation = 'slideUp 0.8s ease-out forwards';
-                } else {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            } else if (!entry.isIntersecting && !isScrollingDown) {
-                element.style.animation = 'none';
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(50px)';
-            }
-        });
-    }, observerOptions);
-
-    document.addEventListener('DOMContentLoaded', () => {
-        // Observe sections
-        const sections = document.querySelectorAll('.mb-16 > div, .py-16 > div, .scroll-animate-up');
-        sections.forEach((section, index) => {
-            if (index > 0) {
-                const element = section as HTMLElement;
-                element.classList.add('scroll-animate-up');
-                
-                const rect = element.getBoundingClientRect();
-                const isInViewport = rect.top < window.innerHeight;
-                
-                if (isInViewport) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                } else {
-                    element.style.opacity = '0';
-                    element.style.transform = 'translateY(50px)';
-                }
-                
-                element.style.transition = 'transform 0.8s ease-out, opacity 0.8s ease-out';
-                observer.observe(element);
-            }
-        });
-
-        // Add initial fade in effect
-        const heroSection = document.querySelector('.pt-32');
-        if (heroSection) {
-            heroSection.classList.add('initial-fade');
-        }
-    });
-</script> 
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+        opacity: 0;
+    }
+</style> 
