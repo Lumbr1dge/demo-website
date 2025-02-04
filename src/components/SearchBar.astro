@@ -23,8 +23,8 @@ const searchData = [
             type="text" 
             id="search-input"
             placeholder="Search services, projects..." 
-            class="w-full px-4 py-2 pl-10 pr-4 text-sm text-gray-700 bg-gray-50 border border-gray-200 
-            rounded-lg focus:outline-none focus:border-[#B22222] focus:ring-2 focus:ring-[#B22222]/20"
+            class="w-full px-4 py-2 pl-10 pr-4 text-sm text-black bg-gray-50 border border-gray-200 
+            rounded-lg focus:outline-none focus:border-[#004225] focus:ring-2 focus:ring-[#004225]/20"
         />
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@ const searchData = [
         
         // Icon based on type
         const iconDiv = document.createElement('div');
-        iconDiv.className = 'mr-3 text-[#B22222]';
+        iconDiv.className = 'mr-3 text-[#004225]';
         
         if (item.type === 'service') {
             iconDiv.innerHTML = `

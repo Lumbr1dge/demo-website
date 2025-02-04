@@ -19,12 +19,11 @@ const currentPath = Astro.url.pathname;
                     <div class="text-center mb-12 sm:mb-16 relative">
                         {/* Title container */}
                         <div class="relative inline-flex flex-col items-center gap-2 sm:gap-4 animate-slide-in-left">
-                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center relative">
-                                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#330000] to-[#330000]/90">About</span>
-                                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#B22222] to-[#B22222]/90 ml-2">Us</span>
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center relative text-[#004225]">
+                                About Us
                             </h1>
-                            <div class="h-1 w-32 sm:w-40 bg-gradient-to-r from-[#330000] via-[#B22222] to-[#330000] rounded-full mt-2"></div>
-                            <p class="text-base sm:text-lg text-gray-600 mt-4">Building Dreams, Delivering Excellence</p>
+                            <div class="h-1 w-32 sm:w-40 bg-[#004225] rounded-full mt-2"></div>
+                            <p class="text-base sm:text-lg text-black mt-4">Building Dreams, Delivering Excellence</p>
                         </div>
                     </div>
 
@@ -33,7 +32,7 @@ const currentPath = Astro.url.pathname;
                         {/* Left Column - Image */}
                         <div class="relative w-full">
                             <div class="relative mb-6 sm:mb-8 overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-br from-[#B22222]/20 to-[#330000]/20 rounded-[70px_20px_70px_20px] transform rotate-6 group-hover:rotate-3 transition-all duration-500"></div>
+                                <div class="absolute inset-0 bg-[#004225]/20 rounded-[70px_20px_70px_20px] transform rotate-6 group-hover:rotate-3 transition-all duration-500"></div>
                                 <img 
                                     src="/AboutUsPageWhoWeAre.jpg" 
                                     alt="Draft & Build Team" 
@@ -42,42 +41,44 @@ const currentPath = Astro.url.pathname;
                                 />
                             </div>
                             {/* Decorative elements */}
-                            <div class="absolute -bottom-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 bg-[#B22222]/5 rounded-full blur-2xl"></div>
-                            <div class="absolute -top-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 bg-[#330000]/5 rounded-full blur-2xl"></div>
+                            <div class="absolute -bottom-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 bg-[#004225]/5 rounded-full blur-2xl"></div>
+                            <div class="absolute -top-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 bg-[#004225]/5 rounded-full blur-2xl"></div>
                         </div>
 
                         {/* Right Column - Content */}
                         <div class="space-y-6 sm:space-y-8">
                             <div>
-                                <h2 class="text-2xl sm:text-3xl font-bold text-[#330000] mb-4">Our Story</h2>
-                                <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-[#004225] mb-4">Our Story</h2>
+                                <p class="text-base sm:text-lg text-black leading-relaxed">
                                     Draft & Build is a residential building company based in Auckland, dedicated to delivering exceptional craftsmanship and a stress-free building experience. With over 13 years of expertise, we've built a reputation for quality, reliability, and attention to detail.
                                 </p>
+                                <div class="w-full h-px bg-[#004225]/30 mt-8"></div>
                             </div>
 
                             <div>
-                                <h2 class="text-2xl sm:text-3xl font-bold text-[#330000] mb-4">Our Approach</h2>
-                                <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-[#004225] mb-4">Our Approach</h2>
+                                <p class="text-base sm:text-lg text-black leading-relaxed">
                                     We believe in transparent communication, meticulous planning, and superior execution. Every project is handled with the same level of dedication, whether it's a small renovation or a complete new build.
                                 </p>
+                                <div class="w-full h-px bg-[#004225]/30 mt-8"></div>
                             </div>
 
                             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-4 sm:pt-6">
-                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                                    <div class="text-lg sm:text-xl font-bold text-[#B22222]">13+</div>
-                                    <div class="text-xs sm:text-sm text-gray-600">Years Experience</div>
+                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-[#004225]/10">
+                                    <div class="text-lg sm:text-xl font-bold text-[#004225]">13+</div>
+                                    <div class="text-xs sm:text-sm text-black">Years Experience</div>
                                 </div>
-                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                                    <div class="text-lg sm:text-xl font-bold text-[#B22222]">50+</div>
-                                    <div class="text-xs sm:text-sm text-gray-600">Projects Done</div>
+                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-[#004225]/10">
+                                    <div class="text-lg sm:text-xl font-bold text-[#004225]">50+</div>
+                                    <div class="text-xs sm:text-sm text-black">Projects Done</div>
                                 </div>
-                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                                    <div class="text-lg sm:text-xl font-bold text-[#B22222]">100%</div>
-                                    <div class="text-xs sm:text-sm text-gray-600">Satisfaction</div>
+                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-[#004225]/10">
+                                    <div class="text-lg sm:text-xl font-bold text-[#004225]">100%</div>
+                                    <div class="text-xs sm:text-sm text-black">Satisfaction</div>
                                 </div>
-                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                                    <div class="text-lg sm:text-xl font-bold text-[#B22222]">LBP</div>
-                                    <div class="text-xs sm:text-sm text-gray-600">Certified</div>
+                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-[#004225]/10">
+                                    <div class="text-lg sm:text-xl font-bold text-[#004225]">LBP</div>
+                                    <div class="text-xs sm:text-sm text-black">Certified</div>
                                 </div>
                             </div>
                         </div>
@@ -85,8 +86,8 @@ const currentPath = Astro.url.pathname;
 
                     {/* Values Section */}
                     <section class="mt-16 sm:mt-24">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">
-                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#330000] to-[#B22222]">Our Values</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-[#004225]">
+                            Our Values
                         </h2>
                         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                             {[
@@ -111,10 +112,10 @@ const currentPath = Astro.url.pathname;
                                     icon: "⭐"
                                 }
                             ].map(value => (
-                                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-[#004225]/10">
                                     <div class="text-3xl sm:text-4xl mb-4">{value.icon}</div>
-                                    <h3 class="text-lg sm:text-xl font-bold text-[#330000] mb-2">{value.title}</h3>
-                                    <p class="text-sm sm:text-base text-gray-600">{value.description}</p>
+                                    <h3 class="text-lg sm:text-xl font-bold text-[#004225] mb-2">{value.title}</h3>
+                                    <p class="text-sm sm:text-base text-black">{value.description}</p>
                                 </div>
                             ))}
                         </div>
@@ -122,8 +123,8 @@ const currentPath = Astro.url.pathname;
 
                     {/* Service Areas Section */}
                     <section class="mt-16 sm:mt-24">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">
-                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#330000] to-[#B22222]">Areas We Service</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-[#004225]">
+                            Areas We Service
                         </h2>
                         
                         {/* Mobile View - Initial 6 items + Show More */}

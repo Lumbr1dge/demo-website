@@ -14,40 +14,41 @@ const currentPath = Astro.url.pathname;
         {/* Hero Section */}
         <section class="pt-24 sm:pt-32 pb-12 sm:pb-16 px-4">
             <div class="max-w-7xl mx-auto">
-                <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 sm:p-10 border-2 border-gray-200/50 shadow-2xl hover:shadow-3xl transition-all duration-500 opacity-0 animate-fade-in">
+                <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 sm:p-10 border-2 border-[#004225]/10 shadow-2xl hover:shadow-3xl transition-all duration-500 opacity-0 animate-fade-in">
                     <div class="text-center mb-12 sm:mb-16 relative">
                         {/* Title container */}
                         <div class="relative inline-flex flex-col items-center gap-2 sm:gap-4 animate-slide-in-left">
-                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center relative">
-                                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#330000] to-[#330000]/90">Our</span>
-                                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#B22222] to-[#B22222]/90 ml-2">Services</span>
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#004225]">
+                                Our Services
                             </h1>
-                            <div class="h-1 w-32 sm:w-40 bg-gradient-to-r from-[#330000] via-[#B22222] to-[#330000] rounded-full mt-2"></div>
-                            <p class="text-base sm:text-lg text-gray-600 mt-4">Crafting Excellence in Every Project</p>
+                            <div class="h-1 w-32 sm:w-40 bg-[#004225] rounded-full mt-2"></div>
+                            <p class="text-2xl sm:text-3xl text-black mt-4">
+                                Crafting Excellence in Every Project
+                            </p>
                         </div>
                     </div>
 
                     {/* Service Cards */}
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                         {/* New Builds */}
-                        <div class="group bg-white rounded-2xl p-6 sm:p-10 border-2 border-gray-100 shadow-lg hover:shadow-xl transition-all duration-500 hover:border-[#B22222]/30">
+                        <div class="group bg-white rounded-2xl p-6 sm:p-10 border-2 border-[#004225]/20 shadow-lg hover:shadow-xl transition-all duration-500 hover:border-[#004225]">
                             <div class="relative mb-6 sm:mb-8 overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-br from-[#B22222]/20 to-[#330000]/20 rounded-[70px_20px_70px_20px] transform rotate-6 group-hover:rotate-3 transition-all duration-500"></div>
+                                <div class="absolute inset-0 bg-[#004225]/20 rounded-[70px_20px_70px_20px] transform rotate-6 group-hover:rotate-3 transition-all duration-500"></div>
                                 <img 
                                     src="/NewBuildServices.jpeg" 
                                     alt="New Build Services" 
                                     class="relative z-10 w-full h-[200px] sm:h-[300px] object-cover rounded-[60px_15px_60px_15px] shadow-xl transform -rotate-3 group-hover:rotate-0 transition-all duration-500"
                                 />
                             </div>
-                            <div class="text-[#B22222] transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 flex justify-center mb-4 sm:mb-6">
+                            <div class="text-[#004225] transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 flex justify-center mb-4 sm:mb-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 sm:h-16 sm:w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                                 </svg>
                             </div>
                             <div class="text-center">
-                                <h3 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-[#330000] group-hover:text-[#B22222] transition-colors duration-300">New Builds</h3>
-                                <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">Create your dream home from the ground up. Our experienced team handles everything from initial design to final construction, ensuring quality and excellence at every step.</p>
-                                <a href="/contact" class="inline-flex items-center px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-[#330000] hover:bg-[#B22222] rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#B22222]/20 transform hover:-translate-y-1">
+                                <h3 class="text-2xl sm:text-3xl font-bold text-black group-hover:text-[#004225] transition-colors duration-300">New Builds</h3>
+                                <p class="text-base sm:text-lg text-black mb-6 sm:mb-8 leading-relaxed">Create your dream home from the ground up. Our experienced team handles everything from initial design to final construction, ensuring quality and excellence at every step.</p>
+                                <a href="/contact" class="inline-flex items-center px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-[#004225] hover:bg-[#004225]/90 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#004225]/20 transform hover:-translate-y-1">
                                     <span class="relative z-10">Get Started</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 ml-2 relative z-10" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -57,24 +58,24 @@ const currentPath = Astro.url.pathname;
                         </div>
 
                         {/* Renovations */}
-                        <div class="group bg-white rounded-2xl p-6 sm:p-10 border-2 border-gray-100 shadow-lg hover:shadow-xl transition-all duration-500 hover:border-[#B22222]/30">
+                        <div class="group bg-white rounded-2xl p-6 sm:p-10 border-2 border-[#004225]/20 shadow-lg hover:shadow-xl transition-all duration-500 hover:border-[#004225]">
                             <div class="relative mb-6 sm:mb-8 overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-bl from-[#B22222]/20 to-[#330000]/20 rounded-[20px_70px_20px_70px] transform -rotate-6 group-hover:-rotate-3 transition-all duration-500"></div>
+                                <div class="absolute inset-0 bg-[#004225]/20 rounded-[20px_70px_20px_70px] transform -rotate-6 group-hover:-rotate-3 transition-all duration-500"></div>
                                 <img 
                                     src="/RenovationsServicesPage.jpg" 
                                     alt="Renovation Services" 
                                     class="relative z-10 w-full h-[200px] sm:h-[300px] object-cover rounded-[15px_60px_15px_60px] shadow-xl transform rotate-3 group-hover:rotate-0 transition-all duration-500"
                                 />
                             </div>
-                            <div class="text-[#B22222] transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 flex justify-center mb-4 sm:mb-6">
+                            <div class="text-[#004225] transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 flex justify-center mb-4 sm:mb-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 sm:h-16 sm:w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
                             </div>
                             <div class="text-center">
-                                <h3 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-[#330000] group-hover:text-[#B22222] transition-colors duration-300">Renovations</h3>
-                                <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">Transform your existing space into something extraordinary. Our renovation services blend modern design with practical functionality, creating spaces that inspire.</p>
-                                <a href="/contact" class="inline-flex items-center px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-[#330000] hover:bg-[#B22222] rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#B22222]/20 transform hover:-translate-y-1">
+                                <h3 class="text-2xl sm:text-3xl font-bold text-black group-hover:text-[#004225] transition-colors duration-300">Renovations</h3>
+                                <p class="text-base sm:text-lg text-black mb-6 sm:mb-8 leading-relaxed">Transform your existing space into something extraordinary. Our renovation services blend modern design with practical functionality, creating spaces that inspire.</p>
+                                <a href="/contact" class="inline-flex items-center px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-[#004225] hover:bg-[#004225]/90 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#004225]/20 transform hover:-translate-y-1">
                                     <span class="relative z-10">Get Started</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 ml-2 relative z-10" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -86,27 +87,30 @@ const currentPath = Astro.url.pathname;
 
                     {/* Specialised Services Section */}
                     <section class="py-12 sm:py-16">
-                        <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 sm:p-10 border-2 border-gray-200/50 shadow-2xl">
-                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 sm:mb-16 text-center">
-                                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#330000] to-[#330000]/90">Specialised</span>
-                                <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#B22222] to-[#B22222]/90 ml-2 sm:ml-4">Services</span>
+                        <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 sm:p-10 border-2 border-[#004225]/20 shadow-2xl">
+                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 sm:mb-16 text-center text-[#004225]">
+                                Specialised Services
                             </h2>
                             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
                                 {[
                                     { name: "Kitchen Remodeling", desc: "Modern kitchen solutions", icon: "🏠" },
                                     { name: "Bathroom Renovations", desc: "Luxury bathroom designs", icon: "🛁" },
                                     { name: "Window Installation", desc: "Quality installations", icon: "🪟" },
-                                    { name: "Roofing Services", desc: "Complete solutions", icon: "🏡" },
                                     { name: "Flooring", desc: "Premium options", icon: "🔨" },
                                     { name: "Insulation", desc: "Energy-efficient", icon: "❄️" },
                                     { name: "Foundation", desc: "Structural integrity", icon: "🏗️" },
-                                    { name: "Electrical", desc: "Licensed experts", icon: "⚡" }
+                                    { name: "Decks", desc: "Custom outdoor spaces", icon: "🪵" },
+                                    { name: "Fences", desc: "Boundary solutions", icon: "🚪" },
+                                    { name: "Retaining Walls", desc: "Structural support", icon: "🧱" },
+                                    { name: "Cosmetic Renovations", desc: "Visual improvements", icon: "✨" },
+                                    { name: "Structural Renovations", desc: "Core improvements", icon: "🏗️" },
+                                    { name: "Paving", desc: "Outdoor surfaces", icon: "🛣️" }
                                 ].map((service) => (
-                                    <div class="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 border-2 border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-[#B22222]/30 transform hover:-translate-y-1">
+                                    <div class="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 border-2 border-[#004225]/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-[#004225]/30 transform hover:-translate-y-1">
                                         <div class="relative overflow-hidden text-center">
                                             <span class="text-3xl sm:text-5xl mb-4 sm:mb-6 block transform group-hover:scale-125 transition-transform duration-300">{service.icon}</span>
-                                            <h3 class="text-sm sm:text-xl font-bold mb-2 sm:mb-3 text-[#330000] group-hover:text-[#B22222] transition-colors duration-300">{service.name}</h3>
-                                            <p class="text-xs sm:text-base text-gray-600">{service.desc}</p>
+                                            <h3 c lass="text-sm sm:text-xl font-bold mb-2 sm:mb-3 text-[#004225] group-hover:text-[#004225] transition-colors duration-300">{service.name}</h3>
+                                            <p class="text-xs sm:text-base text-black/80">{service.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -116,25 +120,19 @@ const currentPath = Astro.url.pathname;
 
                     {/* Categories Section */}
                     <section class="py-12 sm:py-16">
-                        <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 sm:p-10 border-2 border-gray-200/50 shadow-2xl">
+                        <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 sm:p-10 border-2 border-[#004225]/10 shadow-2xl">
                             <div class="text-center mb-8 sm:mb-12">
-                                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-                                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#330000] to-[#330000]/90">Categories</span>
-                                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#B22222] to-[#B22222]/90 ml-2 sm:ml-4">We Service</span>
+                                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-[#004225]">
+                                    Categories We Service
                                 </h2>
-                                <div class="w-32 sm:w-48 h-2 bg-gradient-to-r from-[#330000] via-[#B22222] to-[#330000] mx-auto mb-6 sm:mb-8 rounded-full"></div>
-                                <p class="text-base sm:text-xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto font-medium">Browse through our comprehensive list of services.</p>
-                            </div>
-
-                            {/* Featured Categories */}
-                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
-                                {/* Featured category cards with responsive sizing */}
+                                <div class="w-32 sm:w-48 h-2 bg-gradient-to-r from-[#004225] via-[#004225]/80 to-[#004225] mx-auto mb-6 sm:mb-8 rounded-full"></div>
+                                <p class="text-base sm:text-xl text-black/80 mb-8 sm:mb-12 max-w-3xl mx-auto font-medium">Browse through our comprehensive list of services.</p>
                             </div>
 
                             {/* Categories list */}
                             <div class="mt-8 sm:mt-12">
                                 <div class="text-center">
-                                    <h3 class="text-2xl sm:text-3xl font-bold text-[#330000] mb-6 sm:mb-8">All Service Categories</h3>
+                                    <h3 class="text-2xl sm:text-3xl font-bold text-[#004225] mb-6 sm:mb-8">All Service Categories</h3>
                                 </div>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-6 gap-y-1 sm:gap-y-2">
@@ -230,16 +228,16 @@ const currentPath = Astro.url.pathname;
                                                 {isNewLetter && (
                                                     <div class="col-span-full mt-6 mb-3 first:mt-0">
                                                         <div class="flex items-center gap-4">
-                                                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#B22222] to-[#330000] flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                                                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#004225] to-[#004225]/80 flex items-center justify-center text-white font-bold text-2xl shadow-lg">
                                                                 {firstLetter}
                                                             </div>
-                                                            <div class="h-[2px] flex-grow bg-gradient-to-r from-[#B22222]/20 to-transparent"></div>
+                                                            <div class="h-[2px] flex-grow bg-gradient-to-r from-[#004225]/20 to-transparent"></div>
                                                         </div>
                                                     </div>
                                                 )}
-                                                <div class="group hover:bg-gray-50 p-3 rounded-xl transition-all duration-300 cursor-pointer animate-fade-in" style={`animation-delay: ${index * 50}ms`}>
-                                                    <p class="text-gray-600 group-hover:text-[#B22222] transition-colors duration-300 text-base">{category}</p>
-                                                    <div class="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-[#B22222] to-[#330000] transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+                                                <div class="group hover:bg-[#004225]/5 p-3 rounded-xl transition-all duration-300 cursor-pointer animate-fade-in" style={`animation-delay: ${index * 50}ms`}>
+                                                    <p class="text-black/80 group-hover:text-[#004225] transition-colors duration-300 text-base">{category}</p>
+                                                    <div class="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-[#004225] to-[#004225]/80 transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                                                 </div>
                                             </>
                                         );
