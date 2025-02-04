@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
+import NavBar from '../components/NavBar.astro';
 
 interface Review {
     author: string;
@@ -160,7 +161,8 @@ const reviews: Review[] = [
     }
 ];
 
-const highlightText = (text: string) => {
+
+    const highlightText = (text: string) => {
     const keywords = [
         'excellent', 'professional', 'quality', 'attention to detail',
         'communication', 'schedule', 'on time', 'clean', 'tidy',
@@ -178,6 +180,7 @@ const highlightText = (text: string) => {
     }).join(' ');
 };
 ---
+<NavBar />
 
 <Layout title="Client Stories - Draft & Build">
     <div class="bg-white pt-24 pb-16">
