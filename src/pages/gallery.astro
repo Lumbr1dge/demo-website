@@ -250,9 +250,9 @@ const currentPath = Astro.url.pathname;
 <Layout title="Project Gallery - Draft & Build">
     <NavBar currentPath={currentPath} />
     
-    <main class="min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 pt-32 pb-16 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 relative">
+    <main class="min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 pt-32 pb-16 px-4 w-full overflow-hidden">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="text-center mb-16 relative w-full">
                 {/* Background accent */}
                 <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[150%] bg-gradient-to-r from-[#004225]/5 via-white to-[#004225]/5"></div>
                 
@@ -293,7 +293,7 @@ const currentPath = Astro.url.pathname;
             </div>
 
             <!-- Gallery Grid -->
-            <div class="masonry-gallery max-w-[1400px] mx-auto px-4" id="gallery">
+            <div class="masonry-gallery w-full mx-auto" id="gallery">
                 {sortedImages.map((image, index) => {
                     const currentName = image.src.split('/').pop()?.toLowerCase() || '';
                     const sequenceIndex = sequences.findIndex(seq => 
@@ -386,7 +386,13 @@ const currentPath = Astro.url.pathname;
     .masonry-gallery {
         column-count: 1;
         column-gap: 2rem;
-        padding-bottom: 2rem; /* Add padding to bottom */
+        padding-bottom: 2rem;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     @media (min-width: 640px) {
