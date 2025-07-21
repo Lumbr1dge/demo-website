@@ -3,7 +3,6 @@ import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
 import NavBar from '../components/NavBar.astro';
 import CTA from '../components/CTA.astro';
-import { Astro } from 'astro';
 
 const currentPath = Astro.url.pathname;
 ---
@@ -11,194 +10,393 @@ const currentPath = Astro.url.pathname;
 <Layout title="About - Draft & Build">
     <NavBar currentPath={currentPath} />
     
-    <main class="min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100">
-        {/* Hero Section */}
-        <section class="pt-24 sm:pt-32 pb-12 sm:pb-16 px-4">
-            <div class="max-w-7xl mx-auto">
-                <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 sm:p-10 border-2 border-gray-200/50 shadow-2xl hover:shadow-3xl transition-all duration-500 opacity-0 animate-fade-in">
-                    <div class="text-center mb-12 sm:mb-16 relative">
-                        {/* Title container */}
-                        <div class="relative inline-flex flex-col items-center gap-2 sm:gap-4 animate-slide-in-left">
-                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center relative text-[#004225]">
-                                About Us
-                            </h1>
-                            <div class="h-1 w-32 sm:w-40 bg-[#004225] rounded-full mt-2"></div>
-                            <p class="text-base sm:text-lg text-black mt-4">Building Dreams, Delivering Excellence</p>
-                        </div>
-                    </div>
+    <main class="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden">
+        {/* Dynamic Background Elements */}
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-[#004225]/5 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-40 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/3 w-64 h-64 bg-green-500/3 rounded-full blur-3xl animate-pulse" style="animation-delay: 4s;"></div>
+        </div>
 
-                    {/* Content Grid */}
-                    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
-                        {/* Left Column - Image */}
-                        <div class="relative w-full">
-                            <div class="relative mb-6 sm:mb-8 overflow-hidden">
-                                <div class="absolute inset-0 bg-[#004225]/20 rounded-[70px_20px_70px_20px] transform rotate-6 group-hover:rotate-3 transition-all duration-500"></div>
+        {/* Enhanced Hero Section */}
+        <section class="pt-28 sm:pt-36 pb-20 px-4 relative z-10">
+            <div class="max-w-7xl mx-auto">
+                {/* Hero Content */}
+                <div class="text-center mb-20 scroll-animate-up opacity-0">
+                    <div class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#004225]/10 to-blue-500/10 rounded-full mb-8 shadow-lg backdrop-blur-sm border border-white/50 hover:shadow-xl transition-all duration-500">
+                        <span class="w-2 h-2 bg-gradient-to-r from-[#004225] to-blue-500 rounded-full animate-pulse"></span>
+                        <span class="text-sm font-bold text-[#004225] uppercase tracking-wider">Our Story</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-black mb-6 text-gray-900">
+                        <span class="block">About</span>
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-[#004225] via-blue-500 to-[#006837]">
+                            Draft & Build
+                        </span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Building Dreams, Delivering Excellence
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-[#004225] to-blue-500 mx-auto mt-8 rounded-full"></div>
+                </div>
+
+                {/* Main Content Grid */}
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                    {/* Enhanced Image Section */}
+                    <div class="relative scroll-animate-up opacity-0" style="animation-delay: 0.2s;">
+                        <div class="relative group">
+                            {/* Background effects */}
+                            <div class="absolute -inset-8 bg-gradient-to-r from-[#004225]/10 to-blue-500/10 rounded-[3rem] blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+                            
+                            {/* Main image container */}
+                            <div class="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 border-2 border-white/50 backdrop-blur-sm">
                                 <img 
                                     src="/AboutUsPageWhoWeAre.jpg" 
                                     alt="Draft & Build Team" 
-                                    class="relative z-10 w-full h-[250px] sm:h-[350px] lg:h-[500px] object-cover rounded-[60px_15px_60px_15px] shadow-xl transform -rotate-3 group-hover:rotate-0 transition-all duration-500"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     loading="eager"
                                 />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                                
+                                {/* Floating info card */}
+                                <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/50 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                    <h3 class="text-lg font-bold text-gray-900 mb-2">Our Team</h3>
+                                    <p class="text-gray-600 text-sm">Licensed professionals dedicated to excellence</p>
+                                </div>
                             </div>
+
                             {/* Decorative elements */}
-                            <div class="absolute -bottom-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 bg-[#004225]/5 rounded-full blur-2xl"></div>
-                            <div class="absolute -top-4 -left-4 w-24 h-24 sm:w-32 sm:h-32 bg-[#004225]/5 rounded-full blur-2xl"></div>
-                        </div>
-
-                        {/* Right Column - Content */}
-                        <div class="space-y-6 sm:space-y-8">
-                            <div>
-                                <h2 class="text-2xl sm:text-3xl font-bold text-[#004225] mb-4">Our Story</h2>
-                                <p class="text-base sm:text-lg text-black leading-relaxed">
-                                    Draft & Build is a residential building company based in Auckland, dedicated to delivering exceptional craftsmanship and a stress-free building experience. With over 13 years of expertise, we've built a reputation for quality, reliability, and attention to detail.
-                                </p>
-                                <div class="w-full h-px bg-[#004225]/30 mt-8"></div>
-                            </div>
-
-                            <div>
-                                <h2 class="text-2xl sm:text-3xl font-bold text-[#004225] mb-4">Our Approach</h2>
-                                <p class="text-base sm:text-lg text-black leading-relaxed">
-                                    We believe in transparent communication, meticulous planning, and superior execution. Every project is handled with the same level of dedication, whether it's a small renovation or a complete new build.
-                                </p>
-                                <div class="w-full h-px bg-[#004225]/30 mt-8"></div>
-                            </div>
-
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-4 sm:pt-6">
-                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-[#004225]/10">
-                                    <div class="text-lg sm:text-xl font-bold text-[#004225]">13+</div>
-                                    <div class="text-xs sm:text-sm text-black">Years Experience</div>
-                                </div>
-                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-[#004225]/10">
-                                    <div class="text-lg sm:text-xl font-bold text-[#004225]">50+</div>
-                                    <div class="text-xs sm:text-sm text-black">Projects Done</div>
-                                </div>
-                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-[#004225]/10">
-                                    <div class="text-lg sm:text-xl font-bold text-[#004225]">100%</div>
-                                    <div class="text-xs sm:text-sm text-black">Satisfaction</div>
-                                </div>
-                                <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-[#004225]/10">
-                                    <div class="text-lg sm:text-xl font-bold text-[#004225]">LBP</div>
-                                    <div class="text-xs sm:text-sm text-black">Certified</div>
-                                </div>
-                            </div>
+                            <div class="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-[#004225]/20 to-transparent rounded-full blur-xl animate-pulse"></div>
+                            <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-blue-500/15 to-transparent rounded-full blur-xl animate-pulse" style="animation-delay: 1s;"></div>
                         </div>
                     </div>
 
-                    {/* Values Section */}
-                    <section class="mt-16 sm:mt-24">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-[#004225]">
-                            Our Values
-                        </h2>
-                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                            {[
-                                {
-                                    title: "Quality",
-                                    description: "We never compromise on quality, using only the finest materials and proven techniques.",
-                                    icon: "🏆"
-                                },
-                                {
-                                    title: "Integrity",
-                                    description: "Honesty and transparency are at the core of everything we do.",
-                                    icon: "🤝"
-                                },
-                                {
-                                    title: "Innovation",
-                                    description: "We stay current with the latest building technologies and methods.",
-                                    icon: "💡"
-                                },
-                                {
-                                    title: "Reliability",
-                                    description: "Count on us to deliver on time and within budget, every time.",
-                                    icon: "⭐"
-                                }
-                            ].map(value => (
-                                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-[#004225]/10">
-                                    <div class="text-3xl sm:text-4xl mb-4">{value.icon}</div>
-                                    <h3 class="text-lg sm:text-xl font-bold text-[#004225] mb-2">{value.title}</h3>
-                                    <p class="text-sm sm:text-base text-black">{value.description}</p>
+                    {/* Enhanced Content Section */}
+                    <div class="space-y-8 scroll-animate-up opacity-0" style="animation-delay: 0.4s;">
+                        {/* Our Story */}
+                        <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-[#004225] to-[#006837] rounded-2xl flex items-center justify-center shadow-lg">
+                                    <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                    </svg>
                                 </div>
-                            ))}
-                        </div>
-                    </section>
-
-                    {/* Service Areas Section */}
-                    <section class="mt-16 sm:mt-24">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-[#004225]">
-                            Areas We Service
-                        </h2>
-                        
-                        {/* Mobile View - Initial 6 items + Show More */}
-                        <div class="block sm:hidden">
-                            <div class="grid grid-cols-2 gap-4" id="mobileAreasList">
-                                {[
-                                    "Auckland City",
-                                    "North Shore",
-                                    "East Auckland",
-                                    "West Auckland",
-                                    "South Auckland",
-                                    "Rodney District",
-                                    "Waitakere",
-                                    "Manukau"
-                                ].slice(0, 6).map(area => (
-                                    <div class="group bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center">
-                                        <span class="text-gray-700 text-sm font-medium group-hover:text-[#004225]">{area}</span>
-                                    </div>
-                                ))}
-                            </div>
-                            <div class="hidden" id="mobileAreasListFull">
-                                <div class="grid grid-cols-2 gap-4">
-                                    {[
-                                        "Auckland City",
-                                        "North Shore",
-                                        "East Auckland",
-                                        "West Auckland",
-                                        "South Auckland",
-                                        "Rodney District",
-                                        "Waitakere",
-                                        "Manukau"
-                                    ].map(area => (
-                                        <div class="group bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center">
-                                            <span class="text-gray-700 text-sm font-medium group-hover:text-[#004225]">{area}</span>
-                                        </div>
-                                    ))}
+                                <div>
+                                    <h2 class="text-2xl font-bold text-gray-900">Our Story</h2>
+                                    <div class="w-12 h-1 bg-gradient-to-r from-[#004225] to-[#006837] rounded-full mt-1"></div>
                                 </div>
                             </div>
-                            <button id="showMoreBtn" class="mt-6 w-full py-3 px-4 bg-white text-black rounded-xl border border-black hover:bg-[#B22222] hover:text-white transition-all duration-300">
-                                Show More Areas
-                            </button>
+                            <p class="text-gray-600 leading-relaxed text-lg">
+                                Draft & Build is a residential building company based in Auckland, dedicated to delivering exceptional craftsmanship and a stress-free building experience. With over 13 years of expertise, we've built a reputation for quality, reliability, and attention to detail.
+                            </p>
                         </div>
 
-                        {/* Desktop View - All items in grid */}
-                        <div class="hidden sm:grid sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+                        {/* Our Approach */}
+                        <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center shadow-lg">
+                                    <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold text-gray-900">Our Approach</h2>
+                                    <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full mt-1"></div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed text-lg">
+                                We believe in transparent communication, meticulous planning, and superior execution. Every project is handled with the same level of dedication, whether it's a small renovation or a complete new build.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Enhanced Stats Section */}
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 scroll-animate-up opacity-0" style="animation-delay: 0.6s;">
+                    <div class="group bg-gradient-to-br from-white to-gray-50/50 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-center">
+                        <div class="text-4xl font-black text-[#004225] mb-2 group-hover:scale-110 transition-transform duration-300">13+</div>
+                        <div class="text-gray-600 font-medium">Years Experience</div>
+                        <div class="w-full h-1 bg-gradient-to-r from-[#004225] to-transparent rounded-full mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="group bg-gradient-to-br from-white to-blue-50/50 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-center">
+                        <div class="text-4xl font-black text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+                        <div class="text-gray-600 font-medium">Projects Done</div>
+                        <div class="w-full h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="group bg-gradient-to-br from-white to-green-50/50 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-center">
+                        <div class="text-4xl font-black text-green-600 mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+                        <div class="text-gray-600 font-medium">Satisfaction</div>
+                        <div class="w-full h-1 bg-gradient-to-r from-green-500 to-transparent rounded-full mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="group bg-gradient-to-br from-white to-purple-50/50 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-center">
+                        <div class="text-4xl font-black text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300">LBP</div>
+                        <div class="text-gray-600 font-medium">Certified</div>
+                        <div class="w-full h-1 bg-gradient-to-r from-purple-500 to-transparent rounded-full mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+
+                {/* Enhanced Values Section */}
+                <section class="mb-20 scroll-animate-up opacity-0" style="animation-delay: 0.8s;">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-black mb-6 text-gray-900">
+                            Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#004225] to-blue-500">Values</span>
+                        </h2>
+                        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                            The principles that drive everything we do
+                        </p>
+                    </div>
+                    
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {[
+                            {
+                                title: "Quality",
+                                description: "We never compromise on quality, using only the finest materials and proven techniques.",
+                                icon: "🏆",
+                                color: "from-yellow-400 to-orange-500"
+                            },
+                            {
+                                title: "Integrity",
+                                description: "Honesty and transparency are at the core of everything we do.",
+                                icon: "🤝",
+                                color: "from-blue-400 to-blue-600"
+                            },
+                            {
+                                title: "Innovation",
+                                description: "We stay current with the latest building technologies and methods.",
+                                icon: "💡",
+                                color: "from-purple-400 to-purple-600"
+                            },
+                            {
+                                title: "Reliability",
+                                description: "Count on us to deliver on time and within budget, every time.",
+                                icon: "⭐",
+                                color: "from-green-400 to-green-600"
+                            }
+                        ].map((value, index) => (
+                            <div class={`group bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-center relative overflow-hidden`} style={`animation-delay: ${0.1 * (index + 1)}s;`}>
+                                {/* Background gradient on hover */}
+                                <div class={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                                
+                                <div class="relative z-10">
+                                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{value.icon}</div>
+                                    <h3 class="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
+                                    <p class="text-gray-600 leading-relaxed">{value.description}</p>
+                                    <div class={`w-full h-1 bg-gradient-to-r ${value.color} rounded-full mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Enhanced Service Areas Section */}
+                <section class="scroll-animate-up opacity-0" style="animation-delay: 1s;">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-black mb-6 text-gray-900">
+                            Areas We <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#004225] to-blue-500">Service</span>
+                        </h2>
+                        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                            Proudly serving communities across Auckland
+                        </p>
+                    </div>
+                    
+                    {/* Mobile View - Enhanced */}
+                    <div class="block sm:hidden">
+                        <div class="grid grid-cols-2 gap-4 mb-6" id="mobileAreasList">
                             {[
                                 "Auckland City",
                                 "North Shore",
                                 "East Auckland",
                                 "West Auckland",
                                 "South Auckland",
-                                "Rodney District",
-                                "Waitakere",
-                                "Manukau"
+                                "Rodney District"
                             ].map(area => (
-                                <div class="group bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 text-center">
-                                    <span class="text-gray-700 text-sm sm:text-base font-medium group-hover:text-[#B22222]">{area}</span>
+                                <div class="group bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+                                    <span class="text-gray-700 font-medium group-hover:text-[#004225] transition-colors duration-300">{area}</span>
+                                    <div class="w-full h-1 bg-gradient-to-r from-[#004225] to-transparent rounded-full mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </div>
                             ))}
                         </div>
-                    </section>
-                </div>
+                        <div class="hidden" id="mobileAreasListFull">
+                            <div class="grid grid-cols-2 gap-4">
+                                {[
+                                    "Auckland City",
+                                    "North Shore", 
+                                    "East Auckland",
+                                    "West Auckland",
+                                    "South Auckland",
+                                    "Rodney District",
+                                    "Waitakere",
+                                    "Manukau"
+                                ].map(area => (
+                                    <div class="group bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+                                        <span class="text-gray-700 font-medium group-hover:text-[#004225] transition-colors duration-300">{area}</span>
+                                        <div class="w-full h-1 bg-gradient-to-r from-[#004225] to-transparent rounded-full mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <button id="showMoreBtn" class="mt-6 w-full py-4 px-6 bg-gradient-to-r from-[#004225] to-[#006837] text-white rounded-2xl font-semibold hover:from-[#006837] hover:to-[#004225] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform-gpu">
+                            Show More Areas
+                        </button>
+                    </div>
+
+                    {/* Desktop View - Enhanced */}
+                    <div class="hidden sm:grid sm:grid-cols-3 md:grid-cols-4 gap-6">
+                        {[
+                            "Auckland City",
+                            "North Shore",
+                            "East Auckland", 
+                            "West Auckland",
+                            "South Auckland",
+                            "Rodney District",
+                            "Waitakere",
+                            "Manukau"
+                        ].map((area, index) => (
+                            <div class="group bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center" style={`animation-delay: ${0.05 * index}s;`}>
+                                <span class="text-gray-700 font-medium group-hover:text-[#004225] transition-colors duration-300">{area}</span>
+                                <div class="w-full h-1 bg-gradient-to-r from-[#004225] to-transparent rounded-full mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* CTA Section - Moved above reviews */}
+                <section class="scroll-animate-up opacity-0" style="animation-delay: 1.2s;">
+                    <div class="bg-gradient-to-br from-[#004225] to-[#006837] rounded-3xl p-12 text-center relative overflow-hidden shadow-2xl">
+                        {/* Decorative background elements */}
+                        <div class="absolute inset-0">
+                            <div class="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                            <div class="absolute bottom-10 right-10 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+                        </div>
+                        
+                        <div class="relative z-10">
+                            <h2 class="text-3xl md:text-4xl font-black text-white mb-6">
+                                Ready to Start Your Project?
+                            </h2>
+                            <p class="text-xl text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed">
+                                Let's discuss your vision and create something extraordinary together. Our expert team is ready to bring your ideas to life.
+                            </p>
+                            
+                            {/* CTA Buttons */}
+                            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                                <a href="/services" class="group inline-flex items-center px-8 py-4 bg-white text-[#004225] rounded-2xl font-bold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform-gpu">
+                                    View All Services
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                                <a href="/contact" class="group inline-flex items-center px-8 py-4 bg-transparent text-white border-2 border-white rounded-2xl font-bold text-lg hover:bg-white hover:text-[#004225] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 transform-gpu">
+                                    Get Free Quote
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Client Reviews Section */}
+                <section class="mb-20 scroll-animate-up opacity-0" style="animation-delay: 1.4s;">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-black mb-6 text-gray-900">
+                            What Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#004225] to-blue-500">Clients Say</span>
+                        </h2>
+                        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                            Real experiences from real clients who trusted us with their projects
+                        </p>
+                    </div>
+
+                    {/* Reviews Grid */}
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {[
+                            {
+                                author: "Alix",
+                                project: "New Home Build",
+                                text: "From the first time we met Joseph and Tobin we knew we would be working with Draft and Build. Every question was answered, calls always returned, changes to the plan were not a problem. The quality of the build was amazing with any small issues being picked up and dealt with immediately."
+                            },
+                            {
+                                author: "Steven",
+                                project: "Deck Installation", 
+                                text: "We are delighted with our new deck installation. Not only were we really happy with the outcome, but the process of completion filled us with confidence that we had made the right choice when choosing Draft and Build."
+                            },
+                            {
+                                author: "James",
+                                project: "Custom Project",
+                                text: "Really happy with the outcome of this job. Not often you find builders with such attention to detail. Project management was really transparent as to what's going on. Would highly recommend Draft and Build."
+                            },
+                            {
+                                author: "Graeme", 
+                                project: "New Home Build",
+                                text: "From the very first contact with Draft and Build Ltd we were very impressed with their promptness and communication. Work was completed on schedule and to an excellent standard."
+                            },
+                            {
+                                author: "Carl",
+                                project: "New Home Build",
+                                text: "Draft and build were excellent! Communication was spot on and asked for my opinion when things were impacting the final presentation of the job. Even came in below the initial quote."
+                            },
+                            {
+                                author: "Richard",
+                                project: "New Home Build", 
+                                text: "The lads did a great job at our place. Communication was excellent, they turned up when scheduled and were very flexible with the changes we wanted. Job was completed to a very high standard."
+                            }
+                        ].map((review, index) => (
+                            <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden" style={`animation-delay: ${0.1 * (index + 1)}s;`}>
+                                {/* Background gradient on hover */}
+                                <div class="absolute inset-0 bg-gradient-to-br from-[#004225]/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                
+                                <div class="relative z-10">
+                                    {/* Quote Icon */}
+                                    <div class="text-[#004225] mb-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                                        </svg>
+                                    </div>
+
+                                    {/* Review Text */}
+                                    <p class="text-gray-700 mb-6 leading-relaxed text-lg italic">
+                                        "{review.text}"
+                                    </p>
+
+                                    {/* Star Rating */}
+                                    <div class="flex text-[#004225] gap-1 mb-6">
+                                        {[...Array(5)].map(() => (
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                        ))}
+                                    </div>
+
+                                    {/* Divider */}
+                                    <div class="w-full h-1 bg-gradient-to-r from-[#004225] to-blue-500 rounded-full mb-6"></div>
+
+                                    {/* Author Info */}
+                                    <div>
+                                        <p class="text-xl font-bold text-gray-900 mb-1">{review.author}</p>
+                                        <p class="text-gray-600 font-medium">{review.project}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </div>
         </section>
-
-        <CTA />
     </main>
 
     <Footer />
 </Layout>
 
 <style>
-    .shadow-3xl {
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    /* Enhanced animations */
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     @keyframes fadeIn {
@@ -212,70 +410,23 @@ const currentPath = Astro.url.pathname;
         }
     }
 
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    .animate-fade-in {
-        animation: fadeIn 1s ease-out forwards;
-    }
-
-    .animate-slide-in-left {
-        opacity: 0;
-        animation: slideInLeft 1s ease-out forwards;
-        animation-delay: 0.3s;
-    }
-
-    .animate-slide-in-right {
-        opacity: 0;
-        animation: slideInRight 1s ease-out forwards;
-        animation-delay: 0.3s;
-    }
-
-    /* Additional responsive styles */
-    @media (max-width: 640px) {
-        .animate-slide-in-left, .animate-slide-in-right {
-            animation: fadeIn 1s ease-out forwards;
-            animation-delay: 0.3s;
-        }
-    }
-
-    .animation-delay-2000 {
-        animation-delay: 2s;
-    }
-
-    .animation-delay-4000 {
-        animation-delay: 4s;
-    }
-
-    .animation-delay-6000 {
-        animation-delay: 6s;
-    }
-
     .scroll-animate-up {
         will-change: transform, opacity;
         opacity: 0;
         transform: translateY(50px);
     }
 
+    /* Enhanced shadow utilities */
+    .shadow-3xl {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Transform GPU optimization */
+    .transform-gpu {
+        transform: translateZ(0);
+    }
+
+    /* Custom scrollbar */
     .custom-scrollbar {
         scrollbar-width: thin;
         scrollbar-color: #E5E7EB transparent;
@@ -297,119 +448,18 @@ const currentPath = Astro.url.pathname;
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
         background-color: #D1D5DB;
     }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
-
-    .delay-100 {
-        animation-delay: 100ms;
-    }
-    .delay-200 {
-        animation-delay: 200ms;
-    }
-    .delay-300 {
-        animation-delay: 300ms;
-    }
 </style>
 
 <script>
-    // Force scroll to top immediately when script loads
+    // Smooth scroll to top on page load
     if (typeof window !== 'undefined') {
         window.scrollTo(0, 0);
     }
 
-    // Toggle areas list and scroll into view
-    const toggleButton = document.getElementById('toggleAreas');
-    const arrowIcon = document.getElementById('arrowIcon');
-    const allAreas = document.getElementById('allAreas');
-
-    // Function to close dropdown
-    const closeDropdown = (shouldScroll = false) => {
-        allAreas?.classList.add('hidden');
-        arrowIcon?.classList.remove('rotate-180');
-
-        // Only scroll back if explicitly requested (when toggle button is clicked)
-        if (shouldScroll) {
-            const serviceAreasSection = document.getElementById('serviceAreasSection');
-            if (serviceAreasSection) {
-                const sectionRect = serviceAreasSection.getBoundingClientRect();
-                const scrollPosition = window.pageYOffset + sectionRect.top - 100;
-                
-                window.scrollTo({
-                    top: scrollPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    };
-
-    // Function to open dropdown and scroll to content
-    const openDropdown = () => {
-        allAreas?.classList.remove('hidden');
-        arrowIcon?.classList.add('rotate-180');
-
-        // Wait for the dropdown to be visible before scrolling
-        setTimeout(() => {
-            if (allAreas) {
-                const dropdownRect = allAreas.getBoundingClientRect();
-                const scrollPosition = window.pageYOffset + dropdownRect.top - (window.innerHeight / 2) + (dropdownRect.height / 2);
-                
-                window.scrollTo({
-                    top: scrollPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }, 100);
-    };
-
-    // Toggle button click handler
-    toggleButton?.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent click from immediately triggering document click
-        if (allAreas?.classList.contains('hidden')) {
-            openDropdown();
-        } else {
-            closeDropdown(true); // Pass true to scroll back when toggle button is clicked
-        }
-    });
-
-    // Click outside to close
-    document.addEventListener('click', (e) => {
-        if (!allAreas?.contains(e.target as Node) && 
-            !toggleButton?.contains(e.target as Node) && 
-            !allAreas?.classList.contains('hidden')) {
-            closeDropdown(false); // Pass false to prevent scrolling when clicking outside
-        }
-    });
-
-    // Prevent clicks inside dropdown from closing it
-    allAreas?.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !allAreas?.classList.contains('hidden')) {
-            closeDropdown(false); // Pass false to prevent scrolling when using escape key
-        }
-    });
-
-    // Scroll animation
-    let lastScrollTop = 0;
-    let isScrollingDown = true;
-
-    // Update scroll direction
-    window.addEventListener('scroll', () => {
-        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        isScrollingDown = currentScrollTop > lastScrollTop;
-        lastScrollTop = currentScrollTop;
-    });
-
-    // Scroll animation for content sections
+    // Scroll animation observer
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '0px 0px -50px 0px',
         threshold: 0.1
     };
 
@@ -418,46 +468,17 @@ const currentPath = Astro.url.pathname;
             const element = entry.target as HTMLElement;
             
             if (entry.isIntersecting) {
-                // Only animate if we're scrolling and not on initial page load
-                if (lastScrollTop > 0) {
-                    element.style.animation = 'slideUp 0.8s ease-out forwards';
-                } else {
-                    // On initial load, just show the element without animation
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            } else if (!entry.isIntersecting && !isScrollingDown) {
-                // Reset only when scrolling up and element is out of view
-                element.style.animation = 'none';
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(50px)';
+                element.style.animation = 'slideUp 0.8s ease-out forwards';
             }
         });
     }, observerOptions);
 
-    // Start observing all elements with scroll-animate-up class
+    // Start observing elements when DOM is loaded
     document.addEventListener('DOMContentLoaded', () => {
-        // Select the outer div that contains the gradient border
-        const sections = document.querySelectorAll('.mb-16 > div');
-        sections.forEach((section, index) => {
-            // Skip the first section (hero)
-            if (index > 0) {
-                const element = section as HTMLElement;
-                element.classList.add('scroll-animate-up');
-                element.style.transition = 'transform 0.8s ease-out, opacity 0.8s ease-out';
-                observer.observe(element);
-            }
-        });
+        const animatedElements = document.querySelectorAll('.scroll-animate-up');
+        animatedElements.forEach(el => observer.observe(el));
 
-        // Also observe CTA and footer
-        const additionalSections = document.querySelectorAll('.py-16, footer');
-        additionalSections.forEach(section => {
-            const element = section as HTMLElement;
-            element.classList.add('scroll-animate-up');
-            element.style.transition = 'transform 0.8s ease-out, opacity 0.8s ease-out';
-            observer.observe(element);
-        });
-
+        // Mobile areas toggle functionality
         const showMoreBtn = document.getElementById('showMoreBtn');
         const mobileAreasList = document.getElementById('mobileAreasList');
         const mobileAreasListFull = document.getElementById('mobileAreasListFull');
@@ -470,4 +491,5 @@ const currentPath = Astro.url.pathname;
             });
         }
     });
+</script> 
 </script> 
