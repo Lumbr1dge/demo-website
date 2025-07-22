@@ -35,7 +35,7 @@ const currentPath = Astro.url.pathname;
                             <div class="relative mb-6 sm:mb-8 overflow-hidden">
                                 <div class="absolute inset-0 bg-[#004225]/20 rounded-[70px_20px_70px_20px] transform rotate-6 group-hover:rotate-3 transition-all duration-500"></div>
                                 <img 
-                                    src="/NewBuildServices.jpeg" 
+                                    src="/New-House-Build-1.jpg" 
                                     alt="New Build Services" 
                                     class="relative z-10 w-full h-[200px] sm:h-[300px] object-cover rounded-[60px_15px_60px_15px] shadow-xl transform -rotate-3 group-hover:rotate-0 transition-all duration-500"
                                 />
@@ -62,7 +62,7 @@ const currentPath = Astro.url.pathname;
                             <div class="relative mb-6 sm:mb-8 overflow-hidden">
                                 <div class="absolute inset-0 bg-[#004225]/20 rounded-[20px_70px_20px_70px] transform -rotate-6 group-hover:-rotate-3 transition-all duration-500"></div>
                                 <img 
-                                    src="/RenovationsServicesPage.jpg" 
+                                    src="/House-Renovation-1.jpg" 
                                     alt="Renovation Services" 
                                     class="relative z-10 w-full h-[200px] sm:h-[300px] object-cover rounded-[15px_60px_15px_60px] shadow-xl transform rotate-3 group-hover:rotate-0 transition-all duration-500"
                                 />
@@ -109,7 +109,7 @@ const currentPath = Astro.url.pathname;
                                     <div class="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 border-2 border-[#004225]/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-[#004225]/30 transform hover:-translate-y-1">
                                         <div class="relative overflow-hidden text-center">
                                             <span class="text-3xl sm:text-5xl mb-4 sm:mb-6 block transform group-hover:scale-125 transition-transform duration-300">{service.icon}</span>
-                                            <h3 c lass="text-sm sm:text-xl font-bold mb-2 sm:mb-3 text-[#004225] group-hover:text-[#004225] transition-colors duration-300">{service.name}</h3>
+                                            <h3 class="text-sm sm:text-xl font-bold mb-2 sm:mb-3 text-[#004225] group-hover:text-[#004225] transition-colors duration-300">{service.name}</h3>
                                             <p class="text-xs sm:text-base text-black/80">{service.desc}</p>
                                         </div>
                                     </div>
@@ -118,134 +118,7 @@ const currentPath = Astro.url.pathname;
                         </div>
                     </section>
 
-                    {/* Categories Section */}
-                    <section class="py-12 sm:py-16">
-                        <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 sm:p-10 border-2 border-[#004225]/10 shadow-2xl">
-                            <div class="text-center mb-8 sm:mb-12">
-                                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-[#004225]">
-                                    Categories We Service
-                                </h2>
-                                <div class="w-32 sm:w-48 h-2 bg-gradient-to-r from-[#004225] via-[#004225]/80 to-[#004225] mx-auto mb-6 sm:mb-8 rounded-full"></div>
-                                <p class="text-base sm:text-xl text-black/80 mb-8 sm:mb-12 max-w-3xl mx-auto font-medium">Browse through our comprehensive list of services.</p>
-                            </div>
-
-                            {/* Categories list */}
-                            <div class="mt-8 sm:mt-12">
-                                <div class="text-center">
-                                    <h3 class="text-2xl sm:text-3xl font-bold text-[#004225] mb-6 sm:mb-8">All Service Categories</h3>
-                                </div>
-
-                                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-6 gap-y-1 sm:gap-y-2">
-                                    {[
-                                        "Architects",
-                                        "Architects / Building Designers",
-                                        "Asbestos Removal",
-                                        "Baches and Cottages",
-                                        "Balustrade",
-                                        "Bars",
-                                        "Bathroom Remodelers",
-                                        "Builders",
-                                        "Building Advice",
-                                        "Building Contractors",
-                                        "Building Designers",
-                                        "Building Maintenance",
-                                        "Building Removals & Demolition",
-                                        "Building Supplies & Fittings",
-                                        "Carpentry Companies",
-                                        "Carpentry Contractors / Carpenters",
-                                        "Cat doors",
-                                        "Cedar Timber Work",
-                                        "Cladding",
-                                        "Commercial fit-outs",
-                                        "Concrete Cutters",
-                                        "Construction Companies",
-                                        "Construction Project Managers",
-                                        "Custom Homes Builders",
-                                        "Deck restoration",
-                                        "Decks & Decking",
-                                        "Demolition",
-                                        "Design & Construction",
-                                        "Door & Window Installation",
-                                        "Drainage",
-                                        "Draughting Services",
-                                        "Drilling and site preparation",
-                                        "Driveways",
-                                        "Earthworks & Retaining Walls",
-                                        "Excavating & Earthmoving",
-                                        "Farm Fencing",
-                                        "Fencing Contractors",
-                                        "Flashings",
-                                        "Floor Repair",
-                                        "Flooring Contractors",
-                                        "Floors & Carpet",
-                                        "Foundation / Repiling Contractors",
-                                        "Foundation Contractors",
-                                        "Framing Beams",
-                                        "Framing Contractor",
-                                        "Garden Awnings",
-                                        "Handymen Services",
-                                        "Hardware & Home Improvement",
-                                        "Holiday Homes",
-                                        "House & Building Shrink Wrapping",
-                                        "House Inspections",
-                                        "Insulation Installers",
-                                        "Insulation Removal",
-                                        "Joinery",
-                                        "Kitchen Remodellers",
-                                        "Kitset Buildings",
-                                        "Land Clearance",
-                                        "Landscaping Architects",
-                                        "Landscaping Designers",
-                                        "Luxury Homes Builders",
-                                        "Maintenance & Repair / Renovation",
-                                        "Metal roofing",
-                                        "Pile Driving & Retaining Walls",
-                                        "Piling Services",
-                                        "Pool Fencing",
-                                        "Pre-sale maintenance",
-                                        "Property maintenance",
-                                        "Renovation",
-                                        "Residential Awnings",
-                                        "Roofing",
-                                        "Roofing Consultants",
-                                        "Roofing Contractors",
-                                        "Rubbish / Junk Removal",
-                                        "Security fencing",
-                                        "Shelters",
-                                        "Skylights & Ventilation",
-                                        "Timber Flooring",
-                                        "Window Installation",
-                                        "Window Repairs",
-                                        "Windows & Doors",
-                                        "Wood Floor Installers"
-                                    ].sort().map((category, index, array) => {
-                                        const firstLetter = category.charAt(0);
-                                        const prevFirstLetter = index > 0 ? array[index - 1].charAt(0) : '';
-                                        const isNewLetter = firstLetter !== prevFirstLetter;
-
-                                        return (
-                                            <>
-                                                {isNewLetter && (
-                                                    <div class="col-span-full mt-6 mb-3 first:mt-0">
-                                                        <div class="flex items-center gap-4">
-                                                            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#004225] to-[#004225]/80 flex items-center justify-center text-white font-bold text-2xl shadow-lg">
-                                                                {firstLetter}
-                                                            </div>
-                                                            <div class="h-[2px] flex-grow bg-gradient-to-r from-[#004225]/20 to-transparent"></div>
-                                                        </div>
-                                                    </div>
-                                                )}
-                                                <div class="group hover:bg-[#004225]/5 p-3 rounded-xl transition-all duration-300 cursor-pointer animate-fade-in" style={`animation-delay: ${index * 50}ms`}>
-                                                    <p class="text-black/80 group-hover:text-[#004225] transition-colors duration-300 text-base">{category}</p>
-                                                    <div class="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-[#004225] to-[#004225]/80 transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                                                </div>
-                                            </>
-                                        );
-                                    })}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    
                 </div>
             </div>
         </section>

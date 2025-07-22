@@ -3,205 +3,54 @@ import Layout from '../layouts/Layout.astro';
 import NavBar from '../components/NavBar.astro';
 import Footer from '../components/Footer.astro';
 
-// Import images from public directory
+// Import images from public directory - Only real images
 const images = [
     {
-        src: "/NewMinorDwellingInWestmere-MakingUseOfUnusedSpaceToAddValue.jpg",
-        alt: "Minor Dwelling in Westmere",
-        title: "Westmere Project",
-        description: "Minor Dwelling Addition"
+        src: "/Hero-section-1.jpg",
+        alt: "Featured Construction Project",
+        title: "Featured Project",
+        description: "Premium construction work showcasing our expertise"
     },
     {
-        src: "/WideBoardGarapaDecking-3.jpg",
-        alt: "Wide Board Garapa Decking View 3",
-        title: "Garapa Decking",
-        description: "Wide Board Installation - View 3"
+        src: "/House-Design-1.jpg",
+        alt: "Custom House Design",
+        title: "House Design",
+        description: "Architectural excellence and custom design solutions"
     },
     {
-        src: "/WideBoardGarapaDecking-2.jpg",
-        alt: "Wide Board Garapa Decking View 2",
-        title: "Garapa Decking",
-        description: "Wide Board Installation - View 2"
+        src: "/New-House-Build-1.jpg",
+        alt: "New House Construction",
+        title: "New House Build",
+        description: "Complete new home construction from foundation to finish"
     },
     {
-        src: "/WideBoardGarapaDecking-1.jpg",
-        alt: "Wide Board Garapa Decking View 1",
-        title: "Garapa Decking",
-        description: "Wide Board Installation - View 1"
+        src: "/House-Renovation-1.jpg",
+        alt: "House Renovation Project",
+        title: "House Renovation",
+        description: "Modern transformation of existing homes"
     },
     {
-        src: "/WideBoardGarapaDecking.jpg",
-        alt: "Wide Board Garapa Decking",
-        title: "Garapa Decking",
-        description: "Wide Board Installation"
+        src: "/Outdoor-Structure-1.jpg",
+        alt: "Outdoor Structure Construction",
+        title: "Outdoor Structures",
+        description: "Expanding your living space with custom outdoor builds"
     },
     {
-        src: "/NewKwilaDeckInDevonport.jpg",
-        alt: "New Kwila Deck in Devonport",
-        title: "Devonport",
-        description: "Kwila Deck Installation"
+        src: "/AboutUs1.jpg",
+        alt: "Draft and Build Team",
+        title: "Our Story",
+        description: "Building excellence with experienced craftsmanship"
     },
     {
-        src: "/Simple-Deck-Stairs.jpg",
-        alt: "Simple Deck with Stairs",
-        title: "Deck Project",
-        description: "Simple and Elegant Design"
-    },
-    {
-        src: "/RedBeach-Stairs-Decking-1.jpg",
-        alt: "Red Beach Stairs and Decking",
-        title: "Red Beach",
-        description: "Custom Stairs and Deck"
-    },
-    {
-        src: "/Avondale-Stairs-Deck-2.jpg",
-        alt: "Avondale Stairs and Deck View 2",
-        title: "Avondale",
-        description: "Stairs and Deck - View 2"
-    },
-    {
-        src: "/Waiatarua.jpg",
-        alt: "Waiatarua Project",
-        title: "Waiatarua",
-        description: "Custom Build Project"
-    },
-    {
-        src: "/MinorDwelling.jpg",
-        alt: "Minor Dwelling",
-        title: "Minor Dwelling",
-        description: "Space Optimisation"
-    },
-    {
-        src: "/HappyClientsInAvondale.jpg",
-        alt: "Happy Clients in Avondale",
-        title: "Avondale",
-        description: "Client Satisfaction"
-    },
-    {
-        src: "/Avondale-Stairs-Deck-1.jpg",
-        alt: "Avondale Stairs and Deck View 1",
-        title: "Avondale",
-        description: "Stairs and Deck - View 1"
-    },
-    {
-        src: "/MakingUseOfUnusedSpaceToAddValue1.jpg",
-        alt: "Making Use of Unused Space 1",
-        title: "Space Utilization",
-        description: "Value Addition - View 1"
-    },
-    {
-        src: "/MakingUseOfUnusedSpaceToAddValue.jpg",
-        alt: "Making Use of Unused Space",
-        title: "Space Utilization",
-        description: "Value Addition"
-    },
-    {
-        src: "/CustomFenceInMountEden.jpg",
-        alt: "Custom Fence in Mount Eden",
-        title: "Mount Eden",
-        description: "Custom Fence Installation"
-    },
-    {
-        src: "/BackyardUpgradeInNewLynn.jpg",
-        alt: "Backyard Upgrade in New Lynn",
-        title: "New Lynn",
-        description: "Complete Backyard Transformation"
-    },
-    {
-        src: "/NewRoofExtensionOverANewDeck.jpg",
-        alt: "New Roof Extension Over Deck",
-        title: "Roof Extension",
-        description: "Integrated Deck Design"
-    },
-    {
-        src: "/After-NewBathroomInNewLynn.jpg",
-        alt: "New Bathroom in New Lynn - After",
-        title: "New Lynn",
-        description: "Modern Bathroom - After"
-    },
-    {
-        src: "/Before-NewBathroomInNewLynn.jpg",
-        alt: "New Bathroom in New Lynn - Before",
-        title: "New Lynn",
-        description: "Bathroom - Before"
-    },
-    {
-        src: "/After-MountEden.jpg",
-        alt: "Mount Eden Project - After",
-        title: "Mount Eden",
-        description: "After Renovation"
-    },
-    {
-        src: "/Before-MountEden.jpg",
-        alt: "Mount Eden Project - Before",
-        title: "Mount Eden",
-        description: "Before Renovation"
-    },
-    {
-        src: "/HouseInPlace.jpg",
-        alt: "House in Place",
-        title: "House Installation",
-        description: "Final Positioning"
-    },
-    {
-        src: "/HouseBeingLiftedOntoOurPoleFoundations.jpg",
-        alt: "House Being Lifted Onto Pole Foundations",
-        title: "House Installation",
-        description: "Lifting Process"
-    },
-    {
-        src: "/PoleFoundationsToLiftAHouseOnto.jpg",
-        alt: "Pole Foundations",
-        title: "Foundation Work",
-        description: "Pole Installation"
-    },
-    {
-        src: "/AfterRenovation.jpg",
-        alt: "After Renovation",
-        title: "Renovation",
-        description: "Completed Project"
-    },
-    {
-        src: "/BeforeRenovation.jpg",
-        alt: "Before Renovation",
-        title: "Renovation",
-        description: "Initial State"
-    },
-    {
-        src: "/AfterAlumniumFence.jpg",
-        alt: "After Aluminum Fence Installation",
-        title: "Aluminum Fence",
-        description: "After Installation"
-    },
-    {
-        src: "/BeforeAlumniumFence.jpg",
-        alt: "Before Aluminum Fence Installation",
-        title: "Aluminum Fence",
-        description: "Before Installation"
-    },
-    {
-        src: "/FrenchBayKwilaDeck.jpg",
-        alt: "French Bay Kwila Deck",
-        title: "French Bay",
-        description: "Kwila Deck Installation"
-    },
-    {
-        src: "/WaiataruaNewFence-gate.jpg",
-        alt: "New Fence and Gate in Waiatarua",
-        title: "Waiatarua",
-        description: "Custom Fence and Gate"
+        src: "/AboutUs2.jpg",
+        alt: "Draft and Build Professionals",
+        title: "Our Team",
+        description: "Licensed professionals committed to quality construction"
     }
 ];
 
-// Update the sequences array to include the Avondale client satisfaction photo
-const sequences = [
-    ['BeforeRenovation.jpg', 'AfterRenovation.jpg'],
-    ['Avondale-Stairs-Deck-1.jpg', 'Avondale-Stairs-Deck-2.jpg', 'HappyClientsInAvondale.jpg'],  // Added the Avondale client photo
-    ['PoleFoundationsToLiftAHouseOnto.jpg', 'HouseBeingLiftedOntoOurPoleFoundations.jpg', 'HouseInPlace.jpg'],
-    ['Before-NewBathroomInNewLynn.jpg', 'After-NewBathroomInNewLynn.jpg'],
-    ['Before-MountEden.jpg', 'After-MountEden.jpg'],
-    ['BeforeAlumniumFence.jpg', 'AfterAlumniumFence.jpg']
-];
+// No sequences needed since we only have individual project images
+const sequences = [];
 
 // Add this after the sequences array
 const sequenceColors = {
@@ -250,7 +99,7 @@ const currentPath = Astro.url.pathname;
 <Layout title="Project Gallery - Draft & Build">
     <NavBar currentPath={currentPath} />
     
-    <main class="min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 pt-32 pb-16 px-4 w-full overflow-hidden">
+    <main class="min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 pt-40 pb-16 px-4 w-full overflow-hidden">
         <div class="max-w-7xl mx-auto w-full">
             <div class="text-center mb-16 relative w-full">
                 {/* Background accent */}
