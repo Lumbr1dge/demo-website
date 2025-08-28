@@ -1,0 +1,559 @@
+---
+// Gallery1.astro — Professional Auto-Scrolling Gallery Component
+---
+
+<section class="gallery-section" aria-labelledby="gallery-title">
+  <div class="container">
+    <!-- Header -->
+    <div class="section-header scroll-animate-up">
+      <span class="section-badge">Project Gallery</span>
+      <h2 id="gallery-title" class="section-title">Our Construction Portfolio</h2>
+      <p class="section-subtitle">Discover our latest projects showcasing quality craftsmanship, innovative design, and attention to detail across Auckland</p>
+    </div>
+
+    <!-- Auto-Scrolling Gallery -->
+    <div class="gallery-wrapper scroll-animate-up">
+      <div class="gallery-track" id="galleryTrack">
+        <!-- First Set of Images -->
+        <div class="gallery-item">
+          <img src="/New-House-Build-1.jpg" alt="Modern Family Home - Remuera" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Modern Family Home</h3>
+              <p>Remuera • New Build</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/House-Design-1.jpg" alt="Contemporary Design - Ponsonby" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Contemporary Design</h3>
+              <p>Ponsonby • Custom Build</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/House-Renovation-1.jpg" alt="Luxury Residence - Herne Bay" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Luxury Residence</h3>
+              <p>Herne Bay • Premium Build</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/AboutUs1.jpg" alt="Heritage Renovation - Grey Lynn" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Heritage Renovation</h3>
+              <p>Grey Lynn • Restoration</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/Outdoor-Structure-1.jpg" alt="Outdoor Living Space - Mission Bay" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Outdoor Living</h3>
+              <p>Mission Bay • Extension</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/AboutUs2.jpg" alt="Architectural Marvel - Takapuna" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Architectural Marvel</h3>
+              <p>Takapuna • Design & Build</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/New-House-Build-1.jpg" alt="Commercial Fitout - Auckland CBD" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Commercial Fitout</h3>
+              <p>Auckland CBD • Office</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/House-Renovation-1.jpg" alt="Kitchen Renovation - Mt Eden" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Kitchen Renovation</h3>
+              <p>Mt Eden • Interior</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Duplicate set for seamless loop -->
+        <div class="gallery-item">
+          <img src="/New-House-Build-1.jpg" alt="Modern Family Home - Remuera" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Modern Family Home</h3>
+              <p>Remuera • New Build</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/House-Design-1.jpg" alt="Contemporary Design - Ponsonby" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Contemporary Design</h3>
+              <p>Ponsonby • Custom Build</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/House-Renovation-1.jpg" alt="Luxury Residence - Herne Bay" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Luxury Residence</h3>
+              <p>Herne Bay • Premium Build</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/AboutUs1.jpg" alt="Heritage Renovation - Grey Lynn" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Heritage Renovation</h3>
+              <p>Grey Lynn • Restoration</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/Outdoor-Structure-1.jpg" alt="Outdoor Living Space - Mission Bay" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Outdoor Living</h3>
+              <p>Mission Bay • Extension</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/AboutUs2.jpg" alt="Architectural Marvel - Takapuna" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Architectural Marvel</h3>
+              <p>Takapuna • Design & Build</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/New-House-Build-1.jpg" alt="Commercial Fitout - Auckland CBD" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Commercial Fitout</h3>
+              <p>Auckland CBD • Office</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="/House-Renovation-1.jpg" alt="Kitchen Renovation - Mt Eden" class="gallery-image" />
+          <div class="gallery-overlay">
+            <div class="gallery-content">
+              <h3>Kitchen Renovation</h3>
+              <p>Mt Eden • Interior</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="gallery-footer scroll-animate-up">
+      <a href="/gallery" class="gallery-btn">
+        <span>View Full Gallery</span>
+        <svg class="gallery-btn-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+    /* CSS Variables */
+    :root {
+        --charcoal: #111827;
+        --navy: #162539;
+        --white: #ffffff;
+        --gold: #d4af37;
+        --text-medium: #4b5563;
+        --text-light: #6b7280;
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --shadow-sm: 0 1px 2px 0 rgba(22, 37, 57, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(22, 37, 57, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(22, 37, 57, 0.1);
+        --shadow-xl: 0 20px 25px -5px rgba(22, 37, 57, 0.1);
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+        padding: 6rem 0;
+        background: linear-gradient(135deg, var(--navy) 0%, rgba(22, 37, 57, 0.95) 100%);
+        overflow: hidden;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    /* Section Headers */
+    .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .section-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--gold), #e5c158);
+        color: var(--navy);
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .section-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        color: var(--white);
+        margin-bottom: 1rem;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .section-subtitle {
+        font-size: 1.25rem;
+        color: var(--white);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+        opacity: 0.9;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* Auto-Scrolling Gallery */
+    .gallery-wrapper {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 4rem;
+        opacity: 0;
+        transform: translateY(20px);
+        border-radius: 1rem;
+        box-shadow: var(--shadow-lg);
+        background: var(--navy);
+        border: 2px solid var(--gold);
+    }
+
+    .gallery-track {
+        display: flex;
+        animation: autoScroll 40s linear infinite;
+        will-change: transform;
+    }
+
+    .gallery-track:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes autoScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .gallery-item {
+        flex: 0 0 300px;
+        height: 250px;
+        position: relative;
+        margin-right: 1.5rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 2px solid var(--navy);
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--gold);
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover .gallery-image {
+        transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            transparent 40%,
+            rgba(22, 37, 57, 0.4) 70%,
+            rgba(22, 37, 57, 0.9) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        align-items: flex-end;
+        padding: 1.5rem;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+    }
+
+    .gallery-content {
+        color: var(--white);
+        transform: translateY(10px);
+        transition: transform 0.3s ease;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .gallery-item:hover .gallery-content {
+        transform: translateY(0);
+    }
+
+    .gallery-content h3 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        text-shadow: 0 2px 4px rgba(22, 37, 57, 0.5);
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .gallery-content p {
+        font-size: 0.875rem;
+        opacity: 0.9;
+        margin: 0;
+        text-shadow: 0 1px 2px rgba(22, 37, 57, 0.5);
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* Footer Button */
+    .gallery-footer {
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .gallery-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--navy);
+        color: var(--white);
+        padding: 1rem 2rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.125rem;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow-lg);
+        border: 2px solid var(--gold);
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .gallery-btn:hover {
+        background: var(--gold);
+        color: var(--navy);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--navy);
+    }
+
+    .gallery-btn-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-btn:hover .gallery-btn-icon {
+        transform: translateX(3px);
+    }
+
+    /* Scroll Animation */
+    .scroll-animate-up.in-view {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .container {
+            padding: 0 2rem;
+        }
+
+        .gallery-item {
+            flex: 0 0 280px;
+            height: 220px;
+        }
+
+        .gallery-track {
+            animation-duration: 35s;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 1.5rem;
+        }
+
+        .gallery-section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 6vw, 2.5rem);
+        }
+
+        .gallery-item {
+            flex: 0 0 250px;
+            height: 200px;
+            margin-right: 1rem;
+        }
+
+        .gallery-track {
+            animation-duration: 30s;
+        }
+
+        .gallery-content {
+            padding: 1rem;
+        }
+
+        .gallery-content h3 {
+            font-size: 1rem;
+        }
+
+        .gallery-content p {
+            font-size: 0.75rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 0 1rem;
+        }
+
+        .gallery-item {
+            flex: 0 0 220px;
+            height: 180px;
+        }
+
+        .gallery-track {
+            animation-duration: 25s;
+        }
+
+        .gallery-btn {
+            width: 100%;
+            max-width: 300px;
+            justify-content: center;
+        }
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+        .gallery-track {
+            animation: none;
+        }
+        
+        .gallery-track {
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+    }
+</style>
+
+<script>
+    // Gallery interaction enhancements only (scroll animations handled by parent)
+    document.addEventListener('DOMContentLoaded', () => {
+        const galleryTrack = document.getElementById('galleryTrack');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        if (galleryTrack) {
+            // Pause animation on hover over any gallery item
+            galleryItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    galleryTrack.style.animationPlayState = 'paused';
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    galleryTrack.style.animationPlayState = 'running';
+                });
+
+                // Optional: Click to view larger image or navigate to gallery
+                item.addEventListener('click', () => {
+                    const titleElement = item.querySelector('h3');
+                    if (titleElement) {
+                        console.log('Gallery item clicked:', titleElement.textContent);
+                    }
+                });
+            });
+
+            // Keyboard accessibility
+            galleryItems.forEach((item) => {
+                const titleElement = item.querySelector('h3');
+                if (titleElement) {
+                    item.setAttribute('tabindex', '0');
+                    item.setAttribute('role', 'button');
+                    item.setAttribute('aria-label', `View project: ${titleElement.textContent}`);
+
+                    item.addEventListener('keydown', (e) => {
+                        const keyEvent = e as KeyboardEvent;
+                        if (keyEvent.key === 'Enter' || keyEvent.key === ' ') {
+                            keyEvent.preventDefault();
+                            (item as HTMLElement).click();
+                        }
+                    });
+                }
+            });
+        }
+    });
+</script>

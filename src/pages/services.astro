@@ -1,329 +1,967 @@
 ---
-import Footer from '../components/Footer.astro';
 import Layout from '../layouts/Layout.astro';
-import NavBar from '../components/NavBar.astro';
-import CTA from '../components/CTA.astro';
-
-const currentPath = Astro.url.pathname;
 ---
 
-<Layout title="Services - Build Projects Ltd">
-    <NavBar currentPath={currentPath} />
-    
-    <main class="min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100">
-        {/* Hero Section */}
-        <section class="pt-24 sm:pt-32 pb-12 sm:pb-16 px-4">
-            <div class="max-w-7xl mx-auto">
-                <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 sm:p-10 border-2 border-[#004225]/10 shadow-2xl hover:shadow-3xl transition-all duration-500 opacity-0 animate-fade-in">
-                    <div class="text-center mb-12 sm:mb-16 relative">
-                        {/* Title container */}
-                        <div class="relative inline-flex flex-col items-center gap-2 sm:gap-4 animate-slide-in-left">
-                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#004225]">
-                                Our Services
-                            </h1>
-                            <div class="h-1 w-32 sm:w-40 bg-[#004225] rounded-full mt-2"></div>
-                            <p class="text-2xl sm:text-3xl text-black mt-4">
-                                Crafting Excellence in Every Project
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Service Cards */}
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-                        {/* New Builds */}
-                        <div class="group bg-white rounded-2xl p-6 sm:p-10 border-2 border-[#004225]/20 shadow-lg hover:shadow-xl transition-all duration-500 hover:border-[#004225]">
-                            <div class="relative mb-6 sm:mb-8 overflow-hidden">
-                                <div class="absolute inset-0 bg-[#004225]/20 rounded-[70px_20px_70px_20px] transform rotate-6 group-hover:rotate-3 transition-all duration-500"></div>
-                                <img 
-                                    src="/New-House-Build-1.jpg" 
-                                    alt="New Build Services" 
-                                    class="relative z-10 w-full h-[200px] sm:h-[300px] object-cover rounded-[60px_15px_60px_15px] shadow-xl transform -rotate-3 group-hover:rotate-0 transition-all duration-500"
-                                />
-                            </div>
-                            <div class="text-[#004225] transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 flex justify-center mb-4 sm:mb-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 sm:h-16 sm:w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                </svg>
-                            </div>
-                            <div class="text-center">
-                                <h3 class="text-2xl sm:text-3xl font-bold text-black group-hover:text-[#004225] transition-colors duration-300">New Builds</h3>
-                                <p class="text-base sm:text-lg text-black mb-6 sm:mb-8 leading-relaxed">Create your dream home from the ground up. Our experienced team handles everything from initial design to final construction, ensuring quality and excellence at every step.</p>
-                                <a href="/contact" class="inline-flex items-center px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-[#004225] hover:bg-[#004225]/90 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#004225]/20 transform hover:-translate-y-1">
-                                    <span class="relative z-10">Get Started</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 ml-2 relative z-10" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-
-                        {/* Renovations */}
-                        <div class="group bg-white rounded-2xl p-6 sm:p-10 border-2 border-[#004225]/20 shadow-lg hover:shadow-xl transition-all duration-500 hover:border-[#004225]">
-                            <div class="relative mb-6 sm:mb-8 overflow-hidden">
-                                <div class="absolute inset-0 bg-[#004225]/20 rounded-[20px_70px_20px_70px] transform -rotate-6 group-hover:-rotate-3 transition-all duration-500"></div>
-                                <img 
-                                    src="/House-Renovation-1.jpg" 
-                                    alt="Renovation Services" 
-                                    class="relative z-10 w-full h-[200px] sm:h-[300px] object-cover rounded-[15px_60px_15px_60px] shadow-xl transform rotate-3 group-hover:rotate-0 transition-all duration-500"
-                                />
-                            </div>
-                            <div class="text-[#004225] transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 flex justify-center mb-4 sm:mb-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 sm:h-16 sm:w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                </svg>
-                            </div>
-                            <div class="text-center">
-                                <h3 class="text-2xl sm:text-3xl font-bold text-black group-hover:text-[#004225] transition-colors duration-300">Renovations</h3>
-                                <p class="text-base sm:text-lg text-black mb-6 sm:mb-8 leading-relaxed">Transform your existing space into something extraordinary. Our renovation services blend modern design with practical functionality, creating spaces that inspire.</p>
-                                <a href="/contact" class="inline-flex items-center px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-medium text-white bg-[#004225] hover:bg-[#004225]/90 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#004225]/20 transform hover:-translate-y-1">
-                                    <span class="relative z-10">Get Started</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 ml-2 relative z-10" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Specialised Services Section */}
-                    <section class="py-12 sm:py-16">
-                        <div class="bg-white/90 backdrop-blur-xl rounded-3xl p-6 sm:p-10 border-2 border-[#004225]/20 shadow-2xl">
-                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 sm:mb-16 text-center text-[#004225]">
-                                Specialised Services
-                            </h2>
-                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
-                                {[
-                                    { name: "Kitchen Remodeling", desc: "Modern kitchen solutions", icon: "🏠" },
-                                    { name: "Bathroom Renovations", desc: "Luxury bathroom designs", icon: "🛁" },
-                                    { name: "Window Installation", desc: "Quality installations", icon: "🪟" },
-                                    { name: "Flooring", desc: "Premium options", icon: "🔨" },
-                                    { name: "Insulation", desc: "Energy-efficient", icon: "❄️" },
-                                    { name: "Foundation", desc: "Structural integrity", icon: "🏗️" },
-                                    { name: "Decks", desc: "Custom outdoor spaces", icon: "🪵" },
-                                    { name: "Fences", desc: "Boundary solutions", icon: "🚪" },
-                                    { name: "Retaining Walls", desc: "Structural support", icon: "🧱" },
-                                    { name: "Cosmetic Renovations", desc: "Visual improvements", icon: "✨" },
-                                    { name: "Structural Renovations", desc: "Core improvements", icon: "🏗️" },
-                                    { name: "Paving", desc: "Outdoor surfaces", icon: "🛣️" }
-                                ].map((service) => (
-                                    <div class="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 border-2 border-[#004225]/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-[#004225]/30 transform hover:-translate-y-1">
-                                        <div class="relative overflow-hidden text-center">
-                                            <span class="text-3xl sm:text-5xl mb-4 sm:mb-6 block transform group-hover:scale-125 transition-transform duration-300">{service.icon}</span>
-                                            <h3 class="text-sm sm:text-xl font-bold mb-2 sm:mb-3 text-[#004225] group-hover:text-[#004225] transition-colors duration-300">{service.name}</h3>
-                                            <p class="text-xs sm:text-base text-black/80">{service.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
+<Layout title="Our Services - Wolf Construction Ltd | Construction & Building Services Auckland">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <span class="hero-badge">Professional Construction Services</span>
+                    <h1 class="hero-title">Building Excellence Across Auckland</h1>
+                    <p class="hero-subtitle">From residential homes to commercial spaces, we deliver quality construction solutions tailored to your vision and needs.</p>
                     
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    {/* CTA Section */}
-    <CTA />
+    <!-- Featured Service Section -->
+    <section class="featured-service">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-text">
+                    <div class="section-header">
+                        <span class="section-badge">Featured Service</span>
+                        <h2 class="section-title">New Home Construction</h2>
+                    </div>
+                    <p class="featured-description">
+                        We build high-quality, durable homes designed for modern living. From single-family houses to multi-unit developments, we deliver comfort, functionality, and style.
+                    </p>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <span>Custom floor plans tailored to your needs</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <span>Energy-efficient materials and sustainable practices</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <span>Full compliance with building codes and safety standards</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <span>Transparent cost estimates and timelines</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <span>Added long-term property value</span>
+                        </div>
+                    </div>
+                    <a href="/contact" class="featured-btn">Start Your Project</a>
+                </div>
+                <div class="featured-visual">
+                    <div class="featured-image">
+                        <img src="/New-House-Build-1.jpg" alt="New Home Construction" class="service-image">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3>Quality Construction</h3>
+                                <p>Built to last a lifetime</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <Footer />
+    <!-- Our Services Grid -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">What We Do</span>
+                <h2 class="section-title">Our Construction Services</h2>
+                <p class="section-subtitle">Comprehensive building solutions delivered by experienced professionals</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3>Residential Construction</h3>
+                    <p>Building high-quality homes, from single-family houses to multi-unit developments, tailored to client needs with a focus on durability, comfort, and modern design.</p>
+                    <div class="service-features">
+                        <span>Custom Homes</span>
+                        <span>Multi-Unit Developments</span>
+                        <span>Modern Design</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3>Commercial Construction</h3>
+                    <p>Delivering offices, retail spaces, and industrial facilities that combine functionality with aesthetic appeal, ensuring projects meet safety and compliance standards.</p>
+                    <div class="service-features">
+                        <span>Office Buildings</span>
+                        <span>Retail Spaces</span>
+                        <span>Industrial Facilities</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h3>Renovations & Remodeling</h3>
+                    <p>Upgrading existing properties through structural improvements, layout redesigns, and modern finishes to increase value and usability.</p>
+                    <div class="service-features">
+                        <span>Kitchen Renovations</span>
+                        <span>Bathroom Remodeling</span>
+                        <span>Home Extensions</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v6a2 2 0 002 2h2m0-8h2m-2 0V3m0 2h2m-2 0v6m2-6h2a2 2 0 012 2v6a2 2 0 01-2 2h-2m0-8v8"/>
+                        </svg>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>Comprehensive oversight from planning to completion, ensuring projects are delivered on time, within budget, and to the highest standards.</p>
+                    <div class="service-features">
+                        <span>Timeline Management</span>
+                        <span>Budget Control</span>
+                        <span>Quality Assurance</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </div>
+                    <h3>Civil & Infrastructure Works</h3>
+                    <p>Executing large-scale projects such as roads, drainage systems, and foundations, with a focus on long-lasting, reliable construction.</p>
+                    <div class="service-features">
+                        <span>Road Construction</span>
+                        <span>Drainage Systems</span>
+                        <span>Foundation Work</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"/>
+                        </svg>
+                    </div>
+                    <h3>Custom Design & Build</h3>
+                    <p>Offering tailored solutions that take clients' ideas from concept to reality, including architectural design, planning approvals, and turnkey delivery.</p>
+                    <div class="service-features">
+                        <span>Architectural Design</span>
+                        <span>Planning Approvals</span>
+                        <span>Turnkey Delivery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-badge">Our Process</span>
+                <h2 class="section-title">How We Work</h2>
+                <p class="section-subtitle">A proven 4-step process that ensures quality results every time</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Consultation & Planning</h3>
+                        <p>We discuss your vision, budget, and timeline to understand your exact requirements and create a detailed project plan.</p>
+                    </div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Design & Approvals</h3>
+                        <p>Our architects create detailed plans and secure all necessary permits and approvals before construction begins.</p>
+                    </div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Construction</h3>
+                        <p>Our skilled teams carry out the build using quality materials and proven construction methods, with regular progress updates.</p>
+                    </div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Final Inspection & Handover</h3>
+                        <p>We ensure everything meets the highest standards through thorough inspections before handing over your completed project.</p>
+                    </div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="why-choose-content">
+                <div class="why-choose-text">
+                    <div class="section-header">
+                        <span class="section-badge">Why Choose Us</span>
+                        <h2 class="section-title">Built on Trust & Quality</h2>
+                    </div>
+                    <p class="why-choose-description">
+                        With over 15 years of experience in Auckland's construction industry, we've built our reputation on delivering exceptional results that stand the test of time.
+                    </p>
+                    
+                    <div class="guarantee-items">
+                        <div class="guarantee-item">
+                            <div class="guarantee-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <div class="guarantee-content">
+                                <h4>Licensed & Insured</h4>
+                                <p>Full LBP certification and comprehensive insurance coverage</p>
+                            </div>
+                        </div>
+                        <div class="guarantee-item">
+                            <div class="guarantee-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div class="guarantee-content">
+                                <h4>On-Time Delivery</h4>
+                                <p>Proven track record of completing projects on schedule</p>
+                            </div>
+                        </div>
+                        <div class="guarantee-item">
+                            <div class="guarantee-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                                </svg>
+                            </div>
+                            <div class="guarantee-content">
+                                <h4>Transparent Pricing</h4>
+                                <p>No hidden costs - detailed quotes and regular updates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-choose-visual">
+                    <div class="trust-image">
+                        <img src="/AboutUs2.jpg" alt="Trust and Partnership Handshake" class="handshake-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </Layout>
 
 <style>
-    .shadow-3xl {
+    /* CSS Variables */
+    :root {
+        --primary-color: #004225;
+        --primary-light: #006837;
+        --secondary-color: #3b82f6;
+        --accent-color: #10b981;
+        --text-dark: #111827;
+        --text-medium: #4b5563;
+        --text-light: #6b7280;
+        --white: #ffffff;
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Global Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    /* Section Headers */
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .section-header.text-center {
+        text-align: center;
+    }
+
+    .section-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+        font-size: 1.25rem;
+        color: var(--text-medium);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        position: relative;
+        height: 60vh;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .hero-background {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: url('/ServicesPage/Hero-Background-servicespage.jpg') center/cover;
+        opacity: 0.3;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .hero-text {
+        text-align: center;
+        color: var(--white);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.75rem 1.5rem;
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 8vw, 5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        opacity: 0.9;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+    }
+
+    .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        opacity: 0.9;
+    }
+
+    /* Featured Service Section */
+    .featured-service {
+        padding: 6rem 0;
+        background: var(--gray-50);
+    }
+
+    .featured-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .featured-description {
+        font-size: 1.25rem;
+        line-height: 1.7;
+        color: var(--text-dark);
+        margin-bottom: 2rem;
+    }
+
+    .benefits-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .benefit-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .benefit-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: var(--accent-color);
+        flex-shrink: 0;
+    }
+
+    .benefit-item span {
+        font-size: 1.125rem;
+        color: var(--text-medium);
+    }
+
+    .featured-btn {
+        display: inline-block;
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 1rem 2rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.125rem;
+        transition: all 0.3s ease;
+    }
+
+    .featured-btn:hover {
+        background: var(--primary-light);
+        transform: translateY(-2px);
+    }
+
+    .featured-visual {
+        display: flex;
+        justify-content: center;
+    }
+
+    .featured-image {
+        position: relative;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-xl);
+    }
+
+    .service-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        padding: 2rem;
+        color: var(--white);
+    }
+
+    .overlay-content h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    .overlay-content p {
+        opacity: 0.9;
+    }
+
+    /* Services Grid Section */
+    .services-section {
+        padding: 6rem 0;
+        background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.90)), url('/ServicesPage/ServicePage-OurConstructionServices-1.jpg') center/cover;
+        background-attachment: fixed;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+
+    .service-card {
+        background: var(--white);
+        padding: 2.5rem 2rem;
+        border-radius: 1.5rem;
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--gray-200);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-xl);
+    }
+
+    .service-icon {
+        width: 4rem;
+        height: 4rem;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+    }
+
+    .service-icon svg {
+        width: 2rem;
+        height: 2rem;
+        color: var(--white);
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+
+    .service-card p {
+        color: var(--text-medium);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .service-features span {
+        background: var(--gray-100);
+        color: var(--text-medium);
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    /* Process Section */
+    .process-section {
+        padding: 6rem 0;
+        background: var(--gray-50);
+    }
+
+    .process-timeline {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .process-step {
+        background: var(--white);
+        padding: 2.5rem 2rem;
+        border-radius: 1.5rem;
+        text-align: center;
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--gray-200);
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    .process-step:hover {
+        transform: translateY(-3px);
+    }
+
+    .step-number {
+        position: absolute;
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary-color);
+        color: var(--white);
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .step-icon {
+        width: 3rem;
+        height: 3rem;
+        background: var(--gray-100);
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+    }
+
+    .step-icon svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: var(--primary-color);
+    }
+
+    .step-content h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+
+    .step-content p {
+        color: var(--text-medium);
+        line-height: 1.6;
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-section {
+        padding: 6rem 0;
+        background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.90)), url('/ServicesPage/ServicePage-Built on Trust.jpg') center/cover;
+        background-attachment: fixed;
+    }
+
+    .why-choose-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .why-choose-description {
+        font-size: 1.25rem;
+        line-height: 1.7;
+        color: var(--text-dark);
+        margin-bottom: 2.5rem;
+    }
+
+    .guarantee-items {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .guarantee-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: var(--white);
+        border-radius: 1rem;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-left: 4px solid var(--accent-color);
+    }
+
+    .guarantee-item:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .guarantee-icon {
+        width: 2rem;
+        height: 2rem;
+        color: var(--accent-color);
+        flex-shrink: 0;
+    }
+
+    .guarantee-content h4 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .guarantee-content p {
+        color: var(--text-medium);
+        line-height: 1.5;
+    }
+
+    .why-choose-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .trust-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .handshake-img {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-xl);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .handshake-img:hover {
+        transform: scale(1.02);
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
 
-    .custom-scrollbar {
-        scrollbar-width: thin;
-        scrollbar-color: #E5E7EB transparent;
-    }
-
-    .custom-scrollbar::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    .custom-scrollbar::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-        background-color: #E5E7EB;
-        border-radius: 3px;
-    }
-
-    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-        background-color: #D1D5DB;
-    }
-
-    /* Dropdown Animations */
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-            max-height: 0;
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .container {
+            padding: 0 2rem;
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-            max-height: 600px;
+
+        .featured-content,
+        .why-choose-content {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .hero-stats {
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            padding: 1rem 1.5rem;
+        }
+
+        .services-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .process-timeline {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         }
     }
 
-    @keyframes slideUp {
-        from {
-            opacity: 1;
-            transform: translateY(0);
-            max-height: 600px;
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 1.5rem;
         }
-        to {
-            opacity: 0;
-            transform: translateY(-10px);
-            max-height: 0;
+
+        .hero-section {
+            height: 60vh;
+            min-height: 500px;
         }
-    }
 
-    .dropdown-enter {
-        animation: slideDown 0.5s ease-out forwards;
-    }
-
-    .dropdown-exit {
-        animation: slideUp 0.4s ease-in forwards;
-    }
-
-    .category-item {
-        opacity: 0;
-        transform: translateY(10px);
-        transition: all 0.3s ease-out;
-    }
-
-    .category-item.show {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .letter-header {
-        opacity: 0;
-        transform: translateX(-10px);
-        transition: all 0.3s ease-out;
-    }
-
-    .letter-header.show {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    @keyframes slideUp {
-        0% {
-            opacity: 0;
-            transform: translateY(50px);
+        .section-title {
+            font-size: clamp(2rem, 6vw, 2.5rem);
         }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
 
-    .scroll-animate-up {
-        will-change: transform, opacity;
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+
+        .hero-stats {
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .stat-item {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-badge {
+            display: block;
+            text-align: center;
+            margin: 0 auto 1rem;
+        }
+
+        .featured-text,
+        .why-choose-text {
+            text-align: center;
+        }
+
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .service-card {
+            padding: 2rem 1.5rem;
+        }
+
+        .process-timeline {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
     }
 
-    .initial-fade {
-        animation: fadeIn 1s ease-out forwards;
-    }
-
-    @keyframes slideUp {
-        0% {
-            opacity: 0;
-            transform: translateY(50px);
+    @media (max-width: 480px) {
+        .container {
+            padding: 0 1rem;
         }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
+
+        .hero-text {
+            padding: 0 0.5rem;
         }
-    }
 
-    .scroll-animate-up {
-        will-change: transform, opacity;
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    .clip-path-custom {
-        clip-path: polygon(10% 0%, 90% 0%, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0% 80%, 0% 20%);
-    }
-
-    .clip-path-custom2 {
-        clip-path: polygon(5% 0%, 95% 0%, 100% 25%, 100% 75%, 95% 100%, 5% 100%, 0% 75%, 0% 25%);
-    }
-
-    .clip-path-custom3 {
-        clip-path: polygon(10% 0%, 90% 0%, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0% 80%, 0% 20%);
-    }
-
-    .animate-fade-in {
-        animation: fadeIn 0.5s ease-out forwards;
-        opacity: 0;
-    }
-
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-50px);
+        .section-title {
+            font-size: clamp(1.8rem, 7vw, 2.2rem);
         }
-        to {
-            opacity: 1;
-            transform: translateX(0);
+
+        .hero-title {
+            font-size: clamp(2rem, 8vw, 3rem);
+        }
+
+        .service-card {
+            padding: 1.5rem 1rem;
+        }
+
+        .service-icon {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .service-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .process-step {
+            padding: 2rem 1.5rem;
+        }
+
+        .handshake-img {
+            max-width: 350px;
         }
     }
-
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    .animate-slide-in-left {
-        opacity: 0;
-        animation: slideInLeft 1s ease-out forwards;
-        animation-delay: 0.3s;
-    }
-
-    .animate-slide-in-right {
-        opacity: 0;
-        animation: slideInRight 1s ease-out forwards;
-        animation-delay: 0.3s;
-    }
-
-    /* Additional responsive styles */
-    @media (max-width: 640px) {
-        .clip-path-custom,
-        .clip-path-custom2,
-        .clip-path-custom3 {
-            clip-path: polygon(5% 0%, 95% 0%, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0% 90%, 0% 10%);
-        }
-        .animate-slide-in-left, .animate-slide-in-right {
-            animation: fadeIn 1s ease-out forwards;
-            animation-delay: 0.3s;
-        }
-    }
-</style> </style> 
+</style>

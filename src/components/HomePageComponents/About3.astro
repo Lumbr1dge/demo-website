@@ -1,0 +1,488 @@
+---
+// AboutUs.astro  — Astro component (TS frontmatter + HTML + CSS + client JS/TS)
+
+export interface Props {
+  imageUrl?: string;
+  yearsExperience?: number | string;
+  leadBadgeText?: string;
+  titleTop?: string;
+  titleAccent?: string;
+  sinceYear?: number | string;
+  paragraph?: string;
+  point1Title?: string;
+  point1Text?: string;
+  point2Title?: string;
+  point2Text?: string;
+  learnMoreHref?: string;
+  quoteHref?: string;
+  companyName?: string; // for alt text
+}
+
+const {
+  imageUrl = "/About/About.jpg",
+  yearsExperience = "10+",
+  leadBadgeText = "End-to-End Construction Excellence",
+  titleTop = "WOLF CONSTRUCTION LIMITED",
+  titleAccent = "Since",
+  sinceYear = "2016",
+  paragraph = "We are an end-to-end construction company that manages all aspects of the construction industry. We have New Zealand qualified carpenters who are hand-picked to fit with our company and the code of ethics we stand by.",
+  point1Title = "Comprehensive Services",
+  point1Text = "Design and Architecture, Renovations, New builds, Construction Project Management, Building Maintenance, Landscaping, Earthworks.",
+  point2Title = "Qualified Team",
+  point2Text = "New Zealand qualified carpenters upholding our high standards and ethical code since 2016.",
+  learnMoreHref = "/about",
+  quoteHref = "/contact",
+  companyName = "WOLF CONSTRUCTION LIMITED",
+} = Astro.props as Props;
+---
+
+<section class="about3" aria-label="About Us">
+
+
+  <div class="about3__container">
+    <div class="about3__grid">
+      <!-- Image side - now on the left -->
+      <div class="about3__visual scroll-in">
+        <div class="visual__wrap">
+          <!-- subtle grid pattern -->
+          <div class="visual__pattern" aria-hidden="true"></div>
+
+          <!-- soft glow frames -->
+          <div class="visual__glow visual__glow-a" aria-hidden="true"></div>
+          <div class="visual__glow visual__glow-b" aria-hidden="true"></div>
+
+          <!-- main image -->
+          <div class="visual__image">
+            <img
+              src={imageUrl}
+              alt={`${companyName} team at work`}
+              loading="eager"
+            />
+            <div class="visual__overlay" aria-hidden="true"></div>
+          </div>
+
+          <!-- Years badge -->
+          <div class="badge badge--years" aria-label="Years Experience">
+            <p class="badge__value">{yearsExperience}</p>
+            <p class="badge__label">Years Experience</p>
+          </div>
+
+          <!-- Incorporation Date badge -->
+          <div class="badge badge--lbp" aria-label="Incorporated">
+            <svg class="badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <div class="badge__text">
+              <p class="badge__small">Incorporated</p>
+              <p class="badge__strong">31 May 2016</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content side - now on the right -->
+      <div class="about3__content scroll-in">
+        <!-- lead tag -->
+        <div class="lead">
+          <span class="lead__dot" aria-hidden="true"></span>
+          <span class="lead__text">{leadBadgeText}</span>
+        </div>
+
+        <h2 class="title">
+          {titleTop} <span class="title__accent">{titleAccent} {sinceYear}</span>
+        </h2>
+
+        <div class="copy">
+          <p class="copy__p">{paragraph}</p>
+        </div>
+
+        <!-- Mobile image - positioned below text for responsive layout -->
+        <div class="about3__visual-mobile scroll-in">
+          <div class="visual__wrap">
+            <!-- subtle grid pattern -->
+            <div class="visual__pattern" aria-hidden="true"></div>
+
+            <!-- soft glow frames -->
+            <div class="visual__glow visual__glow-a" aria-hidden="true"></div>
+            <div class="visual__glow visual__glow-b" aria-hidden="true"></div>
+
+            <!-- main image -->
+            <div class="visual__image">
+              <img
+                src={imageUrl}
+                alt={`${companyName} team at work`}
+                loading="eager"
+              />
+              <div class="visual__overlay" aria-hidden="true"></div>
+            </div>
+
+            <!-- Years badge -->
+            <div class="badge badge--years" aria-label="Years Experience">
+              <p class="badge__value">{yearsExperience}</p>
+              <p class="badge__label">Years Experience</p>
+            </div>
+
+            <!-- Incorporation Date badge -->
+            <div class="badge badge--lbp" aria-label="Incorporated">
+              <svg class="badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              <div class="badge__text">
+                <p class="badge__small">Incorporated</p>
+                <p class="badge__strong">31 May 2016</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Points section -->
+        <div class="points">
+          <div class="point">
+            <div class="point__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <h3 class="point__title">{point1Title}</h3>
+            <p class="point__text">{point1Text}</p>
+          </div>
+
+          <div class="point">
+            <div class="point__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h3 class="point__title">{point2Title}</h3>
+            <p class="point__text">{point2Text}</p>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+          <a href={learnMoreHref} class="btn btn--primary">
+            <span>Learn More About Us</span>
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href={quoteHref} class="btn btn--ghost btn--desktop-only">
+            <span>Get Free Quote</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .about3{
+    --ink:#111827; --paper:#FFFFFF; --muted:#4b5563;
+    --brand:#162539; --brand-ink:#FFFFFF; --brand-soft: rgba(22,37,57,.08);
+    --panel:#FFFFFF; --panel-border:#f1f5f9; --panel-glass: rgba(255,255,255,.5);
+    position:relative; overflow:hidden;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(249,250,251,.5) 60%, #FFFFFF 100%);
+    padding: 0.5rem 1.25rem 4rem 1.25rem;
+    font-family: sans-serif;
+  }
+  
+  /* Responsive padding */
+  @media (max-width: 768px){
+    .about3{ padding: 3rem 1rem; }
+  }
+  @media (max-width: 480px){
+    .about3{ padding: 2.5rem 1rem; }
+  }
+  
+  .about3__container{ max-width: 1400px; margin: 0 auto; position:relative }
+  .about3__grid{
+    display:grid; grid-template-columns: 1fr; gap: 4rem; align-items:center;
+    text-align: center;
+  }
+  
+  /* Desktop layout */
+  @media (min-width: 1024px){
+    .about3__grid{ 
+      grid-template-columns: 1fr 1.1fr; 
+      gap: 4rem;
+      text-align: left;
+    }
+  }
+
+  /* Visual */
+  .visual__wrap{ 
+    position:relative; 
+    max-width: 500px; 
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  /* Responsive image sizing */
+  @media (max-width: 768px){
+    .visual__wrap{ 
+      max-width: 400px; 
+    }
+  }
+  @media (max-width: 480px){
+    .visual__wrap{ 
+      max-width: 320px; 
+    }
+  }
+  
+  /* Mobile image - positioned below text for responsive layout */
+  .about3__visual-mobile{ 
+    display: none;
+  }
+  
+  @media (max-width: 1023px){
+    .about3__visual-mobile{ 
+      display: block;
+      margin: 2rem auto;
+    }
+    .about3__visual{ 
+      display: none;
+    }
+  }
+  
+  @media (min-width: 1024px){
+    .about3__visual-mobile{ 
+      display: none;
+    }
+    .about3__visual{ 
+      display: block;
+    }
+  }
+  
+  .visual__pattern{
+    position:absolute; inset:0; opacity:.2;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAgMjBMNDAgMjBMNDAgNDBMMjAgNDBMMjAgMjBaTTAgMjBMMjAgMjBMMjAgNDBMMCA0MEwwIDIwWk0wIDBMMjAgMEwyMCAyMEwwIDIwTDAgMFoiIGZpbGw9IiMxNjI1MzkiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==");
+    background-size: auto; background-repeat: repeat;
+  }
+  .visual__glow{ position:absolute; inset:-1rem; border-radius: 100px; filter: blur(24px); opacity:.3; animation: pulse-slow 4s ease-in-out infinite; }
+  .visual__glow-a{ background: linear-gradient(90deg, rgba(22,37,57,.2), transparent); }
+  .visual__glow-b{ background: linear-gradient(270deg, rgba(22,37,57,.2), transparent); animation-delay: 1s; }
+  .visual__image{
+    position:relative; overflow:hidden; border-radius: 0 100px 0 100px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.18);
+    border: 2px solid #FFFFFF;
+  }
+  .visual__image img{ display:block; width:100%; aspect-ratio: 4 / 3; object-fit: cover }
+  .visual__overlay{ position:absolute; inset:0; background: linear-gradient(45deg, rgba(22,37,57,.2), transparent) }
+
+  .badge{
+    position:absolute; padding: .9rem; border-radius: 16px; box-shadow: 0 12px 24px rgba(0,0,0,.15);
+    display:flex; align-items:center; justify-content:center; gap:.35rem;
+  }
+  .badge--years{ top:-12px; right:-12px; background:#FFFFFF }
+  .badge--lbp{ bottom:-12px; left:-12px; background: var(--brand); color: var(--brand-ink) }
+  
+  /* Responsive badge sizing */
+  @media (max-width: 768px){
+    .badge{ 
+      padding: .7rem; 
+    }
+    .badge__value{ font-size: 1.5rem; }
+    .badge__label{ font-size: .7rem; }
+    .badge__icon{ width: 28px; height: 28px; }
+  }
+  @media (max-width: 480px){
+    .badge{ 
+      padding: .6rem; 
+    }
+    .badge__value{ font-size: 1.3rem; }
+    .badge__label{ font-size: .65rem; }
+    .badge__icon{ width: 24px; height: 24px; }
+  }
+  
+  .badge__value{ margin:0; font-size: 1.8rem; font-weight: 800; color: var(--brand) }
+  .badge__label{ margin:0; font-size:.8rem; color:#555 }
+  .badge__icon{ width: 32px; height: 32px }
+  .badge__text{ line-height:1 }
+  .badge__small{ margin:0; font-size:.8rem }
+  .badge__strong{ margin:0; font-weight: 800 }
+
+  /* Content */
+  .lead{
+    display:inline-flex; align-items:center; gap:.5rem; margin-bottom: 1rem;
+    padding:.5rem .9rem; border-radius: 999px; background: rgba(22,37,57,.06); border: 1px solid rgba(22,37,57,.15);
+    margin: 0 auto 1rem;
+  }
+  @media (min-width: 1024px){
+    .lead{ margin: 0 0 1rem; }
+  }
+  
+  .lead__dot{ width:.6rem; height:.6rem; border-radius:999px; background: var(--brand) }
+  .lead__text{ font-size:.82rem; font-weight: 700; letter-spacing:.08em; color: var(--brand) ; text-transform: uppercase}
+
+  .title{ 
+    margin:.4rem 0 1.2rem; 
+    font-size:clamp(2rem, 4vw, 3rem); 
+    font-weight: 800; 
+    color:#111827; 
+    line-height:1.08;
+    text-align: center;
+  }
+  @media (min-width: 1024px){
+    .title{ text-align: left; }
+  }
+  
+  .title__accent{
+    color: var(--brand); font-weight: 800;
+  }
+
+  .copy{ 
+    color: var(--muted);
+    text-align: center;
+  }
+  @media (min-width: 1024px){
+    .copy{ text-align: left; }
+  }
+  
+  .copy__p{ 
+    margin: 0 auto; 
+    font-size: 1.05rem; 
+    line-height:1.8; 
+    max-width: 60ch;
+    text-align: center;
+  }
+  @media (min-width: 1024px){
+    .copy__p{ 
+      margin: 0; 
+      text-align: left; 
+    }
+  }
+  
+  .points{ 
+    display:grid; 
+    grid-template-columns: 1fr; 
+    gap: 1rem; 
+    margin: 1.75rem auto 0; 
+    max-width: 42rem;
+    text-align: center;
+  }
+  @media (min-width: 640px){
+    .points{ 
+      grid-template-columns: 1fr 1fr;
+      margin: 1.75rem auto 0;
+    }
+  }
+  @media (min-width: 1024px){
+    .points{ 
+      margin: 1.75rem 0 0;
+      text-align: left;
+    }
+  }
+  
+  .point{
+    background: var(--panel-glass); -webkit-backdrop-filter: blur(6px) saturate(120%); backdrop-filter: blur(6px) saturate(120%);
+    border: 1px solid var(--panel-border); border-radius: 14px; padding: 1rem;
+    text-align: center;
+  }
+  .point__icon{
+    width: 40px; height: 40px; border-radius: 10px; display:flex; align-items:center; justify-content:center;
+    margin: 0 auto .6rem; background: rgba(22,37,57,.10); color: var(--brand);
+  }
+  .point__icon svg{ width: 24px; height: 24px }
+  .point__title{ margin:0 0 .25rem; color:#111827; font-weight: 700 }
+  .point__text{ margin:0; font-size:.95rem }
+
+  .actions{ 
+    display:flex; 
+    flex-wrap:wrap; 
+    gap:.8rem; 
+    padding-top: 1.8rem;
+    justify-content: center;
+  }
+  @media (min-width: 1024px){
+    .actions{ 
+      justify-content: flex-start;
+    }
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:.5rem; height: 48px; padding: 0 1.1rem;
+    border-radius: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    text-decoration: none; border: 2px solid transparent; transition: transform .2s ease, filter .2s ease, box-shadow .2s ease;
+  }
+  .btn--primary{
+    background: #d4af37; border-color: #d4af37; color: #111827;
+    box-shadow: 0 10px 22px rgba(212,175,55,.25);
+  }
+  .btn--primary:hover{ filter: brightness(.95); transform: translateY(-2px) }
+  .btn--ghost{
+    background: transparent; color: #111827; border-color: rgba(17,24,39,.2);
+  }
+  .btn--ghost:hover{ background: rgba(17,24,39,.06) }
+  
+  /* Hide Get Free Quote button on mobile */
+  .btn--desktop-only{ 
+    display: inline-flex; 
+  }
+  
+  @media (max-width: 1023px){
+    .btn--desktop-only{ 
+      display: none; 
+    }
+  }
+  
+  .btn__icon{ width: 20px; height: 20px; transition: transform .25s ease }
+  .btn--primary:hover .btn__icon{ transform: translateX(6px) }
+
+  /* Animations */
+  @keyframes float { 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-10px) } }
+  @keyframes pulse-slow { 0%,100%{ opacity:.3; transform: scale(1) } 50%{ opacity:.6; transform: scale(1.05) } }
+  /* Removed float animation from badges to make them static */
+  .visual__glow{ animation: pulse-slow 4s ease-in-out infinite }
+
+  /* Scroll-in */
+  .scroll-in{ opacity:0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease }
+  .scroll-in.is-in{ opacity:1; transform: none }
+
+  /* Responsive refinements */
+  @media (max-width: 960px){
+    .about3{ padding-top: 3rem }
+  }
+  
+  /* Additional mobile optimizations */
+  @media (max-width: 768px){
+    .about3__grid{ 
+      gap: 3rem; 
+    }
+    .visual__wrap{ 
+      margin-bottom: 1rem; 
+    }
+  }
+  
+  @media (max-width: 480px){
+    .about3__grid{ 
+      gap: 2rem; 
+    }
+    .points{ 
+      gap: .75rem; 
+    }
+    .actions{ 
+      gap: .6rem; 
+    }
+  }
+</style>
+
+<script>
+  // Client-side JS/TS: reveal on scroll (IntersectionObserver)
+  document.addEventListener('DOMContentLoaded', () => {
+    const els = Array.from(document.querySelectorAll('.scroll-in'));
+    if (!('IntersectionObserver' in window) || els.length === 0) {
+      els.forEach(el => el.classList.add('is-in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+
+    els.forEach(el => io.observe(el));
+  });
+</script>

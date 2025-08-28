@@ -1,0 +1,493 @@
+---
+// Metro-line timeline: serpentine SVG path with stations and moving indicator
+type Milestone = { title: string; date: string; description: string };
+const milestones: Milestone[] = [
+  { title: 'Incorporation', date: '2015', description: 'Established the company with a long-term vision.' },
+  { title: 'Early Clients', date: '2016', description: 'Onboarded early partners and validated our approach.' },
+  { title: 'Team Growth', date: '2018', description: 'Expanded across engineering, product, and success.' },
+  { title: 'Resilience', date: '2019', description: 'Invested in reliability, security, and performance.' },
+  { title: 'Global', date: '2021', description: 'Launched internationally with localized offerings.' },
+  { title: 'Today', date: 'Now', description: 'Relentless focus on customer outcomes.' },
+];
+---
+
+<section class="metro-section" aria-label="Metro timeline">
+  <div class="metro-container">
+    <header class="metro-header">
+      <h2 class="metro-title">Metro Timeline</h2>
+      <p class="metro-subtitle">A serpentine path through our key moments</p>
+    </header>
+
+    <div id="metro" class="metro" style={`--count:${milestones.length}`}> 
+      <svg id="metro-svg" class="metro-svg" aria-hidden="true"></svg>
+      <div id="train" class="train" aria-hidden="true"></div>
+
+      <ol id="stations" class="stations" role="list">
+        {milestones.map((m, i) => (
+          <li class="station" data-idx={i} role="listitem">
+            <button class={`dot ${i === 0 ? 'active' : ''}`} aria-current={i === 0 ? 'step' : undefined} aria-label={`${m.date} – ${m.title}`}></button>
+            <div class="bubble" tabindex="0">
+                             <div class="b-top">
+                 <span class="b-icon" aria-hidden="true">
+                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M12 2l2.6 5.27 5.82.85-4.21 4.1.99 5.78L12 15.9l-5.2 2.9.99-5.78-4.21-4.1 5.82-.85L12 2z" fill="url(#g)"/>
+                     <defs>
+                       <linearGradient id="g" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                         <stop stop-color="currentColor"/>
+                         <stop offset="1" stop-color="currentColor"/>
+                       </linearGradient>
+                     </defs>
+                   </svg>
+                 </span>
+                 <h3 class="b-title">{m.title}</h3>
+                 <time class="b-date" datetime={m.date}>{m.date}</time>
+               </div>
+              <p class="b-desc">{m.description}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      
+    </div>
+  </div>
+</section>
+
+<style>
+  :root {
+    --radius: 16px;
+    --shadow: 0 8px 24px #111827 / 0.12;
+    --border: #162539;
+    --ink-1: #111827; /* Charcoal */
+    --ink-2: #162539; /* Navy */
+    --muted: #FFFFFF; /* White */
+    --accent-1: #d4af37; /* Gold/Yellowish */
+    --accent-2: #162539; /* Navy */
+  }
+
+  .metro-section {
+    position: relative;
+    padding: clamp(2rem, 3vw, 3rem) 0; /* allow full-bleed container sizing */
+    background: var(--muted);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  .metro-container {
+    width: 80vw; /* expand to 80% of the screen width */
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  .metro-header { text-align: center; margin-bottom: 0.75rem; }
+  .metro-title {
+    margin: 0; font-weight: 800; font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); line-height: 1.2;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: 0.2px;
+  }
+  .metro-subtitle { margin: 0.4rem 0 0; color: var(--ink-2); font-size: 0.95rem; }
+
+  .metro { position: relative; }
+  .metro-svg { width: 100%; height: 280px; display: block; }
+
+  /* train dot */
+  .train {
+    position: absolute; width: 14px; height: 14px; border-radius: 999px; background: var(--accent-2);
+    box-shadow: 0 0 0 6px rgba(22, 37, 57, 0.12), 0 8px 24px rgba(22, 37, 57, 0.3);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  /* stations */
+  .stations { list-style: none; margin: 0; padding: 0; }
+  .station { position: absolute; transform: translate(-50%, -50%); }
+  .dot {
+    width: 14px; height: 14px; border-radius: 999px; border: 3px solid var(--muted); background: var(--accent-1);
+    box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.1);
+    cursor: pointer; display: inline-block; transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+  }
+  .dot:hover { background: var(--accent-2); }
+  .dot.active { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(212, 175, 55, 0.14); }
+
+  .bubble {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    top: 22px; /* default below dot; JS may flip above */
+    width: max(220px, 20vw); max-width: 320px;
+    color: var(--ink-1);
+    border-radius: var(--radius);
+    padding: 0.95rem 1rem 1.05rem;
+    background:
+      /* subtle tinted fill */
+      linear-gradient(135deg, #FFFFFF, #f8f9fa) padding-box,
+      /* gentle colored border */
+      linear-gradient(135deg, #e9ecef, #dee2e6) border-box;
+    border: 1px solid transparent;
+    box-shadow: 0 12px 28px var(--shadow);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  
+  .bubble:hover { transform: translateX(-50%) translateY(-4px); box-shadow: 0 16px 36px rgba(17, 24, 39, 0.2); }
+         .b-top { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.35rem; }
+       
+       @media (max-width: 760px) {
+         .b-top { 
+           flex-direction: row; 
+           align-items: center; 
+           gap: 0.8rem; 
+           margin-bottom: 0.5rem;
+           position: relative;
+         }
+         
+         .b-top::after {
+           content: '';
+           position: absolute;
+           bottom: -0.5rem;
+           left: 0;
+           right: 0;
+           height: 2px;
+           background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+           border-radius: 1px;
+         }
+         
+         .b-icon {
+           flex-shrink: 0;
+         }
+         
+         .b-title {
+           margin: 0;
+           font-size: 1.1rem;
+           flex: 1;
+         }
+         
+         .b-date {
+           margin: 0;
+           font-size: 0.9rem;
+           padding: 0.2rem 0.6rem;
+           flex-shrink: 0;
+         }
+       }
+  .b-icon {
+    display: inline-grid; place-items: center;
+    width: 34px; height: 34px; border-radius: 12px;
+    color: var(--accent-1);
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 1px solid #dee2e6;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+  .b-headings { display: grid; gap: 2px; }
+  .b-title { margin: 0; font-size: 1.02rem; }
+  .b-date {
+    font-size: 0.85rem; color: var(--ink-2);
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    display: inline-block; padding: 0.2rem 0.55rem; border-radius: 999px;
+    border: 1px solid #dee2e6;
+  }
+  .b-desc { margin: 0.5rem 0 0; color: var(--ink-2); line-height: 1.55; }
+
+  
+
+           @media (max-width: 760px) {
+      .metro-svg { 
+        height: auto; 
+        min-height: 400px;
+        display: none; /* Hide SVG path on mobile */
+      }
+      
+      /* Add separator line and circle for mobile */
+      .metro::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, var(--accent-1), var(--accent-2));
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+      
+      /* Circle on top of separator line */
+      .metro::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        background: var(--accent-2);
+        border-radius: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 0 3px rgba(22, 37, 57, 0.2);
+        z-index: 2;
+      }
+      
+      .bubble { 
+        width: 80vw; 
+        max-width: 90vw; 
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        margin: 0.3rem 0; /* Much closer spacing */
+      }
+      .metro-container {
+        width: 90vw;
+      }
+      .stations {
+        position: relative !important;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem; /* Very close spacing */
+        align-items: center;
+        z-index: 3; /* Above the separator line */
+      }
+             .station {
+         position: relative !important;
+         transform: none !important;
+         left: auto !important;
+         top: auto !important;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         padding: 0.3rem 0; /* Much closer padding */
+       }
+      .dot {
+        margin-bottom: 0.3rem; /* Closer to bubble */
+      }
+      .metro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+      .train {
+        display: none; /* Hide moving train on mobile */
+      }
+      .metro-header {
+        margin-bottom: 1.5rem;
+      }
+      .metro-title {
+        font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
+      }
+      .metro-subtitle {
+        font-size: 0.9rem;
+      }
+      .bubble {
+        box-shadow: 0 8px 20px var(--shadow);
+      }
+      .bubble:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(17, 24, 39, 0.16);
+      }
+    }
+  @media (prefers-reduced-motion: reduce) {
+    .ctrl { transition: none; }
+  }
+</style>
+
+<script>
+  type Pt = { x: number; y: number };
+  const svg = document.getElementById('metro-svg') as SVGSVGElement | null;
+  const stationEls = Array.from(document.querySelectorAll('.station')) as HTMLElement[];
+  const dotEls = Array.from(document.querySelectorAll('.dot')) as HTMLButtonElement[];
+     const trainEl = document.getElementById('train') as HTMLElement | null;
+
+  let points: Pt[] = [];
+  let active = 0;
+  let rafId: number | null = null;
+  let lastTs = 0;
+  let secondsPerStep = 3.2; // auto-advance speed
+
+  function computePath() {
+    if (!svg) return;
+    
+    // Check if we're in mobile mode
+    const isMobile = window.innerWidth <= 760;
+    
+         if (isMobile) {
+       // Mobile: vertical layout - no SVG path needed
+       svg.style.display = 'none';
+       
+       // Reset station positions for mobile
+       stationEls.forEach((st, i) => {
+         st.style.position = 'relative';
+         st.style.left = 'auto';
+         st.style.top = 'auto';
+         st.style.transform = 'none';
+       });
+       
+       // Reset bubble positions for mobile
+       stationEls.forEach((st) => {
+         const bubble = st.querySelector('.bubble') as HTMLElement | null;
+         if (bubble) {
+           bubble.style.position = 'relative';
+           bubble.style.top = '0';
+           bubble.style.left = '0';
+           bubble.style.transform = 'none';
+         }
+       });
+       
+       return;
+     }
+     
+     // Desktop: horizontal serpentine layout
+     // Reset all stations to absolute positioning first
+     stationEls.forEach((st) => {
+       st.style.position = 'absolute';
+       st.style.left = '';
+       st.style.top = '';
+       st.style.transform = 'translate(-50%, -50%)';
+     });
+     
+     // Reset all bubbles to absolute positioning first
+     stationEls.forEach((st) => {
+       const bubble = st.querySelector('.bubble') as HTMLElement | null;
+       if (bubble) {
+         bubble.style.position = 'absolute';
+         bubble.style.top = '';
+         bubble.style.left = '';
+         bubble.style.transform = 'translateX(-50%)';
+       }
+     });
+    
+    // Desktop: horizontal serpentine layout
+    svg.style.display = 'block';
+    const paddingX = 32;
+    const paddingY = 40;
+    const width = svg.clientWidth;
+    const height = svg.clientHeight;
+    const count = stationEls.length;
+
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.setAttribute('width', String(width));
+    svg.setAttribute('height', String(height));
+    svg.innerHTML = '';
+
+    points = [];
+    const usableWidth = width - paddingX * 2;
+    const dx = usableWidth / Math.max(1, count - 1);
+    const yTop = paddingY;
+    const yBottom = height - paddingY;
+
+    for (let i = 0; i < count; i++) {
+      const x = paddingX + dx * i;
+      const y = i % 2 === 0 ? yTop : yBottom; // serpentine rows
+      points.push({ x, y });
+    }
+
+    // draw path using smooth cubic curves between points
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    let d = `M ${points[0].x} ${points[0].y}`;
+    for (let i = 1; i < points.length; i++) {
+      const p0 = points[i - 1];
+      const p1 = points[i];
+      const cx = (p0.x + p1.x) / 2;
+      d += ` C ${cx} ${p0.y}, ${cx} ${p1.y}, ${p1.x} ${p1.y}`;
+    }
+    path.setAttribute('d', d);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', `url(#grad)`);
+    path.setAttribute('stroke-width', '6');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    const grad = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    grad.setAttribute('id', 'grad');
+    grad.setAttribute('x1', '0%'); grad.setAttribute('y1', '0%');
+    grad.setAttribute('x2', '100%'); grad.setAttribute('y2', '0%');
+    const s1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop'); s1.setAttribute('offset', '0%'); s1.setAttribute('stop-color', getComputedStyle(document.documentElement).getPropertyValue('--accent-1').trim() || '#d4af37');
+    const s2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop'); s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', getComputedStyle(document.documentElement).getPropertyValue('--accent-2').trim() || '#162539');
+    grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad);
+    svg.appendChild(defs);
+    svg.appendChild(path);
+
+    // place stations and bubbles (desktop only)
+    for (let i = 0; i < stationEls.length; i++) {
+      const st = stationEls[i];
+      const pt = points[i];
+      st.style.left = `${pt.x}px`;
+      st.style.top = `${pt.y}px`;
+      const bubble = st.querySelector('.bubble') as HTMLElement | null;
+      if (bubble) {
+        // place bubble above for bottom row
+        if (pt.y > height / 2) {
+          const h = bubble.offsetHeight || 120;
+          bubble.style.top = `-${h + 22}px`;
+        } else {
+          bubble.style.top = '22px';
+        }
+      }
+    }
+
+    // position train at active (desktop only)
+    if (trainEl && points[active] && !isMobile) {
+      trainEl.style.left = `${points[active].x}px`;
+      trainEl.style.top = `${points[active].y}px`;
+    }
+  }
+
+  function setActive(i: number) {
+    active = (i + stationEls.length) % stationEls.length;
+    dotEls.forEach((d, idx) => d.classList.toggle('active', idx === active));
+  }
+
+  function loop(ts: number) {
+    if (lastTs === 0) lastTs = ts;
+    const dt = (ts - lastTs) / 1000;
+    const count = stationEls.length;
+    const t = Math.min(1, dt / secondsPerStep);
+
+    // Only animate train on desktop
+    if (window.innerWidth > 760 && points.length > 0) {
+      const idx0 = active;
+      const idx1 = (active + 1) % count;
+      const p0 = points[idx0];
+      const p1 = points[idx1];
+
+      if (p0 && p1 && trainEl) {
+        const x = p0.x + (p1.x - p0.x) * t;
+        const y = p0.y + (p1.y - p0.y) * t;
+        trainEl.style.left = `${x}px`;
+        trainEl.style.top = `${y}px`;
+      }
+    }
+
+    if (dt >= secondsPerStep) {
+      lastTs = ts;
+      setActive(active + 1);
+    }
+    rafId = requestAnimationFrame(loop);
+  }
+
+     // Events
+   dotEls.forEach((d, i) => d.addEventListener('click', () => { setActive(i); lastTs = performance.now(); }));
+
+   // Debounced resize handler to prevent excessive recalculations
+   let resizeTimeout: number;
+   window.addEventListener('resize', () => {
+     clearTimeout(resizeTimeout);
+     resizeTimeout = setTimeout(() => {
+       computePath();
+     }, 100);
+   });
+
+  // Init
+  requestAnimationFrame(() => {
+    computePath();
+    setActive(0);
+    lastTs = 0;
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(loop);
+  });
+
+  // Pause on hover/focus
+  const metro = document.getElementById('metro');
+  const pause = () => { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } };
+  const resume = () => { if (!rafId) { lastTs = 0; rafId = requestAnimationFrame(loop); } };
+  metro?.addEventListener('mouseenter', pause);
+  metro?.addEventListener('mouseleave', resume);
+  metro?.addEventListener('focusin', pause);
+  metro?.addEventListener('focusout', resume);
+</script>
+
+

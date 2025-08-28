@@ -1,0 +1,135 @@
+---
+// Hero1: Full-bleed hero with background image, overlay, and centered content
+// Props allow overriding defaults if needed
+export interface Props {
+  bgUrl?: string;
+  quoteHref?: string;
+  workHref?: string;
+  headerOffsetPx?: number; // height of fixed header to subtract from viewport
+}
+
+const {
+  bgUrl = '/Hero/Hero.jpg',
+  quoteHref = '#quote',
+  workHref = '#work',
+  headerOffsetPx = 128,
+} = Astro.props as Props;
+---
+
+<section class="hero1" role="banner" aria-label="Hero" style={`--hero-bg: url('${bgUrl}'); --hero-offset: ${headerOffsetPx}px`}>
+  <div class="hero1-overlay" aria-hidden="true"></div>
+  <div class="hero1-content">
+    <h1 class="hero1-title">Your Project, Our Passion</h1>
+    <p class="hero1-sub">From concept to completion, we build spaces that stand the test of time — delivering quality, reliability, and peace of mind.</p>
+    <p class="hero1-support">Whether it’s a new home, a commercial space, or a full-scale renovation, our experienced team brings your vision to life with precision and care.</p>
+    <div class="hero1-actions">
+      <a href="/contact" class="hero1-btn hero1-btn-primary">Get a Free Quote</a>
+      <a href="/services" class="hero1-btn hero1-btn-outline">See Our Work</a>
+    </div>
+  </div>
+  <span class="sr-only">Decorative background image</span>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap');
+
+  .hero1, .hero1 * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; }
+
+  .hero1 {
+    width: 100%;
+    min-height: calc(100svh - var(--hero-offset, 128px));
+    position: relative;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    text-align: center;
+    background-image: var(--hero-bg);
+    background-size: cover;             /* cover entire hero */
+    background-position: center;        /* keep image centered */
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .hero1-overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0.6); /* dark overlay for readability */
+  }
+
+  .hero1-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1024px;
+    padding: 0 20px;
+    display: grid;
+    gap: 24px;
+    justify-items: center;
+    margin: 0;
+  }
+
+  .hero1-title {
+    margin: 0;
+    line-height: 1.1;
+    font-weight: 800;
+    font-size: clamp(28px, 4.2vw, 56px);
+    letter-spacing: 0.01em;
+  }
+
+  .hero1-sub {
+    margin: 6px 0 0;
+    font-weight: 700;
+    font-size: clamp(16px, 2.2vw, 22px);
+    opacity: 0.95;
+  }
+
+  .hero1-support {
+    margin: 6px 0 0;
+    font-weight: 600;
+    font-size: clamp(14px, 1.8vw, 18px);
+    max-width: 920px;
+    opacity: 0.92;
+  }
+
+  .hero1-actions { 
+    display: flex; 
+    gap: 16px; 
+    margin: 16px 0 0 0; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+
+  /* Buttons use site accents (gold + white) for contrast on dark overlay */
+  .hero1-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 48px; padding: 0 22px; border-radius: 8px; font-weight: 800;
+    letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+    transition: all .2s ease; border: 2px solid transparent; color: #0b0b0b;
+    backdrop-filter: saturate(130%);
+    margin: 0;
+  }
+
+  .hero1-btn-primary { background: #d4af37; border-color: #d4af37; color: #4B1C24; }
+  .hero1-btn-primary:hover { filter: brightness(0.95); }
+
+  .hero1-btn-outline { background: transparent; color: #ffffff; border-color: #ffffff; }
+  .hero1-btn-outline:hover { background: rgba(255,255,255,0.12); color: #ffffff; }
+
+  /* Mobile tweaks */
+  @media (max-width: 720px) {
+    .hero1-content { gap: 18px; }
+    .hero1-actions { gap: 12px; margin: 14px 0 0 0; }
+    .hero1-btn { height: 46px; width: 100%; max-width: 360px; }
+  }
+
+  /* Help browser performance on large backgrounds */
+  @media (min-width: 1600px) {
+    .hero1 { background-attachment: scroll; }
+  }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+</style>
+

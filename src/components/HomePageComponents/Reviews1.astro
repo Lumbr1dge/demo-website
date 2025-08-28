@@ -1,0 +1,447 @@
+---
+// Reviews Component for Homepage
+---
+
+<section class="reviews-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-badge">Client Testimonials</span>
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Real experiences from satisfied customers across Auckland</p>
+        </div>
+        
+        <div class="reviews-grid">
+            <!-- Review 1 - William's Review (Blue Theme) -->
+            <div class="review-card card-blue">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-content">
+                    <p>"We live on Waiheke and anyone who knows Waiheke, knows that building here is not straight forward by any means of the imagination. James took time to come over on his day off on a Sunday to come and scope the terrain and what we were after in terms of design. Our house is on a steep slope and required a bit of thinking outside the box to get the job done. James and his team built an outdoor sauna area for me and the design and build quality far exceeded my expectations."</p>
+                </div>
+                <div class="client-info">
+                    <div class="client-name">William</div>
+                    <div class="client-location">Outdoor Sauna • Waiheke Island</div>
+                </div>
+            </div>
+
+            <!-- Review 2 - Kerryn's Review (Green Theme) -->
+            <div class="review-card card-green">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-content">
+                    <p>"It was a relief to find James on no cowboys as we had been let down by two builders. James is a great communicator and keeps you in the loop. He organised members of his team well and was always on hand for them. Cody did a great job and was a pleasure to have in the house as he was respectful, didn't mind my questions and tidy. The price was as we expected."</p>
+                </div>
+                <div class="client-info">
+                    <div class="client-name">Kerryn</div>
+                    <div class="client-location">Toilet & Vanity Installation • Auckland</div>
+                </div>
+            </div>
+
+            <!-- Review 3 - Michael's Review (Orange Theme) -->
+            <div class="review-card card-orange">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-content">
+                    <p>"James visited our home, and discussed fully the options for a raised deck in our backyard, to deal with the problem we had with flooding (Auckland flood 2023). His recommendations were very helpful and clear and we had a quote we could accept. His team did an excellent job and the raised deck looks very good and works well with draining excess rain water."</p>
+                </div>
+                <div class="client-info">
+                    <div class="client-name">Michael</div>
+                    <div class="client-location">Raised Deck • Auckland</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="reviews-cta">
+            <a href="/testimonials" class="cta-btn">Read More Reviews</a>
+            <p class="reviews-note">Join 100+ satisfied clients across Auckland</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* CSS Variables */
+    :root {
+        --charcoal: #111827;
+        --navy: #162539;
+        --white: #ffffff;
+        --gold: #d4af37;
+        --text-medium: #4b5563;
+        --text-light: #6b7280;
+        --gray-50: #f9fafb;
+        --gray-100: #f3f4f6;
+        --gray-200: #e5e7eb;
+        --shadow-sm: 0 1px 2px 0 rgba(22, 37, 57, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(22, 37, 57, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(22, 37, 57, 0.1);
+        --shadow-xl: 0 20px 25px -5px rgba(22, 37, 57, 0.1);
+    }
+
+    .reviews-section {
+        padding: 4rem 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(249, 250, 251, 0.9) 100%), url('/ClientReviews/ClientReviewsBackground.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Section Headers */
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .section-header.text-center {
+        text-align: center;
+    }
+
+    .section-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--gold), #e5c158);
+        color: var(--navy);
+        padding: 0.4rem 0.8rem;
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.8rem;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .section-title {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 900;
+        line-height: 1.1;
+        color: var(--charcoal);
+        margin-bottom: 0.8rem;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        text-shadow: 0 2px 4px rgba(17, 24, 39, 0.1);
+    }
+
+    .section-subtitle {
+        font-size: 1.25rem;
+        color: var(--white);
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* Reviews Grid */
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .review-card {
+        background: var(--white);
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow-lg);
+        border: 2px solid transparent;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .review-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: var(--shadow-xl);
+    }
+
+    /* Unique Card Themes with New Color Scheme */
+    .card-blue {
+        background: linear-gradient(135deg, var(--white) 0%, rgba(22, 37, 57, 0.02) 100%);
+        border-color: var(--navy);
+        position: relative;
+    }
+
+    .card-blue::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, var(--navy), var(--charcoal));
+    }
+
+    .card-green {
+        background: linear-gradient(135deg, var(--white) 0%, rgba(212, 175, 55, 0.05) 100%);
+        border-color: var(--gold);
+        position: relative;
+    }
+
+    .card-green::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, var(--gold), #b8941f);
+    }
+
+    .card-orange {
+        background: linear-gradient(135deg, var(--white) 0%, rgba(17, 24, 39, 0.02) 100%);
+        border-color: var(--charcoal);
+        position: relative;
+    }
+
+    .card-orange::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(135deg, var(--charcoal), var(--navy));
+    }
+
+    /* Card Icons */
+    .card-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        transition: all 0.4s ease;
+        position: relative;
+        z-index: 2;
+    }
+
+    .card-blue .card-icon {
+        background: linear-gradient(135deg, var(--navy), var(--charcoal));
+        color: var(--white);
+        box-shadow: 0 4px 15px rgba(22, 37, 57, 0.3);
+    }
+
+    .card-green .card-icon {
+        background: linear-gradient(135deg, var(--gold), #b8941f);
+        color: var(--navy);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .card-orange .card-icon {
+        background: linear-gradient(135deg, var(--charcoal), var(--navy));
+        color: var(--gold);
+        box-shadow: 0 4px 15px rgba(17, 24, 39, 0.3);
+    }
+
+    .review-card:hover .card-icon {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 8px 25px rgba(22, 37, 57, 0.4);
+    }
+
+    .card-icon svg {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .stars {
+        color: var(--gold);
+        font-size: 1.5rem;
+        text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+        filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.2));
+    }
+
+    .review-content p {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: var(--charcoal);
+        margin-bottom: 1rem;
+        font-style: italic;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .client-info {
+        border-top: 1px solid var(--gray-200);
+        padding-top: 0.8rem;
+    }
+
+    .client-name {
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.25rem;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .client-location {
+        color: var(--text-medium);
+        font-size: 0.875rem;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* CTA Section */
+    .reviews-cta {
+        text-align: center;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--navy), var(--charcoal));
+        color: var(--white);
+        padding: 0.8rem 1.8rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.125rem;
+        transition: all 0.3s ease;
+        margin-bottom: 0.8rem;
+        border: 2px solid var(--gold);
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        box-shadow: 0 4px 15px rgba(22, 37, 57, 0.3);
+    }
+
+    .cta-btn:hover {
+        background: linear-gradient(135deg, var(--gold), #e5c158);
+        color: var(--navy);
+        transform: translateY(-2px);
+        border-color: var(--navy);
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    }
+
+    .reviews-note {
+        color: var(--white);
+        font-size: 0.875rem;
+        font-style: italic;
+        opacity: 0.8;
+        font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .container {
+            padding: 0 2rem;
+        }
+
+        .reviews-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .review-card {
+            padding: 1.2rem;
+        }
+
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .card-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 1.5rem;
+        }
+
+        .reviews-section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 6vw, 2.5rem);
+        }
+
+        .reviews-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            padding: 1.5rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .card-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
+
+        .card-icon svg {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container {
+            padding: 0 1rem;
+        }
+
+        .review-card {
+            padding: 1.2rem;
+        }
+
+        .review-content p {
+            font-size: 1rem;
+        }
+
+        .card-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .card-icon svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .cta-btn {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+</style>

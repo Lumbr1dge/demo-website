@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/_astro/*",
+    "/About/*",
+    "/AboutPage/*",
+    "/AboutUs1.jpg",
+    "/AboutUs2.jpg",
+    "/ClientReviews/*",
+    "/Hero/*",
+    "/Hero-section-1.jpg",
+    "/House-Design-1.jpg",
+    "/House-Renovation-1.jpg",
+    "/New-House-Build-1.jpg",
+    "/Outdoor-Structure-1.jpg",
+    "/Services/*",
+    "/ServicesPage/*"
+  ]
+}

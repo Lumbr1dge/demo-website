@@ -1,0 +1,380 @@
+globalThis.process ??= {};
+globalThis.process.env ??= {};
+/* empty css                                 */
+import {
+  c as createComponent,
+  r as renderTemplate,
+  m as maybeRenderHead,
+  e as addAttribute,
+  f as createAstro,
+  d as renderScript,
+  b as renderComponent,
+} from "../chunks/astro/server_Dd3KBmvD.mjs";
+import {
+  a as $$Navbar2,
+  b as $$Footer,
+  $ as $$Layout,
+} from "../chunks/Layout_BbirI07O.mjs";
+/* empty css                                 */
+export { renderers } from "../renderers.mjs";
+
+const $$Astro$4 = createAstro();
+const $$Hero1 = createComponent(
+  ($$result, $$props, $$slots) => {
+    const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
+    Astro2.self = $$Hero1;
+    const {
+      bgUrl = "/Hero/Hero.jpg",
+      quoteHref = "#quote",
+      workHref = "#work",
+      headerOffsetPx = 128,
+    } = Astro2.props;
+    return renderTemplate`${maybeRenderHead()}<section class="hero1" role="banner" aria-label="Hero"${addAttribute(
+      `--hero-bg: url('${bgUrl}'); --hero-offset: ${headerOffsetPx}px`,
+      "style"
+    )} data-astro-cid-xttcc7mm> <div class="hero1-overlay" aria-hidden="true" data-astro-cid-xttcc7mm></div> <div class="hero1-content" data-astro-cid-xttcc7mm> <h1 class="hero1-title" data-astro-cid-xttcc7mm>Your Project, Our Passion</h1> <p class="hero1-sub" data-astro-cid-xttcc7mm>From concept to completion, we build spaces that stand the test of time — delivering quality, reliability, and peace of mind.</p> <p class="hero1-support" data-astro-cid-xttcc7mm>Whether it’s a new home, a commercial space, or a full-scale renovation, our experienced team brings your vision to life with precision and care.</p> <div class="hero1-actions" data-astro-cid-xttcc7mm> <a${addAttribute(
+      quoteHref,
+      "href"
+    )} class="hero1-btn hero1-btn-primary" data-astro-cid-xttcc7mm>Get a Free Quote</a> <a${addAttribute(
+      workHref,
+      "href"
+    )} class="hero1-btn hero1-btn-outline" data-astro-cid-xttcc7mm>See Our Work</a> </div> </div> <span class="sr-only" data-astro-cid-xttcc7mm>Decorative background image</span> </section> `;
+  },
+  "C:/Projects/lumbr1dge/demo-website/src/components/HomePageComponents/Hero1.astro",
+  undefined
+);
+
+const $$Astro$3 = createAstro();
+const $$About3 = createComponent(
+  ($$result, $$props, $$slots) => {
+    const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
+    Astro2.self = $$About3;
+    const {
+      imageUrl = "/About/About.jpg",
+      yearsExperience = "15+",
+      leadBadgeText = "Auckland's Premier Builder",
+      titleTop = "Building Excellence",
+      titleAccent = "Since",
+      sinceYear = "2016",
+      paragraph = "At Wolf Construction Ltd, we've spent over 15 years perfecting the art of residential construction in Auckland. As Licensed Building Practitioners (LBP), we combine technical expertise with creative vision to deliver exceptional results that exceed expectations.",
+      point1Title = "Quality Assured",
+      point1Text = "Licensed professionals delivering superior craftsmanship on every project.",
+      point2Title = "On-Time Delivery",
+      point2Text = "Efficient project management ensuring timely completion.",
+      learnMoreHref = "/about",
+      quoteHref = "/contact",
+      companyName = "Wolf Construction Ltd",
+    } = Astro2.props;
+    return renderTemplate`${maybeRenderHead()}<section class="about3" aria-label="About Us" data-astro-cid-vwyy2wg6> <div class="about3__container" data-astro-cid-vwyy2wg6> <div class="about3__grid" data-astro-cid-vwyy2wg6> <!-- Image side - now on the left --> <div class="about3__visual scroll-in" data-astro-cid-vwyy2wg6> <div class="visual__wrap" data-astro-cid-vwyy2wg6> <!-- subtle grid pattern --> <div class="visual__pattern" aria-hidden="true" data-astro-cid-vwyy2wg6></div> <!-- soft glow frames --> <div class="visual__glow visual__glow-a" aria-hidden="true" data-astro-cid-vwyy2wg6></div> <div class="visual__glow visual__glow-b" aria-hidden="true" data-astro-cid-vwyy2wg6></div> <!-- main image --> <div class="visual__image" data-astro-cid-vwyy2wg6> <img${addAttribute(
+      imageUrl,
+      "src"
+    )}${addAttribute(
+      `${companyName} team at work`,
+      "alt"
+    )} loading="eager" data-astro-cid-vwyy2wg6> <div class="visual__overlay" aria-hidden="true" data-astro-cid-vwyy2wg6></div> </div> <!-- Years badge --> <div class="badge badge--years" aria-label="Years Experience" data-astro-cid-vwyy2wg6> <p class="badge__value" data-astro-cid-vwyy2wg6>${yearsExperience}</p> <p class="badge__label" data-astro-cid-vwyy2wg6>Years Experience</p> </div> <!-- LBP badge --> <div class="badge badge--lbp" aria-label="LBP Certified" data-astro-cid-vwyy2wg6> <svg class="badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" data-astro-cid-vwyy2wg6> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" data-astro-cid-vwyy2wg6></path> </svg> <div class="badge__text" data-astro-cid-vwyy2wg6> <p class="badge__small" data-astro-cid-vwyy2wg6>Licensed</p> <p class="badge__strong" data-astro-cid-vwyy2wg6>LBP Certified</p> </div> </div> </div> </div> <!-- Content side - now on the right --> <div class="about3__content scroll-in" data-astro-cid-vwyy2wg6> <!-- lead tag --> <div class="lead" data-astro-cid-vwyy2wg6> <span class="lead__dot" aria-hidden="true" data-astro-cid-vwyy2wg6></span> <span class="lead__text" data-astro-cid-vwyy2wg6>${leadBadgeText}</span> </div> <h2 class="title" data-astro-cid-vwyy2wg6> ${titleTop}<br data-astro-cid-vwyy2wg6> <span class="title__accent" data-astro-cid-vwyy2wg6>${titleAccent} ${sinceYear}</span> </h2> <div class="copy" data-astro-cid-vwyy2wg6> <p class="copy__p" data-astro-cid-vwyy2wg6>${paragraph}</p> </div> <!-- Mobile image - positioned below text for responsive layout --> <div class="about3__visual-mobile scroll-in" data-astro-cid-vwyy2wg6> <div class="visual__wrap" data-astro-cid-vwyy2wg6> <!-- subtle grid pattern --> <div class="visual__pattern" aria-hidden="true" data-astro-cid-vwyy2wg6></div> <!-- soft glow frames --> <div class="visual__glow visual__glow-a" aria-hidden="true" data-astro-cid-vwyy2wg6></div> <div class="visual__glow visual__glow-b" aria-hidden="true" data-astro-cid-vwyy2wg6></div> <!-- main image --> <div class="visual__image" data-astro-cid-vwyy2wg6> <img${addAttribute(
+      imageUrl,
+      "src"
+    )}${addAttribute(
+      `${companyName} team at work`,
+      "alt"
+    )} loading="eager" data-astro-cid-vwyy2wg6> <div class="visual__overlay" aria-hidden="true" data-astro-cid-vwyy2wg6></div> </div> <!-- Years badge --> <div class="badge badge--years" aria-label="Years Experience" data-astro-cid-vwyy2wg6> <p class="badge__value" data-astro-cid-vwyy2wg6>${yearsExperience}</p> <p class="badge__label" data-astro-cid-vwyy2wg6>Years Experience</p> </div> <!-- LBP badge --> <div class="badge badge--lbp" aria-label="LBP Certified" data-astro-cid-vwyy2wg6> <svg class="badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" data-astro-cid-vwyy2wg6> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" data-astro-cid-vwyy2wg6></path> </svg> <div class="badge__text" data-astro-cid-vwyy2wg6> <p class="badge__small" data-astro-cid-vwyy2wg6>Licensed</p> <p class="badge__strong" data-astro-cid-vwyy2wg6>LBP Certified</p> </div> </div> </div> </div> <!-- Points section --> <div class="points" data-astro-cid-vwyy2wg6> <div class="point" data-astro-cid-vwyy2wg6> <div class="point__icon" data-astro-cid-vwyy2wg6> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" data-astro-cid-vwyy2wg6> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" data-astro-cid-vwyy2wg6></path> </svg> </div> <h3 class="point__title" data-astro-cid-vwyy2wg6>${point1Title}</h3> <p class="point__text" data-astro-cid-vwyy2wg6>${point1Text}</p> </div> <div class="point" data-astro-cid-vwyy2wg6> <div class="point__icon" data-astro-cid-vwyy2wg6> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" data-astro-cid-vwyy2wg6> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" data-astro-cid-vwyy2wg6></path> </svg> </div> <h3 class="point__title" data-astro-cid-vwyy2wg6>${point2Title}</h3> <p class="point__text" data-astro-cid-vwyy2wg6>${point2Text}</p> </div> </div> <!-- Actions --> <div class="actions" data-astro-cid-vwyy2wg6> <a${addAttribute(
+      learnMoreHref,
+      "href"
+    )} class="btn btn--primary" data-astro-cid-vwyy2wg6> <span data-astro-cid-vwyy2wg6>Learn More About Us</span> <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" data-astro-cid-vwyy2wg6> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" data-astro-cid-vwyy2wg6></path> </svg> </a> <a${addAttribute(
+      quoteHref,
+      "href"
+    )} class="btn btn--ghost btn--desktop-only" data-astro-cid-vwyy2wg6> <span data-astro-cid-vwyy2wg6>Get Free Quote</span> </a> </div> </div> </div> </div> </section>  ${renderScript(
+      $$result,
+      "C:/Projects/lumbr1dge/demo-website/src/components/HomePageComponents/About3.astro?astro&type=script&index=0&lang.ts"
+    )}`;
+  },
+  "C:/Projects/lumbr1dge/demo-website/src/components/HomePageComponents/About3.astro",
+  undefined
+);
+
+const $$Astro$2 = createAstro();
+const $$Services4 = createComponent(
+  ($$result, $$props, $$slots) => {
+    const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
+    Astro2.self = $$Services4;
+    const {
+      items = [
+        {
+          title: "New Home Builds",
+          desc: "We specialise in designing and building homes tailored to your lifestyle, budget, and vision. From architectural plans to the final finishes, our team handles every detail, ensuring your home is both beautiful and built to last. We work closely with you at every stage to deliver a result that feels uniquely yours.",
+          icon: "select",
+        },
+        {
+          title: "Commercial Construction",
+          desc: "From office complexes to retail outlets and warehouses, we create commercial spaces that are functional, efficient, and visually impressive. Our experienced team understands the demands of business operations and works to minimise downtime, delivering projects that meet compliance standards and brand expectations.",
+          icon: "ship",
+        },
+        {
+          title: "Renovations & Extensions",
+          desc: "Transform your existing property with upgrades that enhance space, style, and functionality. Whether it\u2019s adding a new room, modernising a kitchen, or refreshing a dated exterior, we combine precision craftsmanship with creative design to achieve seamless results that integrate perfectly with your existing structure.",
+          icon: "quote",
+        },
+        {
+          title: "Project Management",
+          desc: "We provide complete end-to-end project management, coordinating trades, suppliers, and timelines to keep your build running smoothly. Our proactive approach ensures clear communication, cost control, and timely delivery, so you can enjoy peace of mind while we handle the details.",
+          icon: "use",
+        },
+      ],
+      heading = "What We Do",
+      subheading = "Comprehensive Construction Services",
+      blurb = "From concept to completion, we provide an integrated set of construction services designed to deliver quality, clarity, and confidence. Explore how we turn ideas into spaces that work beautifully.",
+      stats = [
+        { value: "350+ ", label: "Projects Delivered" },
+        { value: "98% ", label: "Client Satisfaction" },
+        { value: "15+ ", label: "Years Experience" },
+      ],
+      ctaHref = "/services",
+      ctaText = "View All Services",
+    } = Astro2.props;
+    return renderTemplate`${maybeRenderHead()}<section class="s4" aria-label="Services" data-astro-cid-idrpkq5a> <div class="s4-inner" data-astro-cid-idrpkq5a> <header class="s4-head" data-astro-cid-idrpkq5a> <p class="s4-eyebrow" data-astro-cid-idrpkq5a>${subheading}</p> <h2 class="s4-heading" data-astro-cid-idrpkq5a>${heading}</h2> <p class="s4-blurb" data-astro-cid-idrpkq5a>${blurb}</p> </header> <div class="s4-body" data-astro-cid-idrpkq5a> <aside class="s4-stats" aria-label="Key stats" data-astro-cid-idrpkq5a> ${stats.map(
+      (s) =>
+        renderTemplate`<div class="s4-stat" data-astro-cid-idrpkq5a> <div class="s4-kpi" data-astro-cid-idrpkq5a>${s.value}</div> <div class="s4-kpi-label" data-astro-cid-idrpkq5a>${s.label}</div> </div>`
+    )} </aside> <div class="s4-cards" data-astro-cid-idrpkq5a> ${items.map(
+      (item) =>
+        renderTemplate`<article class="s4-card" data-astro-cid-idrpkq5a> <span class="s4-icon" aria-hidden="true" data-astro-cid-idrpkq5a> ${
+          item.icon === "select" &&
+          renderTemplate`<svg viewBox="0 0 24 24" class="ic" data-astro-cid-idrpkq5a><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" data-astro-cid-idrpkq5a></path><path d="M8 8h8M8 12h6M8 16h4" fill="none" stroke="currentColor" stroke-width="1.7" data-astro-cid-idrpkq5a></path></svg>`
+        } ${
+          item.icon === "quote" &&
+          renderTemplate`<svg viewBox="0 0 24 24" class="ic" data-astro-cid-idrpkq5a><path d="M4 5h16M4 12h16M4 19h10" fill="none" stroke="currentColor" stroke-width="1.7" data-astro-cid-idrpkq5a></path><path d="M17 19l3-3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" data-astro-cid-idrpkq5a></path></svg>`
+        } ${
+          item.icon === "ship" &&
+          renderTemplate`<svg viewBox="0 0 24 24" class="ic" data-astro-cid-idrpkq5a><path d="M3 7h11v10H3z" fill="none" stroke="currentColor" stroke-width="1.7" data-astro-cid-idrpkq5a></path><path d="M14 10h4l3 3v4h-7V10Z" fill="none" stroke="currentColor" stroke-width="1.7" data-astro-cid-idrpkq5a></path><circle cx="7" cy="19" r="1.6" fill="currentColor" data-astro-cid-idrpkq5a></circle><circle cx="17" cy="19" r="1.6" fill="currentColor" data-astro-cid-idrpkq5a></circle></svg>`
+        } ${
+          item.icon === "use" &&
+          renderTemplate`<svg viewBox="0 0 24 24" class="ic" data-astro-cid-idrpkq5a><path d="M12 3v6l4 2v10H8V11l4-2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" data-astro-cid-idrpkq5a></path></svg>`
+        } </span> <h3 class="s4-title" data-astro-cid-idrpkq5a>${
+          item.title
+        }</h3> <div class="s4-sep" aria-hidden="true" data-astro-cid-idrpkq5a></div> <p class="s4-desc" data-astro-cid-idrpkq5a>${
+          item.desc
+        }</p> </article>`
+    )} </div> </div> <div class="s4-cta-row" data-astro-cid-idrpkq5a> <a${addAttribute(
+      ctaHref,
+      "href"
+    )} class="s4-cta" data-astro-cid-idrpkq5a>${ctaText}</a> </div> </div> <span class="sr-only" data-astro-cid-idrpkq5a>Service steps</span> </section> `;
+  },
+  "C:/Projects/lumbr1dge/demo-website/src/components/HomePageComponents/Services4.astro",
+  undefined
+);
+
+const $$Gallery1 = createComponent(
+  ($$result, $$props, $$slots) => {
+    return renderTemplate`${maybeRenderHead()}<section class="gallery-section" aria-labelledby="gallery-title" data-astro-cid-lwixokpw> <div class="container" data-astro-cid-lwixokpw> <!-- Header --> <div class="section-header scroll-animate-up" data-astro-cid-lwixokpw> <span class="section-badge" data-astro-cid-lwixokpw>Project Gallery</span> <h2 id="gallery-title" class="section-title" data-astro-cid-lwixokpw>Our Construction Portfolio</h2> <p class="section-subtitle" data-astro-cid-lwixokpw>Discover our latest projects showcasing quality craftsmanship, innovative design, and attention to detail across Auckland</p> </div> <!-- Auto-Scrolling Gallery --> <div class="gallery-wrapper scroll-animate-up" data-astro-cid-lwixokpw> <div class="gallery-track" id="galleryTrack" data-astro-cid-lwixokpw> <!-- First Set of Images --> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/New-House-Build-1.jpg" alt="Modern Family Home - Remuera" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Modern Family Home</h3> <p data-astro-cid-lwixokpw>Remuera • New Build</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/House-Design-1.jpg" alt="Contemporary Design - Ponsonby" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Contemporary Design</h3> <p data-astro-cid-lwixokpw>Ponsonby • Custom Build</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/House-Renovation-1.jpg" alt="Luxury Residence - Herne Bay" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Luxury Residence</h3> <p data-astro-cid-lwixokpw>Herne Bay • Premium Build</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/AboutUs1.jpg" alt="Heritage Renovation - Grey Lynn" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Heritage Renovation</h3> <p data-astro-cid-lwixokpw>Grey Lynn • Restoration</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/Outdoor-Structure-1.jpg" alt="Outdoor Living Space - Mission Bay" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Outdoor Living</h3> <p data-astro-cid-lwixokpw>Mission Bay • Extension</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/AboutUs2.jpg" alt="Architectural Marvel - Takapuna" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Architectural Marvel</h3> <p data-astro-cid-lwixokpw>Takapuna • Design & Build</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/New-House-Build-1.jpg" alt="Commercial Fitout - Auckland CBD" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Commercial Fitout</h3> <p data-astro-cid-lwixokpw>Auckland CBD • Office</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/House-Renovation-1.jpg" alt="Kitchen Renovation - Mt Eden" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Kitchen Renovation</h3> <p data-astro-cid-lwixokpw>Mt Eden • Interior</p> </div> </div> </div> <!-- Duplicate set for seamless loop --> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/New-House-Build-1.jpg" alt="Modern Family Home - Remuera" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Modern Family Home</h3> <p data-astro-cid-lwixokpw>Remuera • New Build</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/House-Design-1.jpg" alt="Contemporary Design - Ponsonby" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Contemporary Design</h3> <p data-astro-cid-lwixokpw>Ponsonby • Custom Build</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/House-Renovation-1.jpg" alt="Luxury Residence - Herne Bay" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Luxury Residence</h3> <p data-astro-cid-lwixokpw>Herne Bay • Premium Build</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/AboutUs1.jpg" alt="Heritage Renovation - Grey Lynn" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Heritage Renovation</h3> <p data-astro-cid-lwixokpw>Grey Lynn • Restoration</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/Outdoor-Structure-1.jpg" alt="Outdoor Living Space - Mission Bay" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Outdoor Living</h3> <p data-astro-cid-lwixokpw>Mission Bay • Extension</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/AboutUs2.jpg" alt="Architectural Marvel - Takapuna" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Architectural Marvel</h3> <p data-astro-cid-lwixokpw>Takapuna • Design & Build</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/New-House-Build-1.jpg" alt="Commercial Fitout - Auckland CBD" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Commercial Fitout</h3> <p data-astro-cid-lwixokpw>Auckland CBD • Office</p> </div> </div> </div> <div class="gallery-item" data-astro-cid-lwixokpw> <img src="/House-Renovation-1.jpg" alt="Kitchen Renovation - Mt Eden" class="gallery-image" data-astro-cid-lwixokpw> <div class="gallery-overlay" data-astro-cid-lwixokpw> <div class="gallery-content" data-astro-cid-lwixokpw> <h3 data-astro-cid-lwixokpw>Kitchen Renovation</h3> <p data-astro-cid-lwixokpw>Mt Eden • Interior</p> </div> </div> </div> </div> </div> <!-- View More Button --> <div class="gallery-footer scroll-animate-up" data-astro-cid-lwixokpw> <a href="/Gallery" class="gallery-btn" data-astro-cid-lwixokpw> <span data-astro-cid-lwixokpw>View Full Gallery</span> <svg class="gallery-btn-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-astro-cid-lwixokpw> <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" data-astro-cid-lwixokpw></path> </svg> </a> </div> </div> </section>  ${renderScript(
+      $$result,
+      "C:/Projects/lumbr1dge/demo-website/src/components/HomePageComponents/Gallery1.astro?astro&type=script&index=0&lang.ts"
+    )}`;
+  },
+  "C:/Projects/lumbr1dge/demo-website/src/components/HomePageComponents/Gallery1.astro",
+  undefined
+);
+
+const $$Reviews1 = createComponent(
+  ($$result, $$props, $$slots) => {
+    return renderTemplate`${maybeRenderHead()}<section class="reviews-section" data-astro-cid-jqlry4fu> <div class="container" data-astro-cid-jqlry4fu> <div class="section-header text-center" data-astro-cid-jqlry4fu> <span class="section-badge" data-astro-cid-jqlry4fu>Client Testimonials</span> <h2 class="section-title" data-astro-cid-jqlry4fu>What Our Clients Say</h2> <p class="section-subtitle" data-astro-cid-jqlry4fu>Real experiences from satisfied customers across Auckland</p> </div> <div class="reviews-grid" data-astro-cid-jqlry4fu> <!-- Review 1 - Residential (Blue Theme) --> <div class="review-card card-blue" data-astro-cid-jqlry4fu> <div class="card-icon" data-astro-cid-jqlry4fu> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-jqlry4fu> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" data-astro-cid-jqlry4fu></path> </svg> </div> <div class="rating" data-astro-cid-jqlry4fu> <div class="stars" data-astro-cid-jqlry4fu>★★★★★</div> </div> <div class="review-content" data-astro-cid-jqlry4fu> <p data-astro-cid-jqlry4fu>"Wolf Construction Ltd made our dream home a reality. Their project management was exceptional and the quality of workmanship is outstanding."</p> </div> <div class="client-info" data-astro-cid-jqlry4fu> <div class="client-name" data-astro-cid-jqlry4fu>David & Emma Chen</div> <div class="client-location" data-astro-cid-jqlry4fu>New Home Build • Remuera</div> </div> </div> <!-- Review 2 - Commercial (Green Theme) --> <div class="review-card card-green" data-astro-cid-jqlry4fu> <div class="card-icon" data-astro-cid-jqlry4fu> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-jqlry4fu> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" data-astro-cid-jqlry4fu></path> </svg> </div> <div class="rating" data-astro-cid-jqlry4fu> <div class="stars" data-astro-cid-jqlry4fu>★★★★★</div> </div> <div class="review-content" data-astro-cid-jqlry4fu> <p data-astro-cid-jqlry4fu>"We needed our office completed quickly without compromising on quality. Wolf Construction Ltd delivered exactly that. Their team created a modern workspace that our employees love."</p> </div> <div class="client-info" data-astro-cid-jqlry4fu> <div class="client-name" data-astro-cid-jqlry4fu>James Morrison</div> <div class="client-location" data-astro-cid-jqlry4fu>Office Fitout • Auckland CBD</div> </div> </div> <!-- Review 3 - Renovation (Orange Theme) --> <div class="review-card card-orange" data-astro-cid-jqlry4fu> <div class="card-icon" data-astro-cid-jqlry4fu> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-jqlry4fu> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" data-astro-cid-jqlry4fu></path> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" data-astro-cid-jqlry4fu></path> </svg> </div> <div class="rating" data-astro-cid-jqlry4fu> <div class="stars" data-astro-cid-jqlry4fu>★★★★★</div> </div> <div class="review-content" data-astro-cid-jqlry4fu> <p data-astro-cid-jqlry4fu>"Our kitchen and bathroom renovation was a big investment for us. Wolf Construction Ltd exceeded our expectations in every way. The design suggestions were brilliant."</p> </div> <div class="client-info" data-astro-cid-jqlry4fu> <div class="client-name" data-astro-cid-jqlry4fu>Lisa & Mark Rodriguez</div> <div class="client-location" data-astro-cid-jqlry4fu>Kitchen & Bathroom • Mt Eden</div> </div> </div> </div> <!-- CTA Button --> <div class="reviews-cta" data-astro-cid-jqlry4fu> <a href="/TestimonialPage" class="cta-btn" data-astro-cid-jqlry4fu>Read More Reviews</a> <p class="reviews-note" data-astro-cid-jqlry4fu>Join 500+ satisfied clients across Auckland</p> </div> </div> </section> `;
+  },
+  "C:/Projects/lumbr1dge/demo-website/src/components/HomePageComponents/Reviews1.astro",
+  undefined
+);
+
+const $$CTA1 = createComponent(
+  ($$result, $$props, $$slots) => {
+    return renderTemplate`<!-- Unique CTA Section with Geometric Design -->${maybeRenderHead()}<section class="cta-section scroll-animate-up" aria-labelledby="cta-title" data-astro-cid-jlza4i3p> <div class="cta-container" data-astro-cid-jlza4i3p> <!-- Animated Background Elements --> <div class="cta-bg-elements" data-astro-cid-jlza4i3p> <div class="floating-shape shape-1" data-astro-cid-jlza4i3p></div> <div class="floating-shape shape-2" data-astro-cid-jlza4i3p></div> <div class="floating-shape shape-3" data-astro-cid-jlza4i3p></div> <div class="floating-shape shape-4" data-astro-cid-jlza4i3p></div> <div class="geometric-pattern" data-astro-cid-jlza4i3p></div> </div> <!-- Main Content --> <div class="cta-content" data-astro-cid-jlza4i3p> <div class="cta-header" data-astro-cid-jlza4i3p> <div class="cta-badge" data-astro-cid-jlza4i3p> <span class="badge-icon" data-astro-cid-jlza4i3p>🚀</span> <span data-astro-cid-jlza4i3p>Let's Build Together</span> </div> <h2 id="cta-title" class="cta-title" data-astro-cid-jlza4i3p> <span class="title-line" data-astro-cid-jlza4i3p>Ready to Transform</span> <span class="title-line highlight" data-astro-cid-jlza4i3p>Your Vision?</span> </h2> <p class="cta-description" data-astro-cid-jlza4i3p>
+Join hundreds of satisfied clients who've trusted us to bring their construction dreams to life. 
+          Let's create something extraordinary together.
+</p> </div> <!-- Action Buttons --> <div class="cta-actions" data-astro-cid-jlza4i3p> <a href="/contact" class="cta-btn primary-btn" data-astro-cid-jlza4i3p> <span class="btn-text" data-astro-cid-jlza4i3p>Start Your Project</span> <div class="btn-glow" data-astro-cid-jlza4i3p></div> <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-jlza4i3p> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" data-astro-cid-jlza4i3p></path> </svg> </a> <a href="/services" class="cta-btn secondary-btn" data-astro-cid-jlza4i3p> <span class="btn-text" data-astro-cid-jlza4i3p>Explore Services</span> <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-jlza4i3p> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" data-astro-cid-jlza4i3p></path> </svg> </a> </div> <!-- Trust Indicators --> <div class="cta-trust" data-astro-cid-jlza4i3p> <div class="trust-text" data-astro-cid-jlza4i3p>Trusted by Auckland's leading developers</div> <div class="trust-badges" data-astro-cid-jlza4i3p> <div class="trust-badge" data-astro-cid-jlza4i3p>Licensed</div> <div class="trust-badge" data-astro-cid-jlza4i3p>Insured</div> <div class="trust-badge" data-astro-cid-jlza4i3p>Certified</div> </div> </div> </div> </div> </section>  ${renderScript(
+      $$result,
+      "C:/Projects/lumbr1dge/demo-website/src/components/HomePageComponents/CTA1.astro?astro&type=script&index=0&lang.ts"
+    )}`;
+  },
+  "C:/Projects/lumbr1dge/demo-website/src/components/HomePageComponents/CTA1.astro",
+  undefined
+);
+
+const $$Timeline4 = createComponent(
+  ($$result, $$props, $$slots) => {
+    const milestones = [
+      {
+        title: "Incorporation",
+        date: "2015",
+        description: "Established the company with a long-term vision.",
+      },
+      {
+        title: "Early Clients",
+        date: "2016",
+        description: "Onboarded early partners and validated our approach.",
+      },
+      {
+        title: "Team Growth",
+        date: "2018",
+        description: "Expanded across engineering, product, and success.",
+      },
+      {
+        title: "Resilience",
+        date: "2019",
+        description: "Invested in reliability, security, and performance.",
+      },
+      {
+        title: "Global",
+        date: "2021",
+        description: "Launched internationally with localized offerings.",
+      },
+      {
+        title: "Today",
+        date: "Now",
+        description: "Relentless focus on customer outcomes.",
+      },
+    ];
+    return renderTemplate`${maybeRenderHead()}<section class="metro-section" aria-label="Metro timeline" data-astro-cid-copnckqk> <div class="metro-container" data-astro-cid-copnckqk> <header class="metro-header" data-astro-cid-copnckqk> <h2 class="metro-title" data-astro-cid-copnckqk>Metro Timeline</h2> <p class="metro-subtitle" data-astro-cid-copnckqk>A serpentine path through our key moments</p> </header> <div id="metro" class="metro"${addAttribute(
+      `--count:${milestones.length}`,
+      "style"
+    )} data-astro-cid-copnckqk> <svg id="metro-svg" class="metro-svg" aria-hidden="true" data-astro-cid-copnckqk></svg> <div id="train" class="train" aria-hidden="true" data-astro-cid-copnckqk></div> <ol id="stations" class="stations" role="list" data-astro-cid-copnckqk> ${milestones.map(
+      (m, i) =>
+        renderTemplate`<li class="station"${addAttribute(
+          i,
+          "data-idx"
+        )} role="listitem" data-astro-cid-copnckqk> <button${addAttribute(
+          `dot ${i === 0 ? "active" : ""}`,
+          "class"
+        )}${addAttribute(
+          i === 0 ? "step" : undefined,
+          "aria-current"
+        )}${addAttribute(
+          `${m.date} \u2013 ${m.title}`,
+          "aria-label"
+        )} data-astro-cid-copnckqk></button> <div class="bubble" tabindex="0" data-astro-cid-copnckqk> <div class="b-top" data-astro-cid-copnckqk> <span class="b-icon" aria-hidden="true" data-astro-cid-copnckqk> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-astro-cid-copnckqk> <path d="M12 2l2.6 5.27 5.82.85-4.21 4.1.99 5.78L12 15.9l-5.2 2.9.99-5.78-4.21-4.1 5.82-.85L12 2z" fill="url(#g)" data-astro-cid-copnckqk></path> <defs data-astro-cid-copnckqk> <linearGradient id="g" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse" data-astro-cid-copnckqk> <stop stop-color="currentColor" data-astro-cid-copnckqk></stop> <stop offset="1" stop-color="currentColor" data-astro-cid-copnckqk></stop> </linearGradient> </defs> </svg> </span> <h3 class="b-title" data-astro-cid-copnckqk>${
+          m.title
+        }</h3> <time class="b-date"${addAttribute(
+          m.date,
+          "datetime"
+        )} data-astro-cid-copnckqk>${
+          m.date
+        }</time> </div> <p class="b-desc" data-astro-cid-copnckqk>${
+          m.description
+        }</p> </div> </li>`
+    )} </ol> </div> </div> </section>  ${renderScript(
+      $$result,
+      "C:/Projects/lumbr1dge/demo-website/src/components/HomePageComponents/Timeline4.astro?astro&type=script&index=0&lang.ts"
+    )}`;
+  },
+  "C:/Projects/lumbr1dge/demo-website/src/components/HomePageComponents/Timeline4.astro",
+  undefined
+);
+
+const $$Astro$1 = createAstro();
+const $$Homepage = createComponent(
+  ($$result, $$props, $$slots) => {
+    const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+    Astro2.self = $$Homepage;
+    const {
+      companyName = "Wolf Construction Ltd",
+      email = "info@buildprojects.co.nz",
+      phone = "0800 BUILD-NZ",
+    } = Astro2.props;
+    return renderTemplate`<!-- Main Homepage Structure -->${maybeRenderHead()}<div class="homepage-container" data-astro-cid-rwrmbyic> <!-- Navigation - Always at top --> ${renderComponent(
+      $$result,
+      "Navbar2",
+      $$Navbar2,
+      {
+        companyName: companyName,
+        email: email,
+        phone: phone,
+        "data-astro-cid-rwrmbyic": true,
+      }
+    )} <!-- Main Content Sections --> <main class="main-content" role="main" data-astro-cid-rwrmbyic> <!-- Hero Section - First impression --> <section class="hero-section" id="hero" data-astro-cid-rwrmbyic> ${renderComponent(
+      $$result,
+      "Hero1",
+      $$Hero1,
+      { "data-astro-cid-rwrmbyic": true }
+    )} </section> <!-- About Section - Company introduction --> <section class="about-section scroll-animate-up" id="about" data-astro-cid-rwrmbyic> ${renderComponent(
+      $$result,
+      "About3",
+      $$About3,
+      { "data-astro-cid-rwrmbyic": true }
+    )} </section> <!-- Services Section - What we offer --> <section class="services-section scroll-animate-up" id="services" data-astro-cid-rwrmbyic> ${renderComponent(
+      $$result,
+      "Services4",
+      $$Services4,
+      { "data-astro-cid-rwrmbyic": true }
+    )} </section> <!-- Gallery Section - Our work showcase --> <section class="gallery-section scroll-animate-up" id="gallery" data-astro-cid-rwrmbyic> ${renderComponent(
+      $$result,
+      "Gallery1",
+      $$Gallery1,
+      { "data-astro-cid-rwrmbyic": true }
+    )} </section> <!-- Reviews Section - Customer testimonials --> <section class="reviews-section scroll-animate-up" id="reviews" data-astro-cid-rwrmbyic> ${renderComponent(
+      $$result,
+      "Reviews1",
+      $$Reviews1,
+      { "data-astro-cid-rwrmbyic": true }
+    )} </section> <!-- Call to Action Section - Contact prompt --> <section class="cta-section scroll-animate-up" id="contact" data-astro-cid-rwrmbyic> ${renderComponent(
+      $$result,
+      "CTA1",
+      $$CTA1,
+      { "data-astro-cid-rwrmbyic": true }
+    )} </section> ${renderComponent($$result, "Timeline4", $$Timeline4, {
+      "data-astro-cid-rwrmbyic": true,
+    })} </main> <!-- Footer - Always at bottom --> ${renderComponent(
+      $$result,
+      "Footer",
+      $$Footer,
+      { "data-astro-cid-rwrmbyic": true }
+    )} </div>  ${renderScript(
+      $$result,
+      "C:/Projects/lumbr1dge/demo-website/src/components/WebPages/Homepage.astro?astro&type=script&index=0&lang.ts"
+    )}`;
+  },
+  "C:/Projects/lumbr1dge/demo-website/src/components/WebPages/Homepage.astro",
+  undefined
+);
+
+const $$Astro = createAstro();
+const $$Index = createComponent(
+  ($$result, $$props, $$slots) => {
+    const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+    Astro2.self = $$Index;
+    Astro2.url.pathname;
+    return renderTemplate`${renderComponent(
+      $$result,
+      "Layout",
+      $$Layout,
+      {
+        title:
+          "Home - Wolf Construction Ltd | Construction & Building Services Auckland",
+      },
+      {
+        default: ($$result2) =>
+          renderTemplate` ${renderComponent($$result2, "Homepage", $$Homepage, {
+            companyName: "Wolf Construction Ltd",
+            email: "info@buildprojects.co.nz",
+            phone: "0800 BUILD-NZ",
+          })} `,
+      }
+    )}`;
+  },
+  "C:/Projects/lumbr1dge/demo-website/src/pages/index.astro",
+  undefined
+);
+
+const $$file = "C:/Projects/lumbr1dge/demo-website/src/pages/index.astro";
+const $$url = "";
+
+const _page = /*#__PURE__*/ Object.freeze(
+  /*#__PURE__*/ Object.defineProperty(
+    {
+      __proto__: null,
+      default: $$Index,
+      file: $$file,
+      url: $$url,
+    },
+    Symbol.toStringTag,
+    { value: "Module" }
+  )
+);
+
+const page = () => _page;
+
+export { page };

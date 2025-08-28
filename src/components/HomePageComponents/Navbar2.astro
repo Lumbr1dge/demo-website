@@ -1,0 +1,256 @@
+---
+// Navbar2.astro upgraded: adds top section and bottom section like Navbar4
+export interface Props {
+  companyName?: string;
+  email?: string;
+  phone?: string;
+}
+
+const {
+  companyName = 'WOLF CONSTRUCTION LIMITED',
+  email = 'office@wolfconstruction.co.nz',
+  phone = '021 023 49527',
+} = Astro.props as Props;
+
+const activePath = Astro.url.pathname;
+const isActive = (href: string) => {
+  if (href === '/') return activePath === '/' || activePath === '';
+  return activePath.startsWith(href);
+};
+---
+
+<header class="nb2-header" role="banner">
+  <!-- Top section -->
+    <div class="nb2-top">
+      <div class="nb2-top-inner">
+        <div class="nb2-topcenter" aria-label="Contact details">
+        <div class="nb2-topitem">
+          <svg class="nb2-icn" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
+          <a class="nb2-toplink" href={`mailto:${email}`}>{email}</a>
+        </div>
+        <span class="nb2-topsep" aria-hidden="true"></span>
+        <div class="nb2-topitem">
+          <svg class="nb2-icn" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.5 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.9 3 3.4 3.4 3 3.9 3H7.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .7-.3 1l-2.2 2.2Z"/></svg>
+          <a class="nb2-toplink" href={`tel:${phone}`}>{phone}</a>
+        </div>
+      </div>
+      <div class="nb2-topright">
+        <a href="/contact" class="nb2-btn nb2-btn-gold">CONTACT US</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Middle section: existing Navbar2 menu -->
+  <nav class="navbar-container nb2-middle">
+    <div class="navbar-content">
+      <ul class="navbar-menu">
+        <li class="nav-item">
+          <a href="/" class="nav-link" aria-current={isActive('/') ? 'page' : undefined}>HOME</a>
+        </li>
+        <li class="nav-item">
+          <a href="/about" class="nav-link" aria-current={isActive('/about') ? 'page' : undefined}>ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a href="/services" class="nav-link" aria-current={isActive('/services') ? 'page' : undefined}>SERVICES</a>
+        </li>
+        <li class="nav-item design-theme-item">
+          <a href="/" class="nav-link design-theme-link" aria-current={isActive('/') ? 'page' : undefined}>
+            WOLF CONSTRUCTION LIMITED
+          </a>
+          <!-- Hanging icon -->
+          <div class="hanging-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="/gallery" class="nav-link" aria-current={isActive('/gallery') ? 'page' : undefined}>GALLERY</a>
+        </li>
+        <li class="nav-item">
+          <a href="/testimonials" class="nav-link" aria-current={isActive('/testimonials') ? 'page' : undefined}>TESTIMONIALS</a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact" class="nav-link" aria-current={isActive('/contact') ? 'page' : undefined}>CONTACT</a>
+        </li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <ul class="mobile-menu-list">
+        <li><a href="/" class="mobile-nav-link" aria-current={isActive('/') ? 'page' : undefined}>HOME</a></li>
+        <li><a href="/about" class="mobile-nav-link" aria-current={isActive('/about') ? 'page' : undefined}>ABOUT</a></li>
+        <li><a href="/services" class="mobile-nav-link" aria-current={isActive('/services') ? 'page' : undefined}>SERVICES</a></li>
+        <li><a href="/gallery" class="mobile-nav-link" aria-current={isActive('/gallery') ? 'page' : undefined}>GALLERY</a></li>
+        <li><a href="/testimonials" class="mobile-nav-link" aria-current={isActive('/testimonials') ? 'page' : undefined}>TESTIMONIALS</a></li>
+        <li><a href="/contact" class="mobile-nav-link" aria-current={isActive('/contact') ? 'page' : undefined}>CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Bottom section with fading underline -->
+  <div class="nb2-bottom" aria-hidden="true"></div>
+</header>
+
+<div class="nb2-spacer" aria-hidden="true"></div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
+  /* Header wrapper */
+  .nb2-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #ffffff; }
+
+  /* Top section */
+  .nb2-top { background: #ffffff; color: #0a1a2f; border-bottom: 1px solid rgba(10,26,47,0.15); }
+  .nb2-top-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; padding: 10px 20px; max-width: 1400px; margin: 0 auto; }
+  .nb2-topcenter { display: flex; align-items: center; justify-content: flex-start; gap: 16px; }
+  .nb2-topitem { display: inline-flex; align-items: center; gap: 8px; }
+  .nb2-topsep { width: 1px; height: 18px; background: rgba(10,26,47,0.25); }
+  .nb2-icn { width: 16px; height: 16px; color: #0a1a2f; opacity: .9; }
+  .nb2-toplink { color: #0a1a2f; text-decoration: none; font-weight: 700; font-family: sans-serif; }
+  .nb2-toplink:hover { color: #0a1a2f; text-decoration: underline; }
+  .nb2-topright { display: flex; align-items: center; justify-content: flex-end; }
+  .nb2-btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 16px; border-radius: 8px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; text-decoration: none; transition: all .2s ease; border: 2px solid transparent; white-space: nowrap; font-family: sans-serif; }
+  .nb2-btn-gold { background: #d4af37; color: #0a1a2f; border-color: #d4af37; }
+  .nb2-btn-gold:hover { filter: brightness(.95); }
+
+  /* Middle section (existing styles adapted) */
+  .navbar-container { position: relative; background: #0a1a2f; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); font-family: sans-serif; height: 60px; }
+  .nb2-middle { border-bottom: 2px solid #d4af37; }
+
+  .navbar-content { max-width: 1400px; margin: 0 auto; height: 100%; display: flex; align-items: center; justify-content: center; padding: 0 2rem; position: relative; }
+  .navbar-menu { display: flex; align-items: center; list-style: none; margin: 0; padding: 0; gap: 0; }
+  .nav-item { position: relative; height: 60px; display: flex; align-items: center; }
+  .nav-link { color: rgba(255, 255, 255, 0.9); text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0 2rem; height: 60px; display: flex; align-items: center; transition: all 0.3s ease; position: relative; white-space: nowrap; font-family: sans-serif; }
+  .nav-link:hover { color: #d4af37; }
+  .nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: #d4af37; transition: width 0.3s ease; }
+  .nav-link:hover::after { width: 80%; }
+  /* Persistent active state */
+  .nav-link[aria-current="page"] { color: #d4af37; }
+  .nav-link[aria-current="page"]::after { width: 80%; }
+
+  /* Design Theme Special Styling */
+  .design-theme-item { position: relative; z-index: 10; }
+  .design-theme-link { background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%); color: white !important; border-radius: 8px; margin: 0 1rem; box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3); transform: translateY(0); padding: 1rem 2.5rem; position: relative; overflow: hidden; height: auto; min-height: 80px; display: flex; align-items: center; z-index: 5; font-family: sans-serif; }
+  .design-theme-link::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); transition: left 0.5s ease; }
+  .design-theme-link:hover::before { left: 100%; }
+  .design-theme-link:hover { color: white !important; background: linear-gradient(135deg, #00acc1 0%, #00838f 100%); transform: translateY(2px); box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4); }
+  .design-theme-link::after { display: none; }
+
+  /* Hanging Icon */
+  .hanging-icon { position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); background: #d4af37; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; color: #0a1a2f; box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4); animation: gentle-bounce 2s ease-in-out infinite; z-index: 15; }
+  @keyframes gentle-bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-3px); } }
+
+  /* Mobile Menu Button */
+  .mobile-menu-btn { display: none; flex-direction: column; justify-content: center; align-items: center; width: 30px; height: 30px; background: none; border: none; cursor: pointer; padding: 0; position: absolute; right: 2rem; }
+  .hamburger-line { width: 25px; height: 3px; background: rgba(255, 255, 255, 0.9); margin: 2px 0; transition: all 0.3s ease; border-radius: 2px; }
+  .mobile-menu-btn:hover .hamburger-line { background: #d4af37; }
+  .mobile-menu-btn.active .hamburger-line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .mobile-menu-btn.active .hamburger-line:nth-child(2) { opacity: 0; }
+  .mobile-menu-btn.active .hamburger-line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+  /* Mobile Menu: expand down from the navbar (hamburger) */
+  .mobile-menu {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: #0a1a2f;
+    max-height: 0; overflow: hidden; padding: 0;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+  }
+  .mobile-menu.active { max-height: 480px; padding: 0.5rem 0; }
+  .mobile-menu-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .mobile-menu-list li { width: 100%; }
+  .mobile-menu-list li:not(:last-child)::after { content: ''; display: block; width: 68%; height: 1px; margin: 0.25rem auto; background: linear-gradient(90deg, rgba(212,175,55,0), rgba(212,175,55,0.6), rgba(212,175,55,0)); }
+  .mobile-nav-link { display: block; color: rgba(255, 255, 255, 0.92); text-decoration: none; font-weight: 700; font-size: 1.02rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 1rem 2rem; transition: all 0.25s ease; text-align: center; border-radius: 10px; font-family: sans-serif; }
+  .mobile-nav-link:hover { color: #d4af37; background: rgba(212, 175, 55, 0.12); transform: translateY(-1px); }
+  .mobile-nav-link[aria-current="page"] { color: #d4af37; font-weight: 700; }
+  .design-theme-mobile { background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%); color: white !important; }
+  .design-theme-mobile:hover { background: linear-gradient(135deg, #00acc1 0%, #00838f 100%) !important; color: white !important; }
+
+  /* Bottom section */
+  .nb2-bottom { position: relative; background: #ffffff; min-height: 48px; border-bottom: 1px solid rgba(10,26,47,0.08); }
+  .nb2-bottom::before { content: ''; position: absolute; top: 75%; left: 50%; transform: translate(-50%, -50%); width: 80vw; height: 6px; background: linear-gradient(90deg, rgba(10,26,47,0), #0a1a2f, rgba(10,26,47,0)); border-radius: 3px; }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .nav-link { padding: 0 1.5rem; font-size: 0.85rem; }
+    .design-theme-link { padding: 0 2rem; }
+    .nb2-topcenter { display: none; }
+    .nb2-top-inner { grid-template-columns: 1fr auto; }
+  }
+  @media (max-width: 768px) {
+    .mobile-menu-btn { display: flex; }
+    .navbar-menu { display: none; }
+    .navbar-content { justify-content: space-between; }
+    .navbar-content::before { content: 'Wolf Construction Ltd'; color: #d4af37; font-weight: 600; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase; font-family: sans-serif; }
+    /* Center the top CTA button */
+    .nb2-top-inner { grid-template-columns: 1fr; }
+    .nb2-topright { justify-content: center; }
+    /* Remove faded line and its space on mobile */
+    .nb2-bottom { display: none; min-height: 0; border-bottom: 0; }
+    :global(body) { padding-top: 0; }
+  }
+  @media (max-width: 480px) {
+    .navbar-content { padding: 0 1rem; }
+    .mobile-nav-link { padding: 0.8rem 1rem; font-size: 0.9rem; }
+  }
+
+  /* Spacer element below fixed header to prevent overlap */
+  .nb2-spacer { height: 6px; }
+  :global(body) { padding-top: 0; }
+</style>
+
+<script>
+  // Mobile menu functionality (typed-safe)
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.querySelector<HTMLButtonElement>('.mobile-menu-btn');
+    const mobileMenu = document.querySelector<HTMLElement>('.mobile-menu');
+    const headerEl = document.querySelector<HTMLElement>('.nb2-header');
+    const spacerEl = document.querySelector<HTMLElement>('.nb2-spacer');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+      });
+    }
+
+    const setSpacerHeight = () => {
+      if (headerEl && spacerEl) {
+        spacerEl.style.height = `${headerEl.offsetHeight + 6}px`;
+      }
+    };
+    setSpacerHeight();
+    window.addEventListener('resize', setSpacerHeight);
+
+    // Close mobile menu when clicking on a link
+    const mobileNavLinks = document.querySelectorAll<HTMLAnchorElement>('.mobile-nav-link');
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        if (mobileMenu && mobileMenuBtn) {
+          mobileMenu.classList.remove('active');
+          mobileMenuBtn.classList.remove('active');
+        }
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (mobileMenu && mobileMenuBtn && mobileMenu.classList.contains('active') && !target.closest('.nb2-header')) {
+        mobileMenu.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+      }
+    });
+  });
+</script>

@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Navbar2 from '../components/HomePageComponents/Navbar2.astro';
+import Footer from '../components/HomePageComponents/Footer.astro';
 
 interface Props {
     title: string;
@@ -18,7 +20,15 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body class="bg-white min-h-screen">
-        <slot />
+        <Navbar2 
+            companyName="WOLF CONSTRUCTION LIMITED"
+            email="office@wolfconstruction.co.nz"
+            phone="021 023 49527"
+        />
+        <main>
+            <slot />
+        </main>
+        <Footer />
         <script>
             function initializeAnimations() {
                 // Force scroll to top
@@ -85,6 +95,23 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
+    /* Ensure proper spacing with fixed navbar */
+    main {
+        padding-top: 0; /* Navbar2 handles its own spacing */
+        min-height: calc(100vh - 200px); /* Account for navbar and footer */
+    }
+
+    /* Ensure footer stays at bottom */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    main {
+        flex: 1;
+    }
+
     .scroll-animate-up {
         opacity: 0;
         transform: translateY(30px);

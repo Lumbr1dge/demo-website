@@ -1,0 +1,859 @@
+---
+const currentYear = new Date().getFullYear();
+
+const businessHours = [
+  { day: "Monday - Friday", hours: "7:00 AM - 6:00 PM" },
+  { day: "Saturday", hours: "8:00 AM - 4:00 PM" },
+  { day: "Sunday", hours: "Emergency Only" }
+];
+
+const links = [
+  { href: "/", text: "Home" },
+  { href: "/about", text: "About" },
+  { href: "/services", text: "Services" },
+  { href: "/gallery", text: "Gallery" },
+  { href: "/testimonials", text: "Testimonials" }
+];
+
+const services = [
+  { href: "/services", text: "Design and Architecture" },
+  { href: "/services", text: "Renovations" },
+  { href: "/services", text: "New Builds" },
+  { href: "/services", text: "Construction Project Management" },
+  { href: "/services", text: "Building Maintenance" },
+  { href: "/services", text: "Landscaping" },
+  { href: "/services", text: "Earthworks" }
+];
+
+const contactInfo = {
+  phone: "021 023 49527",
+  email: "office@wolfconstruction.co.nz",
+  address: "3 Clinker Street, Three Kings, Auckland"
+};
+
+const certifications = [
+  "New Zealand Qualified Carpenters",
+  "Fully Insured & Bonded",
+  "End-to-End Construction Services",
+  "Health & Safety Certified"
+];
+
+const serviceAreas = [
+  "Warkworth Township", "Wairau Valley", "Takapuna", "St Johns", "St Heliers",
+  "Snells Beach", "Remuera", "Ponsonby", "Point Chevalier", "Parnell",
+  "Paremoremo", "Panmure", "Orakei", "Omaha", "North Shore City and Suburbs",
+  "Newmarket", "New Windsor", "Mt Roskill", "Mt Albert", "Mission Bay",
+  "Milford", "Meadowbank", "Matakana", "Mahurangi West", "Long Bay",
+  "Kohimarama", "Grey Lynn", "Greenlane", "Grafton", "Epsom", "Ellerslie",
+  "Central Park", "Belmont", "Balmoral", "Auckland City and Suburbs",
+  "Auckland Central", "Albany"
+];
+---
+
+<footer class="footer-container">
+  <!-- Decorative Top Border -->
+  <div class="footer-top-border"></div>
+  
+  <div class="footer-main">
+    <!-- Column 1: Company Info -->
+    <div class="footer-column company-column">
+      <div class="company-info">
+        <div class="logo-section">
+          <div class="logo-container">
+            <svg class="logo-icon" viewBox="0 0 24 24" width="48" height="48">
+              <path fill="currentColor" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+            </svg>
+          </div>
+          <div class="business-name-container">
+            <h2 class="business-name">WOLF CONSTRUCTION LIMITED</h2>
+            <div class="business-subtitle">End-to-End Construction Excellence</div>
+          </div>
+        </div>
+        
+        <p class="company-description">
+          We are an end-to-end construction company that manages all aspects of the construction industry. We have New Zealand qualified carpenters who are hand-picked to fit with our company and the code of ethics we stand by.
+        </p>
+        
+        <div class="certifications">
+          {certifications.map(cert => (
+            <div class="cert-item">
+              <div class="cert-icon-container">
+                <svg class="cert-icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="cert-text">{cert}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Links & Services -->
+    <div class="footer-column links-column">
+      <div class="quick-links">
+        <h3 class="section-title">
+          <span class="title-icon">⚡</span>
+          Quick Links
+        </h3>
+        <ul class="links-list">
+          {links.map(link => (
+            <li class="link-item">
+              <a href={link.href} class="footer-link">
+                <span class="link-arrow">→</span>
+                {link.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <div class="services-links">
+        <h3 class="section-title">
+          <span class="title-icon">🏗️</span>
+          Our Services
+        </h3>
+        <ul class="links-list">
+          {services.map(service => (
+            <li class="link-item">
+              <a href={service.href} class="footer-link">
+                <span class="link-arrow">→</span>
+                {service.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Column 3: Contact & Hours -->
+    <div class="footer-column contact-column">
+      <div class="contact-section">
+        <h3 class="section-title">
+          <span class="title-icon">📞</span>
+          Contact Us
+        </h3>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon-container">
+              <svg class="contact-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+            </div>
+            <a href="tel:0800BUILDNZ" class="contact-link">{contactInfo.phone}</a>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon-container">
+              <svg class="contact-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              </svg>
+            </div>
+            <a href="mailto:info@buildprojects.co.nz" class="contact-link">{contactInfo.email}</a>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon-container">
+              <svg class="contact-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <span class="contact-text">{contactInfo.address}</span>
+          </div>
+        </div>
+        
+        <div class="business-hours">
+          <h4 class="hours-title">
+            <span class="hours-icon">🕒</span>
+            Business Hours
+          </h4>
+          <ul class="hours-list">
+            {businessHours.map(({ day, hours }) => (
+              <li class="hours-item">
+                <span class="day">{day}</span>
+                <span class="hours">{hours}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <div class="legal-links">
+        <a href="/contact" class="legal-link">Terms & Conditions</a>
+        <span class="separator">•</span>
+        <a href="/contact" class="legal-link">Privacy Policy</a>
+        <span class="separator">•</span>
+        <a href="/contact" class="legal-link">Health & Safety</a>
+      </div>
+      
+      <div class="copyright">
+        <div class="copyright-content">
+          <span class="copyright-icon">©</span>
+          {currentYear} Wolf Construction Ltd. All rights reserved.
+          <span class="lbp-badge">Licensed Building Practitioner</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* CSS Variables */
+  :root {
+    --charcoal: #111827;
+    --navy: #162539;
+    --white: #ffffff;
+    --gold: #d4af37;
+    --gold-light: #e5c158;
+    --gold-dark: #b8941f;
+    --navy-light: rgba(22, 37, 57, 0.8);
+    --navy-lighter: rgba(22, 37, 57, 0.6);
+    --white-90: rgba(255, 255, 255, 0.9);
+    --white-80: rgba(255, 255, 255, 0.8);
+    --white-70: rgba(255, 255, 255, 0.7);
+    --white-60: rgba(255, 255, 255, 0.6);
+    --shadow-sm: 0 2px 4px rgba(22, 37, 57, 0.1);
+    --shadow-md: 0 4px 8px rgba(22, 37, 57, 0.15);
+    --shadow-lg: 0 8px 16px rgba(22, 37, 57, 0.2);
+    --shadow-xl: 0 16px 32px rgba(22, 37, 57, 0.25);
+  }
+
+  /* Base Footer Styles */
+  .footer-container {
+    background: linear-gradient(180deg, var(--navy) 0%, var(--charcoal) 100%);
+    color: var(--white);
+    font-family: 'Sans serif', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
+  }
+
+  /* Decorative Top Border */
+  .footer-top-border {
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    position: relative;
+  }
+
+  .footer-top-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, var(--white), transparent);
+    opacity: 0.3;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+  }
+
+  /* Main Footer Content */
+  .footer-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    padding: 4rem 2rem 3rem;
+    position: relative;
+  }
+
+  /* Company Column */
+  .company-column {
+    position: relative;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .logo-container {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logo-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .logo-container:hover::before {
+    left: 100%;
+  }
+
+  .logo-icon {
+    color: var(--navy);
+    filter: drop-shadow(0 2px 4px rgba(22, 37, 57, 0.3));
+  }
+
+  .business-name-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .business-name {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .business-subtitle {
+    font-size: 0.875rem;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .company-description {
+    color: var(--white-80);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  .company-description::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--gold), var(--gold-light));
+    border-radius: 2px;
+  }
+
+  /* Certifications */
+  .certifications {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cert-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .cert-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--gold);
+    transform: translateX(5px);
+  }
+
+  .cert-icon-container {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cert-icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--navy);
+  }
+
+  .cert-text {
+    color: var(--white-90);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  /* Links Column */
+  .links-column {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .section-title {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-size: 1.375rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3rem;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 2px;
+  }
+
+  .title-icon {
+    font-size: 1.25rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+
+  .links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .link-item {
+    position: relative;
+  }
+
+  .footer-link {
+    color: var(--white-70);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+
+  .footer-link:hover {
+    color: var(--gold);
+    transform: translateX(8px);
+  }
+
+  .link-arrow {
+    color: var(--gold);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+
+  .footer-link:hover .link-arrow {
+    transform: translateX(3px);
+  }
+
+  /* Contact Column */
+  .contact-column {
+    position: relative;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .contact-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  .contact-icon-container {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--navy);
+  }
+
+  .contact-link, .contact-text {
+    color: var(--white-90);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .contact-link:hover {
+    color: var(--gold);
+  }
+
+  /* Business Hours */
+  .business-hours {
+    position: relative;
+  }
+
+  .hours-title {
+    color: var(--white);
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hours-icon {
+    font-size: 1rem;
+  }
+
+  .hours-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hours-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .hours-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .day {
+    font-weight: 600;
+    color: var(--white);
+    font-size: 0.875rem;
+  }
+
+  .hours {
+    color: var(--white-70);
+    font-size: 0.875rem;
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+
+  .footer-bottom-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .legal-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .legal-link {
+    color: var(--white-70);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+  }
+
+  .legal-link:hover {
+    color: var(--gold);
+  }
+
+  .separator {
+    color: var(--white-50);
+    font-weight: bold;
+  }
+
+  .copyright {
+    color: var(--white-60);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .copyright-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .copyright-icon {
+    color: var(--gold);
+    font-weight: bold;
+  }
+
+  .lbp-badge {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-left: 0.5rem;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .footer-main {
+      gap: 3rem;
+      padding: 3rem 2rem 2rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .footer-main {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .company-column {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+    
+    .logo-section {
+      justify-content: center;
+    }
+    
+    .business-name-container {
+      align-items: center;
+    }
+    
+    .company-description {
+      text-align: center;
+    }
+    
+    .company-description::before {
+      display: none;
+    }
+    
+    .certifications {
+      align-items: center;
+    }
+    
+    .links-column {
+      text-align: center;
+    }
+    
+    .section-title {
+      justify-content: center;
+    }
+    
+    .section-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .links-list {
+      align-items: center;
+    }
+    
+    .link-item {
+      justify-content: center;
+    }
+    
+    .footer-link {
+      justify-content: center;
+    }
+    
+    .contact-column {
+      text-align: center;
+    }
+    
+    .contact-info {
+      align-items: center;
+    }
+    
+    .business-hours {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      margin-top: 3rem;
+    }
+    
+    .footer-main {
+      grid-template-columns: 1fr;
+      padding: 3rem 1.5rem 2rem;
+      gap: 3rem;
+    }
+    
+    .company-column,
+    .links-column,
+    .contact-column {
+      text-align: center;
+    }
+    
+    .logo-section {
+      justify-content: center;
+    }
+    
+    .business-name-container {
+      align-items: center;
+    }
+    
+    .company-description {
+      text-align: center;
+    }
+    
+    .company-description::before {
+      display: none;
+    }
+    
+    .certifications {
+      align-items: center;
+    }
+    
+    .section-title {
+      justify-content: center;
+    }
+    
+    .section-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .links-list {
+      align-items: center;
+    }
+    
+    .link-item {
+      justify-content: center;
+    }
+    
+    .footer-link {
+      justify-content: center;
+    }
+    
+    .contact-info {
+      align-items: center;
+    }
+    
+    .business-hours {
+      text-align: center;
+    }
+    
+    .hours-list {
+      max-width: 350px;
+      margin: 0 auto;
+    }
+    
+    .footer-bottom-content {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    
+    .legal-links {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .copyright-content {
+      justify-content: center;
+    }
+    
+    .lbp-badge {
+      margin: 0.5rem 0 0 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-main {
+      padding: 2.5rem 1rem 1.5rem;
+      gap: 2.5rem;
+    }
+    
+    .business-name {
+      font-size: 1.875rem;
+    }
+    
+    .company-description {
+      font-size: 0.95rem;
+      padding-left: 0.75rem;
+    }
+    
+    .company-description::before {
+      width: 2px;
+    }
+    
+    .cert-item,
+    .contact-item {
+      padding: 0.625rem 0.875rem;
+    }
+    
+    .section-title {
+      font-size: 1.25rem;
+    }
+    
+    .footer-bottom-content {
+      padding: 1.5rem 1rem;
+    }
+  }
+</style> 

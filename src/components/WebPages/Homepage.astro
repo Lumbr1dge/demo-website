@@ -1,0 +1,182 @@
+---
+// Homepage.astro - Main homepage component that organizes all sections
+// This component will be imported into index.astro
+
+// Import all homepage components
+import Navbar2 from '../HomePageComponents/Navbar2.astro';
+import Hero1 from '../HomePageComponents/Hero1.astro';
+import About3 from '../HomePageComponents/About3.astro';
+import Services4 from '../HomePageComponents/Services4.astro';
+import Gallery1 from '../HomePageComponents/Gallery1.astro';
+import Reviews1 from '../HomePageComponents/Reviews1.astro';
+import CTA1 from '../HomePageComponents/CTA1.astro';
+import Timeline4 from '../HomePageComponents/Timeline4.astro';
+
+
+// Component props
+export interface Props {
+  companyName?: string;
+  email?: string;
+  phone?: string;
+}
+
+const {
+  companyName = 'Wolf Construction Ltd',
+  email = 'info@buildprojects.co.nz',
+  phone = '0800 BUILD-NZ',
+} = Astro.props as Props;
+---
+
+<!-- Main Homepage Structure -->
+<div class="homepage-container">
+  <!-- Main Content Sections -->
+  <main class="main-content" role="main">
+    <!-- Hero Section - First impression -->
+    <section class="hero-section" id="hero">
+      <Hero1 />
+    </section>
+
+    <!-- About Section - Company introduction -->
+    <section class="about-section scroll-animate-up" id="about">
+      <About3 />
+    </section>
+
+    <!-- Services Section - What we offer -->
+    <section class="services-section scroll-animate-up" id="services">
+      <Services4 />
+    </section>
+
+    <!-- Gallery Section - Our work showcase -->
+    <section class="gallery-section scroll-animate-up" id="gallery">
+      <Gallery1 />
+    </section>
+
+    <!-- Reviews Section - Customer testimonials -->
+    <section class="reviews-section scroll-animate-up" id="reviews">
+      <Reviews1 />
+    </section>
+
+    <!-- Call to Action Section - Contact prompt -->
+    <section class="cta-section scroll-animate-up" id="contact">
+      <CTA1 />
+    </section>
+
+<Timeline4 />
+
+  </main>
+
+</div>
+
+<style>
+  /* Homepage Container */
+  .homepage-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Section Styling */
+  .hero-section {
+    /* Hero takes full viewport height */
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-section,
+  .services-section,
+  .gallery-section,
+  .reviews-section,
+  .cta-section {
+    /* Other sections have standard spacing */
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Scroll Animation Classes */
+  .scroll-animate-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+  }
+
+  .scroll-animate-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-section {
+      min-height: 80vh;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      min-height: 70vh;
+    }
+  }
+</style>
+
+<script>
+  // Enhanced scroll animations for homepage sections
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.scroll-animate-up');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Use a longer delay for gallery section to prevent scroll interruption
+          const isGallerySection = entry.target.closest('.gallery-section');
+          const delay = isGallerySection ? 200 : 50;
+          
+          setTimeout(() => {
+            entry.target.classList.add('in-view');
+          }, delay);
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.3, // Higher threshold for smoother triggering
+      rootMargin: '0px 0px -150px 0px' // Larger margin to trigger earlier
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Smooth scrolling for navigation links (exclude mobile menu button)
+    const navLinks = document.querySelectorAll('a[href^="#"]:not(.mobile-menu-btn)');
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        // Don't interfere with mobile menu button
+        if (e.target.closest('.mobile-menu-btn')) {
+          return;
+        }
+        
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+  });
+</script>

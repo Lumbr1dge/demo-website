@@ -1,0 +1,73 @@
+globalThis.process ??= {};
+globalThis.process.env ??= {};
+/* empty css                                 */
+import {
+  c as createComponent,
+  r as renderTemplate,
+  a as renderHead,
+  b as renderComponent,
+} from "../chunks/astro/server_Dd3KBmvD.mjs";
+import { $ as $$Layout } from "../chunks/Layout_BbirI07O.mjs";
+/* empty css                                 */
+export { renderers } from "../renderers.mjs";
+
+const $$AboutPage = createComponent(
+  ($$result, $$props, $$slots) => {
+    return renderTemplate`<html lang="en" data-astro-cid-stlyuwsr> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About Us - Wolf Construction Ltd | Auckland's Premier Builder</title><meta name="description" content="Learn about Wolf Construction Ltd's mission, values, and commitment to quality construction in Auckland since 2016. Discover our story and why we're the trusted choice for building projects.">${renderHead()}</head> <body data-astro-cid-stlyuwsr> <!-- Hero Section --> <section class="hero-section" data-astro-cid-stlyuwsr> <div class="hero-background" data-astro-cid-stlyuwsr> <div class="hero-overlay" data-astro-cid-stlyuwsr></div> </div> <div class="hero-content" data-astro-cid-stlyuwsr> <div class="container" data-astro-cid-stlyuwsr> <div class="hero-text" data-astro-cid-stlyuwsr> <h1 class="hero-title" data-astro-cid-stlyuwsr>Building Excellence Since 2016</h1> <p class="hero-subtitle" data-astro-cid-stlyuwsr>Discover the story behind Auckland's most trusted construction company</p> </div> </div> </div> </section> <!-- Mission Statement Section --> <section class="mission-section" data-astro-cid-stlyuwsr> <div class="container" data-astro-cid-stlyuwsr> <div class="mission-content" data-astro-cid-stlyuwsr> <div class="mission-text" data-astro-cid-stlyuwsr> <div class="section-header" data-astro-cid-stlyuwsr> <span class="section-badge" data-astro-cid-stlyuwsr>Our Story</span> <h2 class="section-title" data-astro-cid-stlyuwsr>Mission Statement</h2> </div> <p class="mission-statement" data-astro-cid-stlyuwsr>
+At Wolf Construction Ltd, our mission is simple: to create spaces that last a lifetime while making the building process stress-free for our clients. Founded in Auckland in 2016, we've grown from a small local crew into a trusted construction partner delivering projects across residential, commercial, and outdoor sectors.
+</p> <p class="mission-continuation" data-astro-cid-stlyuwsr>
+Every project we take on is guided by a commitment to quality craftsmanship, open communication, and respect for our clients' vision.
+</p> </div> <div class="mission-visual" data-astro-cid-stlyuwsr> <div class="mission-highlight" data-astro-cid-stlyuwsr> <div class="highlight-badge" data-astro-cid-stlyuwsr> <div class="badge-icon" data-astro-cid-stlyuwsr> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-stlyuwsr> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" data-astro-cid-stlyuwsr></path> </svg> </div> <span data-astro-cid-stlyuwsr>Excellence Award</span> </div> <h3 class="highlight-title" data-astro-cid-stlyuwsr>Building Dreams Since 2016</h3> <div class="highlight-stats" data-astro-cid-stlyuwsr> <div class="stat-circle" data-astro-cid-stlyuwsr> <div class="stat-number" data-astro-cid-stlyuwsr>500+</div> <div class="stat-label" data-astro-cid-stlyuwsr>Dreams Built</div> </div> <div class="stat-circle" data-astro-cid-stlyuwsr> <div class="stat-number" data-astro-cid-stlyuwsr>15+</div> <div class="stat-label" data-astro-cid-stlyuwsr>Years of Magic</div> </div> </div> <div class="highlight-features" data-astro-cid-stlyuwsr> <div class="feature-item" data-astro-cid-stlyuwsr> <div class="feature-icon" data-astro-cid-stlyuwsr>🏗️</div> <span data-astro-cid-stlyuwsr>Licensed & Insured</span> </div> <div class="feature-item" data-astro-cid-stlyuwsr> <div class="feature-icon" data-astro-cid-stlyuwsr>⭐</div> <span data-astro-cid-stlyuwsr>5-Star Rated</span> </div> <div class="feature-item" data-astro-cid-stlyuwsr> <div class="feature-icon" data-astro-cid-stlyuwsr>🚀</div> <span data-astro-cid-stlyuwsr>Fast Delivery</span> </div> </div> <div class="highlight-cta" data-astro-cid-stlyuwsr> <a href="/contact" class="highlight-btn" data-astro-cid-stlyuwsr>Start Your Dream Project</a> </div> </div> </div> </div> </div> </section> <!-- Founder Bio Section --> <section class="founder-section" data-astro-cid-stlyuwsr> <div class="container" data-astro-cid-stlyuwsr> <div class="founder-content" data-astro-cid-stlyuwsr> <div class="founder-image" data-astro-cid-stlyuwsr> <img src="/AboutPage/Founder.jpg" alt="Founder of Wolf Construction Ltd" class="founder-photo" data-astro-cid-stlyuwsr> </div> <div class="founder-text" data-astro-cid-stlyuwsr> <div class="section-header" data-astro-cid-stlyuwsr> <span class="section-badge" data-astro-cid-stlyuwsr>Leadership</span> <h2 class="section-title" data-astro-cid-stlyuwsr>Meet Our Founder</h2> </div> <p class="founder-bio" data-astro-cid-stlyuwsr>
+Our founder, [Founder's Name], started in the building trade with a passion for turning ideas into solid, lasting structures. With over 20 years of hands-on experience and Licensed Building Practitioner (LBP) certification, he has led Wolf Construction Ltd from its first small renovation to large-scale new builds and design + build solutions.
+</p> <p class="founder-philosophy" data-astro-cid-stlyuwsr>
+His belief is that construction is not just about bricks and timber—it's about building trust, relationships, and communities.
+</p> <div class="founder-credentials" data-astro-cid-stlyuwsr> <div class="credential" data-astro-cid-stlyuwsr> <div class="credential-icon" data-astro-cid-stlyuwsr> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-stlyuwsr> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" data-astro-cid-stlyuwsr></path> </svg> </div> <span data-astro-cid-stlyuwsr>Licensed Building Practitioner (LBP)</span> </div> <div class="credential" data-astro-cid-stlyuwsr> <div class="credential-icon" data-astro-cid-stlyuwsr> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-stlyuwsr> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" data-astro-cid-stlyuwsr></path> </svg> </div> <span data-astro-cid-stlyuwsr>20+ Years Experience</span> </div> </div> </div> </div> </div> </section> <!-- Company Values Section --> <section class="values-section" data-astro-cid-stlyuwsr> <div class="container" data-astro-cid-stlyuwsr> <div class="section-header text-center" data-astro-cid-stlyuwsr> <span class="section-badge" data-astro-cid-stlyuwsr>Our Approach</span> <h2 class="section-title" data-astro-cid-stlyuwsr>Company Values & Process</h2> <p class="section-subtitle" data-astro-cid-stlyuwsr>The principles that guide every project we undertake</p> </div> <div class="values-grid" data-astro-cid-stlyuwsr> <div class="value-card" data-astro-cid-stlyuwsr> <div class="value-icon" data-astro-cid-stlyuwsr> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-stlyuwsr> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" data-astro-cid-stlyuwsr></path> </svg> </div> <h3 data-astro-cid-stlyuwsr>Quality First</h3> <p data-astro-cid-stlyuwsr>We set the bar high on workmanship, materials, and safety.</p> </div> <div class="value-card" data-astro-cid-stlyuwsr> <div class="value-icon" data-astro-cid-stlyuwsr> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-stlyuwsr> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" data-astro-cid-stlyuwsr></path> </svg> </div> <h3 data-astro-cid-stlyuwsr>Transparency</h3> <p data-astro-cid-stlyuwsr>Clear communication, honest pricing, and no surprises.</p> </div> <div class="value-card" data-astro-cid-stlyuwsr> <div class="value-icon" data-astro-cid-stlyuwsr> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-stlyuwsr> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" data-astro-cid-stlyuwsr></path> </svg> </div> <h3 data-astro-cid-stlyuwsr>Innovation</h3> <p data-astro-cid-stlyuwsr>Creative solutions that save time, money, and enhance function.</p> </div> <div class="value-card" data-astro-cid-stlyuwsr> <div class="value-icon" data-astro-cid-stlyuwsr> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-stlyuwsr> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" data-astro-cid-stlyuwsr></path> </svg> </div> <h3 data-astro-cid-stlyuwsr>Sustainability</h3> <p data-astro-cid-stlyuwsr>Responsible building practices that minimise waste and impact.</p> </div> <div class="value-card" data-astro-cid-stlyuwsr> <div class="value-icon" data-astro-cid-stlyuwsr> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" data-astro-cid-stlyuwsr> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" data-astro-cid-stlyuwsr></path> </svg> </div> <h3 data-astro-cid-stlyuwsr>Personalised Service</h3> <p data-astro-cid-stlyuwsr>Every project is treated as unique, with a tailored approach from consultation to completion.</p> </div> </div> <div class="process-description" data-astro-cid-stlyuwsr> <p data-astro-cid-stlyuwsr>Our unique process blends careful planning, modern technology, and old-fashioned craftsmanship. From early design input to final handover, we involve our clients at every step so the journey is as rewarding as the result.</p> </div> </div> </section> <!-- Why Choose Us Section --> <section class="why-choose-section" data-astro-cid-stlyuwsr> <div class="container" data-astro-cid-stlyuwsr> <div class="section-header text-center" data-astro-cid-stlyuwsr> <span class="section-badge" data-astro-cid-stlyuwsr>Why Wolf Construction Ltd</span> <h2 class="section-title" data-astro-cid-stlyuwsr>The Trusted Choice</h2> <p class="section-subtitle" data-astro-cid-stlyuwsr>Here's what sets us apart from the competition</p> </div> <div class="reasons-grid" data-astro-cid-stlyuwsr> <div class="reason-item" data-astro-cid-stlyuwsr> <div class="reason-number" data-astro-cid-stlyuwsr>01</div> <div class="reason-content" data-astro-cid-stlyuwsr> <h3 data-astro-cid-stlyuwsr>Proven Experience</h3> <p data-astro-cid-stlyuwsr>15+ years in the industry, with hundreds of successful projects.</p> </div> </div> <div class="reason-item" data-astro-cid-stlyuwsr> <div class="reason-number" data-astro-cid-stlyuwsr>02</div> <div class="reason-content" data-astro-cid-stlyuwsr> <h3 data-astro-cid-stlyuwsr>Certified Team</h3> <p data-astro-cid-stlyuwsr>Licensed, insured, and trained professionals.</p> </div> </div> <div class="reason-item" data-astro-cid-stlyuwsr> <div class="reason-number" data-astro-cid-stlyuwsr>03</div> <div class="reason-content" data-astro-cid-stlyuwsr> <h3 data-astro-cid-stlyuwsr>On-Time Delivery</h3> <p data-astro-cid-stlyuwsr>Efficient project management ensures deadlines are met.</p> </div> </div> <div class="reason-item" data-astro-cid-stlyuwsr> <div class="reason-number" data-astro-cid-stlyuwsr>04</div> <div class="reason-content" data-astro-cid-stlyuwsr> <h3 data-astro-cid-stlyuwsr>Trusted Reputation</h3> <p data-astro-cid-stlyuwsr>High referral rates and repeat clients.</p> </div> </div> <div class="reason-item" data-astro-cid-stlyuwsr> <div class="reason-number" data-astro-cid-stlyuwsr>05</div> <div class="reason-content" data-astro-cid-stlyuwsr> <h3 data-astro-cid-stlyuwsr>End-to-End Capability</h3> <p data-astro-cid-stlyuwsr>From renovations to new builds, we handle it all under one roof.</p> </div> </div> </div> </div> </section>  </body> </html>`;
+  },
+  "C:/Projects/lumbr1dge/demo-website/src/components/WebPages/AboutPage.astro",
+  undefined
+);
+
+const $$About = createComponent(
+  ($$result, $$props, $$slots) => {
+    return renderTemplate`${renderComponent(
+      $$result,
+      "Layout",
+      $$Layout,
+      {
+        title:
+          "About Us - Wolf Construction Ltd | Construction & Building Services Auckland",
+      },
+      {
+        default: ($$result2) =>
+          renderTemplate` ${renderComponent(
+            $$result2,
+            "AboutPage",
+            $$AboutPage,
+            {}
+          )} `,
+      }
+    )}`;
+  },
+  "C:/Projects/lumbr1dge/demo-website/src/pages/about.astro",
+  undefined
+);
+
+const $$file = "C:/Projects/lumbr1dge/demo-website/src/pages/about.astro";
+const $$url = "/about";
+
+const _page = /*#__PURE__*/ Object.freeze(
+  /*#__PURE__*/ Object.defineProperty(
+    {
+      __proto__: null,
+      default: $$About,
+      file: $$file,
+      url: $$url,
+    },
+    Symbol.toStringTag,
+    { value: "Module" }
+  )
+);
+
+const page = () => _page;
+
+export { page };
