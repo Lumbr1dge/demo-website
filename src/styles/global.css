@@ -14,11 +14,31 @@
 
   /* Mobile Safari rendering fix - forces content to be visible */
   @supports (-webkit-touch-callout: none) {
+    /* Force hardware acceleration and proper rendering on iOS Safari */
+    html,
+    body {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    /* Force content rendering without visual changes */
     main,
     section,
     div,
     article,
     aside {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-perspective: 1000;
+      perspective: 1000;
+    }
+
+    /* Ensure content is rendered but not visually changed */
+    * {
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
     }
