@@ -10,33 +10,6 @@
 
   body {
     @apply bg-white text-gray-900 min-h-screen;
-    /* Critical: Prevent white screen */
-    background-color: #ffffff !important;
-    color: #111827 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  /* Ensure all content is immediately visible */
-  * {
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  /* Force main content visibility */
-  main {
-    background-color: #ffffff !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  /* Ensure navigation elements are visible */
-  nav,
-  header,
-  footer {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: block !important;
   }
 }
 
