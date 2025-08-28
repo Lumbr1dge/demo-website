@@ -11,31 +11,6 @@
   body {
     @apply bg-white text-gray-900 min-h-screen;
   }
-
-  /* Mobile Safari rendering fix - forces immediate content painting */
-  @supports (-webkit-touch-callout: none) {
-    /* Force Safari to paint content immediately */
-    html,
-    body {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-
-    /* Force all content containers to be painted */
-    main,
-    section,
-    div,
-    article,
-    aside,
-    header,
-    footer,
-    nav {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-      -webkit-will-change: transform;
-      will-change: transform;
-    }
-  }
 }
 
 @layer components {

@@ -88,6 +88,16 @@ const { title } = Astro.props;
                 initializeAnimations();
             }
 
+            // Also initialize after full load (helps Safari render on first paint)
+            window.addEventListener('load', () => {
+                requestAnimationFrame(() => {
+                    initializeAnimations();
+                    // Fallback re-checks to handle iOS Safari paint timing
+                    setTimeout(initializeAnimations, 200);
+                    setTimeout(initializeAnimations, 400);
+                });
+            });
+
             // Handle Astro page changes
             document.addEventListener('astro:page-load', initializeAnimations);
         </script>
