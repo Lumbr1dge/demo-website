@@ -90,6 +90,37 @@ const { title } = Astro.props;
 
             // Handle Astro page changes
             document.addEventListener('astro:page-load', initializeAnimations);
+            
+            // Additional safety - ensure visibility on any navigation
+            document.addEventListener('astro:after-swap', () => {
+                // Force immediate visibility after page swap
+                document.body.style.opacity = '1';
+                document.body.style.visibility = 'visible';
+                document.body.style.backgroundColor = '#ffffff';
+                
+                const main = document.querySelector('main');
+                if (main && main instanceof HTMLElement) {
+                    main.style.opacity = '1';
+                    main.style.visibility = 'visible';
+                    main.style.backgroundColor = '#ffffff';
+                }
+                
+                // Re-initialize animations
+                initializeAnimations();
+            });
+            
+            // Fallback - ensure visibility after a short delay
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.visibility = 'visible';
+                document.body.style.backgroundColor = '#ffffff';
+            }, 100);
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.visibility = 'visible';
+                document.body.style.backgroundColor = '#ffffff';
+            }, 500);
         </script>
     </body>
 </html>
