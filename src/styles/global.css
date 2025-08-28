@@ -12,35 +12,28 @@
     @apply bg-white text-gray-900 min-h-screen;
   }
 
-  /* Mobile Safari rendering fix - forces content to be visible */
+  /* Mobile Safari rendering fix - forces immediate content painting */
   @supports (-webkit-touch-callout: none) {
-    /* Force hardware acceleration and proper rendering on iOS Safari */
+    /* Force Safari to paint content immediately */
     html,
     body {
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
     }
 
-    /* Force content rendering without visual changes */
+    /* Force all content containers to be painted */
     main,
     section,
     div,
     article,
-    aside {
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      -webkit-perspective: 1000;
-      perspective: 1000;
-    }
-
-    /* Ensure content is rendered but not visually changed */
-    * {
-      -webkit-transform: translateZ(0);
-      transform: translateZ(0);
+    aside,
+    header,
+    footer,
+    nav {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-will-change: transform;
+      will-change: transform;
     }
   }
 }
