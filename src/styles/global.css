@@ -11,6 +11,18 @@
   body {
     @apply bg-white text-gray-900 min-h-screen;
   }
+
+  /* Mobile Safari rendering fix - forces content to be visible */
+  @supports (-webkit-touch-callout: none) {
+    main,
+    section,
+    div,
+    article,
+    aside {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+  }
 }
 
 @layer components {
