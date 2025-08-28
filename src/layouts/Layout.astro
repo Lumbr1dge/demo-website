@@ -18,8 +18,10 @@ const { title } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        <!-- Set ASAP so CSS can know JS is available -->
+        <script>document.documentElement.classList.add('js');</script>
     </head>
-    <body class="bg-white min-h-screen">
+    <body class="bg-white min-h-[100svh] md:min-h-screen">
         <Navbar2 
             companyName="WOLF CONSTRUCTION LIMITED"
             email="office@wolfconstruction.co.nz"
@@ -35,15 +37,12 @@ const { title } = Astro.props;
                 const elements = document.querySelectorAll('.scroll-animate-up');
                 elements.forEach(element => {
                     // Remove any existing animation classes
-                    element.classList.remove('init', 'visible', 'in-view');
+                    element.classList.remove('visible', 'in-view');
                     
-                    // Set initial state
-                    element.classList.add('init');
-                    
-                    // Check if element is in viewport - more aggressive detection for mobile Safari
+                    // Check if element is in viewport - more precise detection
                     const rect = element.getBoundingClientRect();
-                    if (rect.top < window.innerHeight || rect.bottom > 0) {
-                        // Add the correct animation class that components expect immediately
+                    // Visible if any part is within the viewport
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
                         element.classList.add('visible', 'in-view');
                     }
                 });
@@ -57,8 +56,8 @@ const { title } = Astro.props;
                     });
                 }, {
                     root: null,
-                    rootMargin: '10px',
-                    threshold: 0.1
+                    rootMargin: '0px 0px -10%',
+                    threshold: 0
                 });
 
                 // Start observing all scroll-animate-up elements except footer
@@ -76,11 +75,12 @@ const { title } = Astro.props;
                 }
             }
 
-            // Initialize on first page load
+            // Initialize after layout, with two rAFs for iOS first-paint
+            const run = () => requestAnimationFrame(() => requestAnimationFrame(initializeAnimations));
             if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initializeAnimations);
+                document.addEventListener('DOMContentLoaded', run);
             } else {
-                initializeAnimations();
+                run();
             }
 
             // Handle Astro page changes
@@ -90,9 +90,20 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
+    /* --- iOS dvh/svh fallbacks --- */
+    @supports (height: 100dvh) {
+        body { min-height: 100dvh; }
+        main { min-height: calc(100dvh - 200px); }
+    }
+    @supports (height: 100svh) {
+        body { min-height: 100svh; }
+        main { min-height: calc(100svh - 200px); }
+    }
+
     /* Ensure proper spacing with fixed navbar */
     main {
         padding-top: 0; /* Navbar2 handles its own spacing */
+        /* 100vh kept as fallback; dvh/svh override above */
         min-height: calc(100vh - 200px); /* Account for navbar and footer */
     }
 
@@ -100,6 +111,7 @@ const { title } = Astro.props;
     body {
         display: flex;
         flex-direction: column;
+        /* 100vh fallback only; dvh/svh override above */
         min-height: 100vh;
     }
 
@@ -107,7 +119,8 @@ const { title } = Astro.props;
         flex: 1;
     }
 
-    .scroll-animate-up {
+    /* Keep content visible by default. Only hide when JS flag is present. */
+    .js .scroll-animate-up {
         opacity: 0;
         transform: translateY(30px);
         transition: none;
