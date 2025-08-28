@@ -38,7 +38,7 @@ const { title } = Astro.props;
                 const elements = document.querySelectorAll('.scroll-animate-up');
                 elements.forEach(element => {
                     // Remove any existing animation classes
-                    element.classList.remove('init', 'visible');
+                    element.classList.remove('init', 'visible', 'in-view');
                     
                     // Set initial state
                     element.classList.add('init');
@@ -48,7 +48,7 @@ const { title } = Astro.props;
                     if (rect.top < window.innerHeight) {
                         // Add visible class after a small delay to ensure smooth animation
                         setTimeout(() => {
-                            element.classList.add('visible');
+                            element.classList.add('visible', 'in-view');
                         }, 100);
                     }
                 });
@@ -57,7 +57,7 @@ const { title } = Astro.props;
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
+                            entry.target.classList.add('visible', 'in-view');
                         }
                     });
                 }, {
@@ -97,6 +97,41 @@ const { title } = Astro.props;
                     setTimeout(initializeAnimations, 400);
                 });
             });
+
+            // Above-the-fold reveal fallback (no visual change)
+            function revealAboveTheFold() {
+                const candidates = document.querySelectorAll('.scroll-animate-up:not(.visible)');
+                candidates.forEach((node) => {
+                    const element = node instanceof HTMLElement ? node : null;
+                    if (!element) return;
+                    const rect = element.getBoundingClientRect();
+                    if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                        element.classList.add('visible', 'in-view');
+                    }
+                });
+            }
+
+            const scheduleReveal = () => {
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        revealAboveTheFold();
+                        setTimeout(revealAboveTheFold, 120);
+                    });
+                });
+            };
+
+            // Run reveal on load and key lifecycle events (safe, invisible)
+            if (document.readyState === 'complete') {
+                scheduleReveal();
+            } else {
+                window.addEventListener('load', scheduleReveal);
+            }
+            document.addEventListener('astro:page-load', scheduleReveal);
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible') scheduleReveal();
+            });
+            window.addEventListener('orientationchange', scheduleReveal);
+            window.addEventListener('resize', scheduleReveal);
 
             // Handle Astro page changes
             document.addEventListener('astro:page-load', initializeAnimations);
