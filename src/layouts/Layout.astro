@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/responsive-consistency.css';
 import Navbar2 from '../components/HomePageComponents/Navbar2.astro';
 import Footer from '../components/HomePageComponents/Footer.astro';
 
@@ -33,19 +34,7 @@ const { title } = Astro.props;
         <Footer />
         <script>
             function initializeAnimations() {
-                // CRITICAL: Ensure Hero section is immediately visible
-                const heroSection = document.querySelector('.hero-section') as HTMLElement;
-                const hero1 = document.querySelector('.hero1') as HTMLElement;
-                if (heroSection) {
-                    heroSection.style.opacity = '1';
-                    heroSection.style.visibility = 'visible';
-                    heroSection.style.transform = 'none';
-                }
-                if (hero1) {
-                    hero1.style.opacity = '1';
-                    hero1.style.visibility = 'visible';
-                    hero1.style.transform = 'none';
-                }
+
                 
                 // Initialize all scroll-animate-up elements
                 const elements = document.querySelectorAll('.scroll-animate-up');
@@ -141,29 +130,7 @@ const { title } = Astro.props;
         will-change: transform, opacity;
     }
     
-    /* Critical: Ensure Hero section is always visible on mobile */
-    .hero-section,
-    .hero1 {
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-    }
-    
-    /* Ensure Hero is never affected by scroll animations */
-    .hero-section .scroll-animate-up,
-    .hero1 .scroll-animate-up {
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-    }
-    
-    /* CRITICAL: Override the .js .scroll-animate-up rule for Hero */
-    .js .hero-section,
-    .js .hero1 {
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-    }
+
 
     .scroll-animate-up.visible,
     .scroll-animate-up.in-view {

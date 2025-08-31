@@ -84,7 +84,8 @@ const {
 
   /* Section Styling */
   .hero-section {
-    /* Let Hero1 component handle its own sizing */
+    /* Hero takes full viewport height */
+    min-height: 100vh;
     position: relative;
     z-index: 1;
   }
@@ -113,7 +114,18 @@ const {
     transform: translateY(0);
   }
 
-  /* Responsive Design - Hero sizing handled by Hero1 component */
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-section {
+      min-height: 80vh;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      min-height: 70vh;
+    }
+  }
 </style>
 
 <script>
