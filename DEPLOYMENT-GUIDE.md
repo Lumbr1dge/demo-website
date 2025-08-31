@@ -41,7 +41,7 @@ rm -rf dist .astro
 npm ci --only=production
 npm run build
 
-# Deploy to Cloudflare
+# Deploy to Cloudflare Pages
 npx wrangler pages deploy dist --project-name=demo-site
 ```
 
@@ -64,10 +64,11 @@ npx wrangler pages deploy dist --project-name=demo-site
 - Prevented chunk splitting issues
 - Enabled modern features for better consistency
 
-### 4. Cloudflare Configuration
+### 4. Cloudflare Pages Configuration
 
-- Added consistent caching headers
-- Ensured proper asset handling
+- **Fixed**: Removed unsupported fields from `wrangler.json`
+- **Added**: `_headers` file for consistent caching behavior
+- **Added**: `_redirects` file for proper routing
 - Configured for consistent edge behavior
 
 ### 5. Responsive Consistency CSS
@@ -75,6 +76,29 @@ npx wrangler pages deploy dist --project-name=demo-site
 - Created dedicated CSS file for consistent behavior
 - Force consistent breakpoints across all environments
 - Ensured consistent spacing, typography, and layout
+
+## 📁 Important Files for Deployment
+
+### `wrangler.json` (Simplified for Pages)
+
+```json
+{
+  "compatibility_date": "2025-01-09",
+  "compatibility_flags": ["nodejs_compat"],
+  "pages_build_output_dir": "./dist",
+  "name": "demo-site"
+}
+```
+
+### `_headers` (Cloudflare Pages Headers)
+
+- Handles caching for CSS, JS, images, and fonts
+- Ensures consistent asset delivery across all environments
+
+### `_redirects` (Cloudflare Pages Routing)
+
+- Handles client-side routing
+- Ensures all pages are accessible
 
 ## 📱 Testing Responsive Behavior
 
@@ -143,6 +167,11 @@ npx wrangler pages deploy dist --project-name=demo-site
 
 **Problem**: Content jumps around during page load
 **Solution**: Ensure consistent spacing and prevent layout shifts
+
+#### 5. Deployment Failures
+
+**Problem**: Wrangler configuration errors
+**Solution**: Use the simplified `wrangler.json` configuration for Pages
 
 ### Debug Steps
 

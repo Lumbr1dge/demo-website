@@ -35,13 +35,8 @@ if (-not (Test-Path "dist/_astro/index.css")) {
     exit 1
 }
 
-if (-not (Test-Path "dist/_worker.js/index.js")) {
-    Write-Host "❌ Critical JS file not found" -ForegroundColor Red
-    exit 1
-}
-
-# Deploy to Cloudflare
-Write-Host "☁️ Deploying to Cloudflare..." -ForegroundColor Yellow
+# Deploy to Cloudflare Pages
+Write-Host "☁️ Deploying to Cloudflare Pages..." -ForegroundColor Yellow
 npx wrangler pages deploy dist --project-name=demo-site
 
 # Verify deployment

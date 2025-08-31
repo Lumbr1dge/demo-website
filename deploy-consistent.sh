@@ -37,13 +37,8 @@ if [ ! -f "dist/_astro/index.css" ]; then
     exit 1
 fi
 
-if [ ! -f "dist/_worker.js/index.js" ]; then
-    echo "❌ Critical JS file not found"
-    exit 1
-fi
-
-# Deploy to Cloudflare
-echo "☁️ Deploying to Cloudflare..."
+# Deploy to Cloudflare Pages
+echo "☁️ Deploying to Cloudflare Pages..."
 npx wrangler pages deploy dist --project-name=demo-site
 
 # Verify deployment

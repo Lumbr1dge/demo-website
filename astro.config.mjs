@@ -33,8 +33,4 @@ export default defineConfig({
       postcss: true,
     },
   },
-  experimental: {
-    // Enable modern features for better consistency
-    assets: true,
-  },
 });

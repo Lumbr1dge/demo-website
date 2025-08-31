@@ -1,0 +1,12 @@
+# Cloudflare Pages Redirects Configuration
+# This file ensures proper routing behavior across all environments
+
+# Handle client-side routing for SPA-like behavior
+/*    /index.html   200
+
+# Ensure all routes work correctly
+/about    /about.html   200
+/services    /services.html   200
+/gallery    /gallery.html   200
+/testimonials    /testimonials.html   200
+/contact    /contact.html   200
