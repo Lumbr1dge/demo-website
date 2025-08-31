@@ -61,7 +61,10 @@ const {
       <CTA1 />
     </section>
 
-<Timeline4 />
+    <!-- Timeline Section - Company timeline -->
+    <section class="timeline-section scroll-animate-up" id="timeline">
+      <Timeline4 />
+    </section>
 
   </main>
 
@@ -84,8 +87,7 @@ const {
 
   /* Section Styling */
   .hero-section {
-    /* Hero takes full viewport height */
-    min-height: 100vh;
+    /* Let Hero1 component handle its own sizing */
     position: relative;
     z-index: 1;
   }
@@ -94,7 +96,8 @@ const {
   .services-section,
   .gallery-section,
   .reviews-section,
-  .cta-section {
+  .cta-section,
+  .timeline-section {
     /* Other sections have standard spacing */
     position: relative;
     z-index: 1;
@@ -114,18 +117,7 @@ const {
     transform: translateY(0);
   }
 
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero-section {
-      min-height: 80vh;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero-section {
-      min-height: 70vh;
-    }
-  }
+  /* Responsive Design - Hero sizing handled by Hero1 component */
 </style>
 
 <script>
@@ -161,7 +153,8 @@ const {
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         // Don't interfere with mobile menu button
-        if (e.target.closest('.mobile-menu-btn')) {
+        const target = e.target as Element | null;
+        if (target && target.closest('.mobile-menu-btn')) {
           return;
         }
         
