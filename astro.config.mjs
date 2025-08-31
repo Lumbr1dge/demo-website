@@ -13,24 +13,4 @@ export default defineConfig({
   }),
   integrations: [tailwind()],
   output: "server",
-  build: {
-    // Ensure consistent asset handling
-    assets: "_astro",
-    inlineStylesheets: "auto",
-  },
-  vite: {
-    // Ensure consistent build behavior
-    build: {
-      cssCodeSplit: false, // Keep CSS in single file for consistency
-      rollupOptions: {
-        output: {
-          manualChunks: undefined, // Prevent chunk splitting issues
-        },
-      },
-    },
-    css: {
-      // Ensure consistent CSS processing
-      postcss: true,
-    },
-  },
 });
