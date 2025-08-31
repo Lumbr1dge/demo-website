@@ -47,14 +47,19 @@ const {
     background-size: cover;             /* cover entire hero */
     background-position: center;        /* keep image centered */
     background-repeat: no-repeat;
+    background-attachment: scroll;      /* Prevent Safari mobile issues */
     margin: 0;
     padding: 0;
     line-height: 1;
+    -webkit-transform: translateZ(0);   /* Force hardware acceleration */
+    transform: translateZ(0);           /* Force compositing layer */
   }
 
   .hero1-overlay {
     position: absolute; inset: 0;
     background: rgba(0,0,0,0.6); /* dark overlay for readability */
+    -webkit-transform: translateZ(0); /* Force GPU layer */
+    transform: translateZ(0);
   }
 
   .hero1-content {

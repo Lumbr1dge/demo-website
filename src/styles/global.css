@@ -10,7 +10,9 @@
 
   body {
     @apply bg-white text-gray-900;
-    min-height: 100vh; /* fallback */
+    min-height: 100vh; /* fallback for older browsers */
+    min-height: 100svh; /* Safari-safe viewport height */
+    -webkit-transform: translateZ(0); /* Force hardware acceleration */
   }
 }
 
@@ -81,8 +83,14 @@
 
 /* Put these overrides at the END of the file so they win the cascade */
 @supports (height: 100dvh) {
-  body { min-height: 100dvh; }
+  body {
+    min-height: 100dvh;
+    -webkit-transform: translateZ(0);
+  }
 }
 @supports (height: 100svh) {
-  body { min-height: 100svh; }
+  body {
+    min-height: 100svh;
+    -webkit-transform: translateZ(0);
+  }
 }

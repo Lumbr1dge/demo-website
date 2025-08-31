@@ -15,7 +15,7 @@ const { title } = Astro.props;
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
 
@@ -66,14 +66,22 @@ const { title } = Astro.props;
 
     /* Content always visible - no fade-in animations */
     .scroll-animate-up {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        visibility: visible !important;
     }
 
     .scroll-animate-up.visible,
     .scroll-animate-up.in-view {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        visibility: visible !important;
+    }
+
+    /* Ensure all content is visible on load - Safari mobile fix */
+    body * {
         opacity: 1;
-        transform: translateY(0);
+        visibility: visible;
     }
 
     @keyframes fadeIn {
