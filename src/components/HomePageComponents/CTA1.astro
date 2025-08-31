@@ -359,16 +359,15 @@
     }
   }
 
-  /* Scroll Animation */
+  /* Scroll Animation - Content visible immediately */
   .scroll-animate-up {
-    opacity: 0;
-    transform: translateY(25px);
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .scroll-animate-up.in-view {
     opacity: 1;
     transform: translateY(0);
-    transition: opacity 0.7s ease, transform 0.7s ease;
   }
 
   /* Hover Effects */
@@ -383,28 +382,4 @@
   }
 </style>
 
-<script>
-  // Enhanced IntersectionObserver with staggered animations
-  document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('.scroll-animate-up');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          // Stagger the animation for child elements
-          setTimeout(() => {
-            entry.target.classList.add('in-view');
-          }, index * 100);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { 
-      threshold: 0.2,
-      rootMargin: '0px 0px -50px 0px'
-    });
 
-    elements.forEach(element => {
-      observer.observe(element);
-    });
-  });
-</script>
