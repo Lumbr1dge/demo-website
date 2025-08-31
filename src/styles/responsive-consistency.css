@@ -2,6 +2,15 @@
    This file ensures your deployed site behaves exactly like your local version
    across all screen sizes and devices */
 
+/* CRITICAL: Prevent white screen in responsive mode */
+html,
+body {
+  background-color: #ffffff !important;
+  min-height: 100vh !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /* Force consistent viewport behavior */
 html {
   /* Prevent zoom on iOS */
@@ -12,6 +21,9 @@ html {
   /* Force consistent scrolling */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+
+  /* Ensure background is always visible */
+  background-color: #ffffff !important;
 }
 
 body {
@@ -29,11 +41,32 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-text-rendering: optimizeLegibility;
   -moz-text-rendering: optimizeLegibility;
+
+  /* CRITICAL: Prevent white screen */
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-/* Force consistent responsive breakpoints */
+/* CRITICAL: Ensure main content is always visible */
+main {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  min-height: calc(100vh - 200px) !important;
+}
+
+/* Force content visibility in all responsive breakpoints */
 @media (max-width: 474px) {
   /* Extra small devices */
+  html,
+  body,
+  main {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
   .xs\:block {
     display: block !important;
   }
@@ -50,6 +83,14 @@ body {
 
 @media (min-width: 475px) and (max-width: 639px) {
   /* Small devices */
+  html,
+  body,
+  main {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
   .sm\:block {
     display: block !important;
   }
@@ -66,6 +107,14 @@ body {
 
 @media (min-width: 640px) and (max-width: 767px) {
   /* Medium-small devices */
+  html,
+  body,
+  main {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
   .md\:block {
     display: block !important;
   }
@@ -82,6 +131,14 @@ body {
 
 @media (min-width: 768px) and (max-width: 1023px) {
   /* Medium devices */
+  html,
+  body,
+  main {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
   .lg\:block {
     display: block !important;
   }
@@ -98,6 +155,14 @@ body {
 
 @media (min-width: 1024px) and (max-width: 1279px) {
   /* Large devices */
+  html,
+  body,
+  main {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
   .xl\:block {
     display: block !important;
   }
@@ -114,6 +179,14 @@ body {
 
 @media (min-width: 1280px) {
   /* Extra large devices */
+  html,
+  body,
+  main {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
   .2xl\:block {
     display: block !important;
   }
@@ -128,6 +201,20 @@ body {
   }
 }
 
+/* CRITICAL: Force all content to be visible by default */
+* {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Only hide elements that are explicitly hidden */
+.hidden,
+[hidden],
+.invisible {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
 /* Force consistent spacing across all breakpoints */
 @media (max-width: 767px) {
   /* Mobile spacing */
@@ -139,6 +226,15 @@ body {
   .mobile-container {
     max-width: 100%;
     padding: 0 1rem;
+  }
+
+  /* CRITICAL: Ensure mobile content is visible */
+  html,
+  body,
+  main {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
 
@@ -153,6 +249,15 @@ body {
     max-width: 768px;
     padding: 0 2rem;
   }
+
+  /* CRITICAL: Ensure tablet content is visible */
+  html,
+  body,
+  main {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -165,6 +270,15 @@ body {
   .desktop-container {
     max-width: 1200px;
     padding: 0 2rem;
+  }
+
+  /* CRITICAL: Ensure desktop content is visible */
+  html,
+  body,
+  main {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
 

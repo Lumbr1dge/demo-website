@@ -50,7 +50,7 @@ npx wrangler pages deploy dist --project-name=demo-site
 ### 1. Viewport Meta Tag
 
 - **Before**: `<meta name="viewport" content="width=device-width" />`
-- **After**: `<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />`
+- **After**: `<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />`
 
 ### 2. Tailwind Configuration
 
@@ -77,6 +77,40 @@ npx wrangler pages deploy dist --project-name=demo-site
 - Force consistent breakpoints across all environments
 - Ensured consistent spacing, typography, and layout
 
+### 6. **CRITICAL: White Screen Prevention**
+
+- **Added**: `critical.css` file loaded immediately to prevent white screen
+- **Fixed**: Responsive mode white screen issues
+- **Ensured**: Content is visible in all viewport sizes immediately
+- **Added**: Critical responsive classes to Tailwind safelist
+
+## 🚨 **White Screen Issue - FIXED**
+
+### **Problem**
+
+Your deployed site showed a white screen in responsive mode, with only the navbar visible. Content only appeared after scrolling.
+
+### **Root Causes**
+
+1. **CSS Loading Delays**: Responsive CSS took too long to load in production
+2. **Viewport Calculation Issues**: Mobile viewport calculations differed between local and deployed
+3. **CSS Purging**: Critical responsive classes were being removed during build
+4. **Initial Render Issues**: Content was hidden initially due to CSS loading order
+
+### **Solutions Implemented**
+
+1. **Critical CSS File**: `src/styles/critical.css` loads immediately
+2. **Enhanced Safelist**: Prevents purging of critical responsive classes
+3. **Forced Visibility**: CSS rules ensure content is always visible
+4. **Immediate Loading**: Critical styles load before any other CSS
+
+### **Files Added/Modified**
+
+- ✅ `src/styles/critical.css` - Prevents white screen
+- ✅ `src/styles/responsive-consistency.css` - Enhanced responsive behavior
+- ✅ `tailwind.config.mjs` - Extended safelist for critical classes
+- ✅ `src/layouts/Layout.astro` - Critical CSS import order
+
 ## 📁 Important Files for Deployment
 
 ### `wrangler.json` (Simplified for Pages)
@@ -102,10 +136,20 @@ npx wrangler pages deploy dist --project-name=demo-site
 
 ## 📱 Testing Responsive Behavior
 
+### **Quick Test for White Screen Issue**
+
+1. Deploy your site
+2. Open in browser
+3. Press F12 → Device Toggle (📱)
+4. Select mobile viewport (375x667)
+5. **Expected**: Content visible immediately, no white screen
+6. **If white screen persists**: Check browser console for CSS errors
+
 ### Test Checklist
 
 #### Mobile (≤768px)
 
+- [ ] **NO WHITE SCREEN** - Content visible immediately
 - [ ] Navigation menu collapses properly
 - [ ] Touch targets are appropriately sized (≥44px)
 - [ ] Text is readable without zooming
@@ -114,6 +158,7 @@ npx wrangler pages deploy dist --project-name=demo-site
 
 #### Tablet (768px - 1024px)
 
+- [ ] **NO WHITE SCREEN** - Content visible immediately
 - [ ] Navigation shows horizontal menu
 - [ ] Layout uses appropriate grid columns
 - [ ] Spacing is consistent with design
@@ -121,6 +166,7 @@ npx wrangler pages deploy dist --project-name=demo-site
 
 #### Desktop (≥1024px)
 
+- [ ] **NO WHITE SCREEN** - Content visible immediately
 - [ ] Full navigation menu is visible
 - [ ] Layout uses maximum available space
 - [ ] Hover effects work correctly
@@ -140,9 +186,16 @@ npx wrangler pages deploy dist --project-name=demo-site
    - [LambdaTest](https://www.lambdatest.com/)
 
 3. **Physical Devices**
+
    - Test on actual mobile devices
    - Test on different screen sizes
    - Test on different operating systems
+
+4. **Automated Testing**
+   ```bash
+   chmod +x test-responsive-deployment.sh
+   ./test-responsive-deployment.sh https://your-site.pages.dev
+   ```
 
 ## 🐛 Troubleshooting
 
