@@ -37,7 +37,8 @@ const {
 
   .hero1 {
     width: 100%;
-    min-height: calc(100svh - var(--hero-offset, 128px));
+    min-height: calc(100vh - var(--hero-offset, 128px)); /* Fallback for older browsers */
+    min-height: calc(100svh - var(--hero-offset, 128px)); /* Safari-safe viewport height */
     position: relative;
     display: grid;
     place-items: center;
@@ -51,8 +52,9 @@ const {
     margin: 0;
     padding: 0;
     line-height: 1;
-    -webkit-transform: translateZ(0);   /* Force hardware acceleration */
-    transform: translateZ(0);           /* Force compositing layer */
+    /* Force hardware acceleration for mobile Safari */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .hero1-overlay {
@@ -125,6 +127,14 @@ const {
     .hero1-content { gap: 18px; }
     .hero1-actions { gap: 12px; margin: 14px 0 0 0; }
     .hero1-btn { height: 46px; width: 100%; max-width: 360px; }
+    
+    /* Critical fix for mobile Safari white screen */
+    .hero1 {
+      min-height: 100vh !important;
+      background-attachment: scroll !important;
+      -webkit-transform: translateZ(0) !important;
+      transform: translateZ(0) !important;
+    }
   }
 
   /* Help browser performance on large backgrounds */

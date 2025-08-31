@@ -15,10 +15,11 @@ const { title } = Astro.props;
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
-
+        <!-- Set ASAP so CSS can know JS is available -->
+        <script>document.documentElement.classList.add('js');</script>
     </head>
     <body>
         <Navbar2 
@@ -30,7 +31,75 @@ const { title } = Astro.props;
             <slot />
         </main>
         <Footer />
+        <script>
+            function initializeAnimations() {
+                // CRITICAL: Ensure Hero section is immediately visible
+                const heroSection = document.querySelector('.hero-section') as HTMLElement;
+                const hero1 = document.querySelector('.hero1') as HTMLElement;
+                if (heroSection) {
+                    heroSection.style.opacity = '1';
+                    heroSection.style.visibility = 'visible';
+                    heroSection.style.transform = 'none';
+                }
+                if (hero1) {
+                    hero1.style.opacity = '1';
+                    hero1.style.visibility = 'visible';
+                    hero1.style.transform = 'none';
+                }
+                
+                // Initialize all scroll-animate-up elements
+                const elements = document.querySelectorAll('.scroll-animate-up');
+                elements.forEach(element => {
+                    // Remove any existing animation classes
+                    element.classList.remove('visible', 'in-view');
+                    
+                    // Check if element is in viewport - more precise detection
+                    const rect = element.getBoundingClientRect();
+                    // Visible if any part is within the viewport
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        element.classList.add('visible', 'in-view');
+                    }
+                });
 
+                // Set up intersection observer for scroll animations
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible', 'in-view');
+                        }
+                    });
+                }, {
+                    root: null,
+                    rootMargin: '0px 0px -10%',
+                    threshold: 0
+                });
+
+                // Start observing all scroll-animate-up elements except footer
+                elements.forEach(element => {
+                    if (!element.matches('footer')) {
+                        observer.observe(element);
+                    }
+                });
+
+                // Ensure footer is always visible
+                const footer = document.querySelector('footer');
+                if (footer) {
+                    footer.style.opacity = '1';
+                    footer.style.transform = 'translateY(0)';
+                }
+            }
+
+            // Initialize after layout, with two rAFs for iOS first-paint
+            const run = () => requestAnimationFrame(() => requestAnimationFrame(initializeAnimations));
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', run);
+            } else {
+                run();
+            }
+
+            // Handle Astro page changes
+            document.addEventListener('astro:page-load', initializeAnimations);
+        </script>
     </body>
 </html>
 
@@ -64,24 +133,81 @@ const { title } = Astro.props;
         flex: 1;
     }
 
-    /* Content always visible - no fade-in animations */
-    .scroll-animate-up {
+    /* Keep content visible by default. Only hide when JS flag is present. */
+    .js .scroll-animate-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: none;
+        will-change: transform, opacity;
+    }
+    
+    /* Critical: Ensure Hero section is always visible on mobile */
+    .hero-section,
+    .hero1 {
         opacity: 1 !important;
-        transform: translateY(0) !important;
         visibility: visible !important;
+        transform: none !important;
+    }
+    
+    /* Ensure Hero is never affected by scroll animations */
+    .hero-section .scroll-animate-up,
+    .hero1 .scroll-animate-up {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+    
+    /* CRITICAL: Override the .js .scroll-animate-up rule for Hero */
+    .js .hero-section,
+    .js .hero1 {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
     }
 
     .scroll-animate-up.visible,
     .scroll-animate-up.in-view {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-        visibility: visible !important;
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Ensure all content is visible on load - Safari mobile fix */
-    body * {
-        opacity: 1;
-        visibility: visible;
+    /* Ensure footer is always visible */
+    footer.scroll-animate-up {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        transition: none !important;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        opacity: 0;
+        animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .animate-slide-down {
+        opacity: 0;
+        animation: slideDown 0.8s cubic-bezier(0.4, 0.2, 1) forwards;
     }
 
     @keyframes fadeIn {

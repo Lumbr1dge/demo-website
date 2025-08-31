@@ -414,15 +414,11 @@
         transform: translateX(3px);
     }
 
-    /* Scroll Animation - Content visible immediately */
-    .scroll-animate-up {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
+    /* Scroll Animation */
     .scroll-animate-up.in-view {
         opacity: 1;
         transform: translateY(0);
+        transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     /* Responsive Design */

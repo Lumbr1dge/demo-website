@@ -70,10 +70,9 @@ const {
 <style>
   /* Homepage Container */
   .homepage-container {
-    min-height: 100svh; /* Safari-safe viewport height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    -webkit-transform: translateZ(0); /* Force hardware acceleration for Safari */
   }
 
   /* Main Content */
@@ -85,11 +84,9 @@ const {
 
   /* Section Styling */
   .hero-section {
-    /* Hero takes full viewport height - Safari safe */
-    min-height: 100svh;
+    /* Let Hero1 component handle its own sizing */
     position: relative;
     z-index: 1;
-    -webkit-transform: translateZ(0); /* Force repaint for Safari */
   }
 
   .about-section,
@@ -102,10 +99,13 @@ const {
     z-index: 1;
   }
 
-  /* Content always visible - no fade-in animations */
+  /* Scroll Animation Classes */
   .scroll-animate-up {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
   }
 
   .scroll-animate-up.in-view {
@@ -113,20 +113,7 @@ const {
     transform: translateY(0);
   }
 
-  /* Responsive Design - Safari mobile safe heights */
-  @media (max-width: 768px) {
-    .hero-section {
-      min-height: 100svh; /* Keep full height on mobile */
-      -webkit-transform: translateZ(0); /* Force GPU layer */
-    }
-  }
-
-  @media (max-width: 480px) {
-    .hero-section {
-      min-height: 100svh; /* Keep full height on mobile */
-      -webkit-transform: translateZ(0); /* Force GPU layer */
-    }
-  }
+  /* Responsive Design - Hero sizing handled by Hero1 component */
 </style>
 
 <script>
