@@ -167,7 +167,7 @@ import Layout from '../layouts/Layout.astro';
   /* Hero Section */
   .hero-section {
     position: relative;
-    height: 60vh;
+    height: calc(100vh - 148px); /* Account for navbar height */
     min-height: 500px;
     display: flex;
     align-items: center;
@@ -175,6 +175,7 @@ import Layout from '../layouts/Layout.astro';
     text-align: center;
     color: white;
     overflow: hidden;
+    background-color: #162539; /* Fallback background color */
   }
   
   .hero-background {
@@ -581,6 +582,10 @@ import Layout from '../layouts/Layout.astro';
   }
   
   @media (max-width: 768px) {
+    .hero-section {
+      height: calc(100vh - 100px); /* Reduced navbar height on mobile */
+    }
+    
     .hero-title {
       font-size: 3rem;
     }

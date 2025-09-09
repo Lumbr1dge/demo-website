@@ -277,10 +277,11 @@
     /* Hero Section */
     .hero-section {
         position: relative;
-        height: 60vh;
+        height: calc(100vh - 148px); /* Account for navbar height */
         min-height: 500px;
         display: flex;
         align-items: center;
+        background-color: #162539; /* Fallback background color */
         overflow: hidden;
     }
 
@@ -559,7 +560,7 @@
         }
 
         .hero-section {
-            height: 50vh;
+            height: calc(100vh - 100px); /* Reduced navbar height on mobile */
             min-height: 400px;
         }
 

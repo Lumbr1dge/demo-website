@@ -5,18 +5,16 @@ export interface Props {
   bgUrl?: string;
   quoteHref?: string;
   workHref?: string;
-  headerOffsetPx?: number; // height of fixed header to subtract from viewport
 }
 
 const {
   bgUrl = '/Hero/Hero.jpg',
   quoteHref = '#quote',
   workHref = '#work',
-  headerOffsetPx = 128,
 } = Astro.props as Props;
 ---
 
-<section class="hero1" role="banner" aria-label="Hero" style={`--hero-bg: url('${bgUrl}'); --hero-offset: ${headerOffsetPx}px`}>
+<section class="hero1" role="banner" aria-label="Hero" style={`background-image: url('${bgUrl}')`}>
   <div class="hero1-overlay" aria-hidden="true"></div>
   <div class="hero1-content">
     <h1 class="hero1-title">Your Project, Our Passion</h1>
@@ -37,19 +35,46 @@ const {
 
   .hero1 {
     width: 100%;
-    min-height: calc(100svh - var(--hero-offset, 128px));
+    min-height: calc(100vh - 148px); /* Fixed height calculation: navbar top(40px) + middle(60px) + bottom(48px) */
     position: relative;
     display: grid;
     place-items: center;
     color: #ffffff;
     text-align: center;
-    background-image: var(--hero-bg);
+    background-image: url('/Hero/Hero.jpg'); /* Default background */
     background-size: cover;             /* cover entire hero */
     background-position: center;        /* keep image centered */
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     line-height: 1;
+    /* Ensure visibility */
+    background-color: #162539; /* Fallback background color */
+  }
+
+  /* Fallback for browsers that don't support vh */
+  @supports not (height: 100vh) {
+    .hero1 {
+      min-height: 600px;
+    }
+  }
+
+  /* Support for modern viewport units with fallback */
+  @supports (height: 100dvh) {
+    .hero1 {
+      min-height: calc(100dvh - 148px);
+    }
+  }
+
+  @supports (height: 100svh) {
+    .hero1 {
+      min-height: calc(100svh - 148px);
+    }
+  }
+
+  /* Ensure hero is always visible with minimum height */
+  .hero1 {
+    min-height: max(calc(100vh - 148px), 400px);
   }
 
   .hero1-overlay {
@@ -117,11 +142,19 @@ const {
 
   /* Mobile tweaks */
   @media (max-width: 720px) {
+    .hero1 {
+      min-height: calc(100vh - 100px); /* Reduced navbar height on mobile */
+    }
     .hero1-content { gap: 18px; }
     .hero1-actions { gap: 12px; margin: 14px 0 0 0; }
     .hero1-btn { height: 46px; width: 100%; max-width: 360px; }
-    
+  }
 
+  /* Extra small screens */
+  @media (max-width: 480px) {
+    .hero1 {
+      min-height: calc(100vh - 80px); /* Further reduced for very small screens */
+    }
   }
 
   /* Help browser performance on large backgrounds */
