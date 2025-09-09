@@ -5,10 +5,7 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Contact Us - Wolf Construction Ltd | Construction & Building Services Auckland">
   <!-- Hero Section -->
   <section class="hero-section">
-    <div class="hero-background">
-      <div class="hero-overlay"></div>
-      <div class="hero-pattern"></div>
-    </div>
+    <div class="hero-background"></div>
     <div class="hero-content">
       <div class="container">
         <div class="hero-text">
@@ -187,21 +184,6 @@ import Layout from '../layouts/Layout.astro';
     background: url('/ContactPage/Phone.jpg') center/cover;
   }
   
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(10, 26, 47, 0.85), rgba(10, 26, 47, 0.75));
-  }
-  
-  .hero-pattern {
-    position: absolute;
-    inset: 0;
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-    opacity: 0.6;
-  }
-  
   .hero-content {
     position: relative;
     z-index: 2;
@@ -212,7 +194,7 @@ import Layout from '../layouts/Layout.astro';
   
   .hero-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #d4af37, #f4d03f);
+    background: #d4af37;
     color: #0a1a2f;
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
@@ -221,12 +203,11 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: 0.15em;
     margin-bottom: 2rem;
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-    transform: translateY(0);
     transition: all 0.3s ease;
   }
   
   .hero-badge:hover {
-    transform: translateY(-2px);
+    background: #c19d2f;
     box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
   }
   
@@ -238,15 +219,11 @@ import Layout from '../layouts/Layout.astro';
   }
   
   .accent-text {
-    background: linear-gradient(135deg, #d4af37, #f4d03f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #d4af37;
   }
   
   .hero-subtitle {
     font-size: 1.3rem;
-    opacity: 0.95;
     line-height: 1.6;
     max-width: 600px;
     margin: 0 auto;

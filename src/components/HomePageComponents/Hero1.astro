@@ -15,7 +15,6 @@ const {
 ---
 
 <section class="hero1" role="banner" aria-label="Hero" style={`background-image: url('${bgUrl}')`}>
-  <div class="hero1-overlay" aria-hidden="true"></div>
   <div class="hero1-content">
     <h1 class="hero1-title">Your Project, Our Passion</h1>
     <p class="hero1-sub">From concept to completion, we build spaces that stand the test of time — delivering quality, reliability, and peace of mind.</p>
@@ -63,10 +62,6 @@ const {
     min-height: max(calc(100vh - 148px), 400px); /* fallback */
   }
 
-  .hero1-overlay {
-    position: absolute; inset: 0;
-    background: rgba(0,0,0,0.6); /* dark overlay for readability */
-  }
 
   .hero1-content {
     position: relative;
@@ -91,7 +86,6 @@ const {
     margin: 6px 0 0;
     font-weight: 700;
     font-size: clamp(16px, 2.2vw, 22px);
-    opacity: 0.95;
   }
 
   .hero1-support {
@@ -99,7 +93,6 @@ const {
     font-weight: 600;
     font-size: clamp(14px, 1.8vw, 18px);
     max-width: 920px;
-    opacity: 0.92;
   }
 
   .hero1-actions { 
@@ -110,18 +103,17 @@ const {
     justify-content: center; 
   }
 
-  /* Buttons use site accents (gold + white) for contrast on dark overlay */
+  /* Buttons use site accents (gold + white) for contrast */
   .hero1-btn {
     display: inline-flex; align-items: center; justify-content: center;
     height: 48px; padding: 0 22px; border-radius: 8px; font-weight: 800;
     letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
     transition: all .2s ease; border: 2px solid transparent; color: #0b0b0b;
-    backdrop-filter: saturate(130%);
     margin: 0;
   }
 
   .hero1-btn-primary { background: #d4af37; border-color: #d4af37; color: #4B1C24; }
-  .hero1-btn-primary:hover { filter: brightness(0.95); }
+  .hero1-btn-primary:hover { background: #c19d2f; }
 
   .hero1-btn-outline { background: transparent; color: #ffffff; border-color: #ffffff; }
   .hero1-btn-outline:hover { background: rgba(255,255,255,0.12); color: #ffffff; }
