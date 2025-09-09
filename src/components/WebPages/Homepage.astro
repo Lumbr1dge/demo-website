@@ -37,32 +37,32 @@ const {
     </section>
 
     <!-- About Section - Company introduction -->
-    <section class="about-section scroll-animate-up" id="about">
+    <section class="about-section" id="about">
       <About3 />
     </section>
 
     <!-- Services Section - What we offer -->
-    <section class="services-section scroll-animate-up" id="services">
+    <section class="services-section" id="services">
       <Services4 />
     </section>
 
     <!-- Gallery Section - Our work showcase -->
-    <section class="gallery-section scroll-animate-up" id="gallery">
+    <section class="gallery-section" id="gallery">
       <Gallery1 />
     </section>
 
     <!-- Reviews Section - Customer testimonials -->
-    <section class="reviews-section scroll-animate-up" id="reviews">
+    <section class="reviews-section" id="reviews">
       <Reviews1 />
     </section>
 
     <!-- Call to Action Section - Contact prompt -->
-    <section class="cta-section scroll-animate-up" id="contact">
+    <section class="cta-section" id="contact">
       <CTA1 />
     </section>
 
     <!-- Timeline Section - Company timeline -->
-    <section class="timeline-section scroll-animate-up" id="timeline">
+    <section class="timeline-section" id="timeline">
       <Timeline4 />
     </section>
 
@@ -103,51 +103,14 @@ const {
     z-index: 1;
   }
 
-  /* Scroll Animation Classes */
-  .scroll-animate-up {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
-                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: opacity, transform;
-  }
-
-  .scroll-animate-up.in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Responsive Design - Hero sizing handled by Hero1 component */
+  /* REMOVED ALL SCROLL ANIMATIONS - Content is immediately visible */
 </style>
 
 <script>
-  // Enhanced scroll animations for homepage sections
+  // REMOVED ALL SCROLL ANIMATIONS - Content loads immediately
+  
+  // Only keep smooth scrolling for navigation links
   document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.scroll-animate-up');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Use a longer delay for gallery section to prevent scroll interruption
-          const isGallerySection = entry.target.closest('.gallery-section');
-          const delay = isGallerySection ? 200 : 50;
-          
-          setTimeout(() => {
-            entry.target.classList.add('in-view');
-          }, delay);
-          
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.3, // Higher threshold for smoother triggering
-      rootMargin: '0px 0px -150px 0px' // Larger margin to trigger earlier
-    });
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-
     // Smooth scrolling for navigation links (exclude mobile menu button)
     const navLinks = document.querySelectorAll('a[href^="#"]:not(.mobile-menu-btn)');
     navLinks.forEach(link => {

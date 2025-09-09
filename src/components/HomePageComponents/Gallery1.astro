@@ -5,14 +5,14 @@
 <section class="gallery-section" aria-labelledby="gallery-title">
   <div class="container">
     <!-- Header -->
-    <div class="section-header scroll-animate-up">
+    <div class="section-header">
       <span class="section-badge">Project Gallery</span>
       <h2 id="gallery-title" class="section-title">Our Construction Portfolio</h2>
       <p class="section-subtitle">Discover our latest projects showcasing quality craftsmanship, innovative design, and attention to detail across Auckland</p>
     </div>
 
     <!-- Auto-Scrolling Gallery -->
-    <div class="gallery-wrapper scroll-animate-up">
+    <div class="gallery-wrapper">
       <div class="gallery-track" id="galleryTrack">
         <!-- First Set of Images -->
         <div class="gallery-item">
@@ -179,7 +179,7 @@
     </div>
 
     <!-- View More Button -->
-    <div class="gallery-footer scroll-animate-up">
+    <div class="gallery-footer">
       <a href="/gallery" class="gallery-btn">
         <span>View Full Gallery</span>
         <svg class="gallery-btn-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -226,8 +226,8 @@
     .section-header {
         text-align: center;
         margin-bottom: 4rem;
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .section-badge {
@@ -268,8 +268,8 @@
         position: relative;
         overflow: hidden;
         margin-bottom: 4rem;
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 1;
+        transform: translateY(0);
         border-radius: 1rem;
         box-shadow: var(--shadow-lg);
         background: var(--navy);
@@ -375,8 +375,8 @@
     /* Footer Button */
     .gallery-footer {
         text-align: center;
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .gallery-btn {
@@ -414,12 +414,7 @@
         transform: translateX(3px);
     }
 
-    /* Scroll Animation */
-    .scroll-animate-up.in-view {
-        opacity: 1;
-        transform: translateY(0);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
+    /* REMOVED SCROLL ANIMATIONS - Content is immediately visible */
 
     /* Responsive Design */
     @media (max-width: 1024px) {
