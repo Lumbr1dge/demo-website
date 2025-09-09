@@ -13,7 +13,9 @@
 <body>
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-background"></div>
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
         <div class="hero-content">
             <div class="container">
                 <div class="hero-text">
@@ -328,21 +330,24 @@
         /* Hero Section */
         .hero-section {
             position: relative;
-            height: calc(100dvh - 148px);
-            height: calc(100svh - 148px);
-            height: calc(-webkit-fill-available - 148px);
-            height: calc(100vh - 148px); /* fallback */
+            height: 60vh;
             min-height: 500px;
             display: flex;
             align-items: center;
-            background-color: #162539; /* Fallback background color */
             overflow: hidden;
         }
 
         .hero-background {
             position: absolute;
             inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(20, 20, 20, 0.8));
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
             background: url('/AboutPage/Hero-Background.jpg') center 30%/cover;
+            opacity: 0.2;
         }
 
         .hero-content {
@@ -366,6 +371,7 @@
 
         .hero-subtitle {
             font-size: clamp(1.25rem, 3vw, 1.5rem);
+            opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -859,10 +865,7 @@
             }
 
             .hero-section {
-                height: calc(100dvh - 100px);
-                height: calc(100svh - 100px);
-                height: calc(-webkit-fill-available - 100px);
-                height: calc(100vh - 100px); /* fallback */
+                height: 50vh;
                 min-height: 400px;
             }
 

@@ -5,7 +5,9 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Our Services - Wolf Construction Ltd | Construction & Building Services Auckland">
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-background"></div>
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
         <div class="hero-content">
             <div class="container">
                 <div class="hero-text">
@@ -391,21 +393,25 @@ import Layout from '../layouts/Layout.astro';
     /* Hero Section */
     .hero-section {
         position: relative;
-        height: calc(100dvh - 148px);
-        height: calc(100svh - 148px);
-        height: calc(-webkit-fill-available - 148px);
-        height: calc(100vh - 148px); /* fallback */
+        height: 60vh;
         min-height: 500px;
         display: flex;
         align-items: center;
         overflow: hidden;
-        background-color: #162539; /* Fallback background color */
     }
 
     .hero-background {
         position: absolute;
         inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
         background: url('/ServicesPage/Hero-Background-servicespage.jpg') center/cover;
+        opacity: 0.3;
     }
 
     .hero-content {
@@ -423,8 +429,7 @@ import Layout from '../layouts/Layout.astro';
 
     .hero-badge {
         display: inline-block;
-        background: var(--primary-color);
-        color: var(--white);
+        background: rgba(255, 255, 255, 0.2);
         padding: 0.75rem 1.5rem;
         border-radius: 2rem;
         font-size: 0.875rem;
@@ -432,6 +437,8 @@ import Layout from '../layouts/Layout.astro';
         text-transform: uppercase;
         letter-spacing: 0.05em;
         margin-bottom: 1.5rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     .hero-title {
@@ -444,6 +451,7 @@ import Layout from '../layouts/Layout.astro';
 
     .hero-subtitle {
         font-size: clamp(1.25rem, 3vw, 1.5rem);
+        opacity: 0.9;
         margin-bottom: 3rem;
         line-height: 1.6;
     }
@@ -460,6 +468,7 @@ import Layout from '../layouts/Layout.astro';
         background: rgba(255, 255, 255, 0.1);
         padding: 1.5rem 2rem;
         border-radius: 1rem;
+        backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
@@ -475,6 +484,7 @@ import Layout from '../layouts/Layout.astro';
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.05em;
+        opacity: 0.9;
     }
 
     /* Featured Service Section */
@@ -862,10 +872,7 @@ import Layout from '../layouts/Layout.astro';
         }
 
         .hero-section {
-            height: calc(100dvh - 100px);
-            height: calc(100svh - 100px);
-            height: calc(-webkit-fill-available - 100px);
-            height: calc(100vh - 100px); /* fallback */
+            height: 60vh;
             min-height: 500px;
         }
 
