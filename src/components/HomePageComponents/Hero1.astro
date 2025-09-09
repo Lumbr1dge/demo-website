@@ -35,7 +35,10 @@ const {
 
   .hero1 {
     width: 100%;
-    min-height: calc(100vh - 148px); /* Fixed height calculation: navbar top(40px) + middle(60px) + bottom(48px) */
+    min-height: calc(100dvh - 148px);
+    min-height: calc(100svh - 148px);
+    min-height: calc(-webkit-fill-available - 148px);
+    min-height: calc(100vh - 148px); /* fallback */
     position: relative;
     display: grid;
     place-items: center;
@@ -52,29 +55,12 @@ const {
     background-color: #162539; /* Fallback background color */
   }
 
-  /* Fallback for browsers that don't support vh */
-  @supports not (height: 100vh) {
-    .hero1 {
-      min-height: 600px;
-    }
-  }
-
-  /* Support for modern viewport units with fallback */
-  @supports (height: 100dvh) {
-    .hero1 {
-      min-height: calc(100dvh - 148px);
-    }
-  }
-
-  @supports (height: 100svh) {
-    .hero1 {
-      min-height: calc(100svh - 148px);
-    }
-  }
-
   /* Ensure hero is always visible with minimum height */
   .hero1 {
-    min-height: max(calc(100vh - 148px), 400px);
+    min-height: max(calc(100dvh - 148px), 400px);
+    min-height: max(calc(100svh - 148px), 400px);
+    min-height: max(calc(-webkit-fill-available - 148px), 400px);
+    min-height: max(calc(100vh - 148px), 400px); /* fallback */
   }
 
   .hero1-overlay {
@@ -143,7 +129,10 @@ const {
   /* Mobile tweaks */
   @media (max-width: 720px) {
     .hero1 {
-      min-height: calc(100vh - 100px); /* Reduced navbar height on mobile */
+      min-height: calc(100dvh - 100px);
+      min-height: calc(100svh - 100px);
+      min-height: calc(-webkit-fill-available - 100px);
+      min-height: calc(100vh - 100px); /* fallback */
     }
     .hero1-content { gap: 18px; }
     .hero1-actions { gap: 12px; margin: 14px 0 0 0; }
@@ -153,7 +142,10 @@ const {
   /* Extra small screens */
   @media (max-width: 480px) {
     .hero1 {
-      min-height: calc(100vh - 80px); /* Further reduced for very small screens */
+      min-height: calc(100dvh - 80px);
+      min-height: calc(100svh - 80px);
+      min-height: calc(-webkit-fill-available - 80px);
+      min-height: calc(100vh - 80px); /* fallback */
     }
   }
 

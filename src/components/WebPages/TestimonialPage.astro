@@ -448,7 +448,10 @@
         /* Hero Section */
         .hero-section {
             position: relative;
-            height: calc(100vh - 148px); /* Account for navbar height */
+            height: calc(100dvh - 148px);
+            height: calc(100svh - 148px);
+            height: calc(-webkit-fill-available - 148px);
+            height: calc(100vh - 148px); /* fallback */
             min-height: 500px;
             display: flex;
             align-items: center;
@@ -989,7 +992,10 @@
             }
 
             .hero-section {
-                height: calc(100vh - 100px); /* Reduced navbar height on mobile */
+                height: calc(100dvh - 100px);
+                height: calc(100svh - 100px);
+                height: calc(-webkit-fill-available - 100px);
+                height: calc(100vh - 100px); /* fallback */
                 min-height: 500px;
             }
 

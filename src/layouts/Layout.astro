@@ -15,7 +15,7 @@ const { title } = Astro.props;
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
         <!-- Set ASAP so CSS can know JS is available -->
@@ -34,38 +34,41 @@ const { title } = Astro.props;
         <script>
             // REMOVED ALL SCROLL ANIMATIONS - Content loads immediately
             // No animations, content is visible immediately
+            
+            // Remove loading states on DOM ready
+            window.addEventListener('DOMContentLoaded', () =>
+                requestAnimationFrame(() => document.documentElement.classList.remove('loading'))
+            );
         </script>
     </body>
 </html>
 
 <style is:global>
-    /* --- iOS dvh/svh fallbacks --- */
-    @supports (height: 100dvh) {
-        body { min-height: 100dvh; }
-        main { min-height: calc(100dvh - 200px); }
+    /* --- Modern viewport units with fallbacks --- */
+    body {
+        min-height: 100dvh;
+        min-height: 100svh;
+        min-height: -webkit-fill-available;
+        min-height: 100vh; /* fallback */
     }
-    @supports (height: 100svh) {
-        body { min-height: 100svh; }
-        main { min-height: calc(100svh - 200px); }
+    
+    main {
+        min-height: calc(100dvh - 200px);
+        min-height: calc(100svh - 200px);
+        min-height: calc(-webkit-fill-available - 200px);
+        min-height: calc(100vh - 200px); /* fallback */
     }
 
     /* Ensure proper spacing with fixed navbar */
     main {
         padding-top: 0; /* Navbar2 handles its own spacing */
-        /* 100vh kept as fallback; dvh/svh override above */
-        min-height: calc(100vh - 200px); /* Account for navbar and footer */
+        flex: 1;
     }
 
     /* Ensure footer stays at bottom */
     body {
         display: flex;
         flex-direction: column;
-        /* 100vh fallback only; dvh/svh override above */
-        min-height: 100vh;
-    }
-
-    main {
-        flex: 1;
     }
 
     /* REMOVED ALL SCROLL ANIMATIONS - Content is immediately visible */
