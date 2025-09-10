@@ -90,13 +90,16 @@
     <section class="founder-section">
         <div class="container">
             <div class="founder-content">
-                <div class="founder-image">
+                <div class="founder-image founder-image-desktop">
                     <img src="/AboutPage/Founder.jpg" alt="Founder of Wolf Construction Ltd" class="founder-photo">
                 </div>
                 <div class="founder-text">
                     <div class="section-header">
                         <span class="section-badge">Leadership</span>
                         <h2 class="section-title">Meet Our Founder</h2>
+                    </div>
+                    <div class="founder-image founder-image-mobile">
+                        <img src="/AboutPage/Founder.jpg" alt="Founder of Wolf Construction Ltd" class="founder-photo">
                     </div>
                     <p class="founder-bio">
                         Our founder, [Founder's Name], started in the building trade with a passion for turning ideas into solid, lasting structures. With over 20 years of hands-on experience and Licensed Building Practitioner (LBP) certification, he has led Wolf Construction Ltd from its first small renovation to large-scale new builds and design + build solutions.
@@ -579,6 +582,15 @@
             justify-content: center;
         }
 
+        /* Desktop: show desktop image, hide mobile image */
+        .founder-image-desktop {
+            display: flex;
+        }
+
+        .founder-image-mobile {
+            display: none;
+        }
+
         .founder-photo {
             width: 300px;
             height: 400px;
@@ -910,6 +922,21 @@
             .founder-bio,
             .founder-philosophy {
                 text-align: center;
+            }
+
+            /* Show/hide appropriate founder images */
+            .founder-image-desktop {
+                display: none;
+            }
+
+            .founder-image-mobile {
+                display: flex;
+                justify-content: center;
+                margin: 2rem auto;
+            }
+
+            .founder-content {
+                display: block;
             }
 
             .values-grid {
