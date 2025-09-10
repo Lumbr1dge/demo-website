@@ -12,6 +12,28 @@
     @apply bg-white text-gray-900;
     min-height: 100vh; /* fallback */
   }
+
+  /* Global override to ensure all content is visible on first paint */
+  * {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* Remove any scroll-based reveal classes */
+  .animate-on-scroll,
+  .scroll-in,
+  .fade-in,
+  .slide-in,
+  .reveal,
+  [class*="stagger-"],
+  [class*="animate-"] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 @layer components {

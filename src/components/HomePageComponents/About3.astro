@@ -42,7 +42,7 @@ const {
   <div class="about3__container">
     <div class="about3__grid">
       <!-- Image side - now on the left -->
-      <div class="about3__visual scroll-in">
+      <div class="about3__visual">
         <div class="visual__wrap">
           <!-- subtle grid pattern -->
           <div class="visual__pattern" aria-hidden="true"></div>
@@ -81,7 +81,7 @@ const {
       </div>
 
       <!-- Content side - now on the right -->
-      <div class="about3__content scroll-in">
+      <div class="about3__content">
         <!-- lead tag -->
         <div class="lead">
           <span class="lead__dot" aria-hidden="true"></span>
@@ -97,7 +97,7 @@ const {
         </div>
 
         <!-- Mobile image - positioned below text for responsive layout -->
-        <div class="about3__visual-mobile scroll-in">
+        <div class="about3__visual-mobile">
           <div class="visual__wrap">
             <!-- subtle grid pattern -->
             <div class="visual__pattern" aria-hidden="true"></div>
@@ -435,8 +435,6 @@ const {
   .visual__glow{ animation: pulse-slow 4s ease-in-out infinite }
 
   /* Scroll-in */
-  .scroll-in{ opacity:0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease }
-  .scroll-in.is-in{ opacity:1; transform: none }
 
   /* Responsive refinements */
   @media (max-width: 960px){
@@ -466,23 +464,3 @@ const {
   }
 </style>
 
-<script>
-  // Client-side JS/TS: reveal on scroll (IntersectionObserver)
-  document.addEventListener('DOMContentLoaded', () => {
-    const els = Array.from(document.querySelectorAll('.scroll-in'));
-    if (!('IntersectionObserver' in window) || els.length === 0) {
-      els.forEach(el => el.classList.add('is-in'));
-      return;
-    }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
-
-    els.forEach(el => io.observe(el));
-  });
-</script>
