@@ -176,8 +176,20 @@ const isActive = (href: string) => {
   .design-theme-mobile:hover { background: linear-gradient(135deg, #00acc1 0%, #00838f 100%) !important; color: white !important; }
 
   /* Bottom section */
-  .nb2-bottom { position: relative; background: #ffffff; min-height: 48px; border-bottom: 1px solid rgba(10,26,47,0.08); }
+  .nb2-bottom { position: relative; background: #ffffff; min-height: 48px; border-bottom: 0.01px solid rgba(10,26,47,0.08); }
   .nb2-bottom::before { content: ''; position: absolute; top: 75%; left: 50%; transform: translate(-50%, -50%); width: 80vw; height: 6px; background: linear-gradient(90deg, rgba(10,26,47,0), #0a1a2f, rgba(10,26,47,0)); border-radius: 3px; }
+  
+  /* Mobile: Clean line under navbar instead of white space */
+  @media (max-width: 768px) {
+    .nb2-bottom { 
+      display: block; 
+      min-height: 0; 
+      height: 1px; 
+      background: #d4af37; 
+      border-bottom: none; 
+    }
+    .nb2-bottom::before { display: none; }
+  }
 
   /* Responsive Design */
   @media (max-width: 1024px) {
@@ -191,11 +203,14 @@ const isActive = (href: string) => {
     .navbar-menu { display: none; }
     .navbar-content { justify-content: space-between; }
     .navbar-content::before { content: 'Wolf Construction Ltd'; color: #d4af37; font-weight: 600; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase; font-family: sans-serif; }
-    /* Center the top CTA button */
+    /* Hide contact us button on mobile */
+    .nb2-topright { display: none; }
     .nb2-top-inner { grid-template-columns: 1fr; }
-    .nb2-topright { justify-content: center; }
-    /* Remove faded line and its space on mobile */
-    .nb2-bottom { display: none; min-height: 0; border-bottom: 0; }
+    /* Remove top section completely on mobile to move navbar to top */
+    .nb2-top { display: none; }
+    /* Ensure navbar is flush to top with no spacing */
+    .nb2-header { top: 0; }
+    .navbar-container { margin-top: 0; }
     :global(body) { padding-top: 0; }
   }
   @media (max-width: 480px) {
