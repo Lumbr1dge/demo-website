@@ -100,12 +100,11 @@ const isActive = (href: string) => {
   <div class="nb2-bottom" aria-hidden="true"></div>
 </header>
 
-<div class="nb2-spacer" aria-hidden="true"></div>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
   /* Header wrapper */
-  .nb2-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #ffffff; }
+  .nb2-header { position: sticky; top: 0; left: 0; right: 0; z-index: 1000; background: #ffffff; }
 
   /* Top section */
   .nb2-top { background: #ffffff; color: #0a1a2f; border-bottom: 1px solid rgba(10,26,47,0.15); }
@@ -218,9 +217,6 @@ const isActive = (href: string) => {
     .mobile-nav-link { padding: 0.8rem 1rem; font-size: 0.9rem; }
   }
 
-  /* Spacer element below fixed header to prevent overlap */
-  .nb2-spacer { height: 6px; }
-  :global(body) { padding-top: 0; }
 </style>
 
 <script>
@@ -228,8 +224,6 @@ const isActive = (href: string) => {
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector<HTMLButtonElement>('.mobile-menu-btn');
     const mobileMenu = document.querySelector<HTMLElement>('.mobile-menu');
-    const headerEl = document.querySelector<HTMLElement>('.nb2-header');
-    const spacerEl = document.querySelector<HTMLElement>('.nb2-spacer');
 
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', (e) => {
@@ -238,14 +232,6 @@ const isActive = (href: string) => {
         mobileMenuBtn.classList.toggle('active');
       });
     }
-
-    const setSpacerHeight = () => {
-      if (headerEl && spacerEl) {
-        spacerEl.style.height = `${headerEl.offsetHeight + 6}px`;
-      }
-    };
-    setSpacerHeight();
-    window.addEventListener('resize', setSpacerHeight);
 
     // Close mobile menu when clicking on a link
     const mobileNavLinks = document.querySelectorAll<HTMLAnchorElement>('.mobile-nav-link');
