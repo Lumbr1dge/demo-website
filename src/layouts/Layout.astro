@@ -51,7 +51,7 @@ const { title } = Astro.props;
 
     /* Ensure proper spacing with fixed navbar */
     main {
-        padding-top: 120px; /* Safe padding for fixed navbar */
+        padding-top: 0; /* Navbar2 handles its own spacing */
         /* 100vh kept as fallback; dvh/svh override above */
         min-height: calc(100vh - 200px); /* Account for navbar and footer */
     }
