@@ -448,8 +448,9 @@
         /* Hero Section */
         .hero-section {
             position: relative;
-            height: 60vh;
-            min-height: 500px;
+            min-height: 60dvh;
+            min-height: 60svh;
+            min-height: -webkit-fill-available;
             display: flex;
             align-items: center;
             overflow: hidden;
@@ -657,7 +658,7 @@
         .testimonials-section {
             padding: 6rem 0;
             background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.90)), url('/AboutPage/AbotuPage-CherryBlossom2.jpg') center/cover;
-            background-attachment: fixed;
+            background-attachment: scroll;
         }
 
         .testimonials-grid {

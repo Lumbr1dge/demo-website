@@ -90,3 +90,14 @@
     min-height: 100svh;
   }
 }
+
+/* iOS: avoid heavy backdrop blur at first paint on mobile */
+@media (max-width: 768px) {
+  .hero-background,
+  .image-overlay,
+  .highlight-badge,
+  .stat-item,
+  .stat-circle {
+    backdrop-filter: none !important;
+  }
+}
