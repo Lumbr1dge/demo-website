@@ -430,10 +430,10 @@
         top: 0;
         left: 0;
         width: 100vw;
-        height: 100dvh;
-        height: 100svh;
+        height: 100vh; /* fallback first */
         height: -webkit-fill-available;
-        height: 100vh; /* fallback */
+        height: 100svh;
+        height: 100dvh; /* best last */
         z-index: 9999;
         justify-content: center;
         align-items: center;
