@@ -90,3 +90,29 @@
     min-height: 100svh;
   }
 }
+
+/* iOS fix */
+.hero-section,
+.services-section,
+.why-choose-section,
+.testimonials-section {
+  background-attachment: scroll !important;
+}
+
+@supports (height: 100svh) {
+  .hero-section {
+    min-height: 60svh;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-background,
+  .image-overlay,
+  .modal,
+  .highlight-badge,
+  .stat-circle {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
